@@ -1,0 +1,275 @@
+
+[%
+var rail: RailDiagram;
+ rail := RailDiagram.allInstances().at(0);
+%]
+
+
+%right_assoc __ :: __
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Basic Types
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+spec Nat = %mono
+  free type Nat ::= 0 | suc(Nat)
+end
+
+spec Pair [sort S] [sort T] = %mono
+ %% free type Pair[S,T] ::= pair(first:S; second:T)
+
+  sort Pair[S,T]
+  ops first: Pair[S,T] -> S;
+      second: Pair[S,T] -> T;
+      pair: S * T -> Pair[S,T]
+
+ forall s:S, t:T
+ . first(pair(s,t)) = s
+ . second(pair(s,t)) = t
+end
+
+spec GenerateList [sort Elem] = %mono
+ sort List[Elem]
+
+ free type List[Elem] ::= [] |  __ :: __ (Elem;List[Elem])
+ %% ops  [] : List[Elem];
+ %%       __ :: __ : Elem * List[Elem] -> List[Elem]
+
+     ops   __ ++ __ : List[Elem] * List[Elem] -> List[Elem];
+
+     forall x: Elem; L,K: List[Elem]
+     . [] ++ K = K                           %(concat_nil_List)%
+     . (x::L) ++ K = x :: (L ++ K)           %(concat_NeList_List)%
+
+
+end
+
+spec List [sort Elem] = %mono
+     GenerateList[sort Elem]
+ then %def
+     pred  __eps__: Elem * List[Elem]
+
+     forall x,y: Elem; L,K: List[Elem]
+
+     %% axioms concerning predicates
+    
+     . not x eps []                             %(List_elemOf_nil)%
+     . x eps (x::L)                             %(List_elemOf_NeList1)%
+     . (x eps (y::L) <=> x eps L) if not x=y    %(List_elemOf_NeList2)%
+end
+
+
+spec Time =
+  Nat with Nat |-> Time
+end
+
+spec ExactBjoernerStaticSignature =
+     List[sort Linear] with List[Linear] |-> Line then
+     List[sort Linear] with List[Linear] |-> Track then 
+ %[    List[sort Unit] ]%
+%[then]%
+     sorts Net, Station, Unit, Connector
+           sorts Linear, Switch < Unit
+
+     preds  __hasLine__: Net * Line;                                %(1)%
+            __hasStation__: Net * Station;                          %(1)%
+            __hasUnit__: Net * Unit;                                %(2)%
+      	    __hasUnit__: Line * Unit;                               %(3)%
+            __hasUnit__: Station * Unit;                            %(5)%
+            __hasTrack__: Station * Track;                          %(8)%
+    	    __hasConnector__: Unit * Connector                      %(13)%
+            __hasUnit__: Track * Unit;                            %(ADDED)%  
+end
+
+spec ExactBjoernerDynamics =
+  ExactBjoernerStaticSignature and Time then 
+  List[sort Path] with List[Path] |-> UnitState then 
+  List[sort UnitState] with List[UnitState] |-> AllStates then
+  List[sort UnitPathPair] with List[UnitPathPair] |-> Routes then  
+  Pair[sort Unit][sort Path] with Pair[Unit, Path] |-> UnitPathPair,
+                                  pair |-> unitPathPair, 
+                                  first:Pair[Unit,Path] -> Unit |-> getUnit, 
+                                  second:Pair[Unit,Path] -> Path |-> getPath 
+  then
+  Pair[sort Connector][sort Connector] with 
+                             first:Pair[Connector,Connector] -> Connector |-> c1, 
+                             second:Pair[Connector,Connector] -> Connector |-> c2 
+then   
+   sort Path = {p:Pair[Connector,Connector] . not(c1(p) = c2(p))}               %(1)%
+
+then %def 
+   op path : Connector * Connector ->? Path
+   forall c1,c2:Connector
+   . path(c1,c2) = pair(c1,c2) as Path  %(shnizzle)%
+
+then %implies
+   . forall c1,c2:Connector. def path(c1,c2) <=> not c1 = c2
+then
+   op __stateAt__: Unit * Time -> UnitState                                     %(2)%
+   op allStatesOf__ : Unit  -> AllStates                                        %(3)%
+
+%% a) AllStates should be a set rather than a list
+%% b) it probably would better be represented by a predicate
+
+then %def
+   pred __closed_At__( u:Unit;t :Time) <=> u stateAt t = []                     %(2)%
+
+   pred __isWellFormed : Routes                                                 %(5)% 
+   sort Route < Routes
+ %% {r: Routes . r isWellFormed}                                    
+
+   pred __isOpenAt__ : Route * Time                                             
+end
+
+spec CommonSignature =
+ ExactBjoernerDynamics
+end
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% General Control Roles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+spec Control =
+CommonSignature then
+  List[sort Unit] then %%with List[Unit] |-> sort Region then             
+  List[sort Region]    %%with List[Region] |-> sort MA then             
+then
+ sort Region < List[Unit]
+ sort MA < List[Region]
+
+ pred assigned:  MA * Time                                                         %(8)%
+ pred ext: MA * Route * MA
+ op regions: Route -> MA
+
+ pred extends: MA * Time
+ pred reduces: MA * Time
+
+ pred clear: Route * Unit
+ pred __isOpenAt__: Unit * Time
+
+  %% No MA at 0
+ . forall m:MA . not m=[] => not assigned(m, 0)   %(no_ma_0)%
+
+  %% [] assigned at all times 
+ . forall t: Time . assigned([] as MA,t)       %([]_all_time)%
+
+  %% Extending/reducing a MA   
+ . forall ma1:MA, t:Time . not ma1=[] => (assigned(ma1, suc(t)) =>
+                                         (assigned(ma1, t) /\ not extends(ma1,t) /\ not reduces(ma1,t)) \/
+                                         (not assigned(ma1, t) /\  extends(ma1,t) /\ not reduces(ma1,t)) \/
+                                         (not assigned(ma1, t) /\ not extends(ma1,t) /\  reduces(ma1,t))) %(assigned_if)%
+
+  forall ma1: MA, t:Time 
+  . extends(ma1,t) <=>  (exists ma2: MA, r:Route . (assigned(ma2,t) /\ (not ma2=[] => not assigned(ma2,suc(t))) /\  ext(ma2,r, ma1)) /\ r isOpenAt t) %(extends)%
+  . reduces(ma1,t) <=>  (exists rg:Region . assigned((rg::ma1) as MA, t) /\ not assigned((rg::ma1) as MA,suc(t)))    %(reduces)%
+
+
+ %% Only one MA changes at any time 
+. forall t:Time . forall m1,m2:MA . ((assigned(m1,suc(t)) => extends(m1,t)) /\ (assigned(m2,suc(t)) => extends(m2,t))) => m1=m2  %(one_changes)%
+
+%%%in use
+ . forall r: Route, rg:Region, ma:MA . rg eps regions(r) /\ rg eps ma /\ assigned(ma,t) =>
+                                   exists u:Unit, upp:UnitPathPair . u eps rg /\ getUnit(upp) = u /\  upp eps r /\  not u isOpenAt t   %(2)%
+
+
+
+end
+
+spec ControlTable = 
+Control then
+
+ forall r:Route; t:Time . r isOpenAt t <=> (forall u:Unit . clear(r,u) => u isOpenAt t) %(Route_open_defn)%
+end
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Example Station.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+spec StationTopology = 
+CommonSignature then
+
+ free type Net ::= genNet
+ free type Station ::= genStation
+ free type Connector ::= 
+[%var i := 0;
+while (i < rail.hasConnectors.size()-1){ %]
+  [%
+  var con : Connector := rail.hasConnectors.at(i);
+  i := i+1;
+  %]
+  c[%=i%] |[%}%] c[%=i+1%] 
+  
+ free type Unit ::= 
+[%var i := 0;
+while (i < rail.hasUnits.size()-1){ %]
+  [%
+  var u : Unit := rail.hasUnits.at(i);
+  i := i+1;
+  %]
+  [%=u.name%] |[%}%][%  var u : Unit := rail.hasUnits.at(i);   i := i+1;   %] [%=u.name%] 
+  
+ free type Linear ::= 
+[%var i := 0;
+while (i < rail.hasUnits.size()-1){ %]
+  [%
+  var u : Unit := rail.hasUnits.at(i);
+  i := i+1;
+  if(u.isKindOf(Linear)){
+  %]
+  [%=u.name%] |[%}}%][%  var u : Unit := rail.hasUnits.at(i); i := i+1; if(u.isKindOf(Linear)){%] [%=u.name%][%}%]
+  
+ free type Switch ::= 
+[%var i := 0;
+while (i < rail.hasUnits.size()-1){ %]
+  [%
+  var u : Unit := rail.hasUnits.at(i);
+  i := i+1;
+  if(u.isKindOf(Point)){
+  %]
+  [%=u.name%] |[%}}%][%  var u : Unit := rail.hasUnits.at(i); i := i+1; if(u.isKindOf(Point)){%] [%=u.name%][%}%]
+  
+ end
+
+spec StationTopologicalRoutes = 
+    StationTopology and CommonSignature and Control
+then
+free type Route ::= 
+[%var i := 0;
+while (i < rail.hasControlTable.hasRoutes.size()-1){ %]
+  [%
+  var r : Route := rail.hasControlTable.hasRoutes.at(i);
+  i := i+1;
+  %]
+  R[%=r.name%] |[%}%][%  var r : Route := rail.hasControlTable.hasRoutes.at(i);   i := i+1;   %] R[%=r.name%] 
+  
+ [%var i := 0;
+while (i < rail.hasControlTable.hasRoutes.size()){ %]
+  [%
+  var r : Route := rail.hasControlTable.hasRoutes.at(i);
+  i := i+1;
+  %] 
+  . [%=r.name%] = ([%var j := 0; while (j < r.hasUPPs.size()){ %][%var u : UnitPathPair= r.hasUPPs.at(j); j := j+1; %]unitPathPair([%=u.hasUnit.name%],path([%=getPosition(u.hasPath.hasPC1)%], [%=getPosition(u.hasPath.hasPC2)%]))::[%}%][])
+  [%}%]
+
+end
+  
+ [%
+ operation getPosition(conIn){
+ var rail: RailDiagram;
+ rail := RailDiagram.allInstances().at(0);
+ 	var i := 0;
+    while (i < rail.hasConnectors.size()-1){ 
+  
+  var con : Connector := rail.hasConnectors.at(i);
+  i := i+1;
+  if(con=conIn){
+  return "c" + i;
+  }
+  } 
+ }
+ %]
+
+ 

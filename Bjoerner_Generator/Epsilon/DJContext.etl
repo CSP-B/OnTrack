@@ -1,0 +1,88 @@
+import "SharedOperations.etl";
+
+pre {
+	// Modify Bjoerner model
+	prepareBjoerner();
+
+	// Main B Machine
+	new BMachine!Machine;
+
+	// Set ALLTRACK = all units + nullTrack
+	var alltrack = newBSet("ALLTRACK");
+
+	// Set SIGNAL = all signal names
+	var signal = newBSet("SIGNAL");
+
+	// Set POINTS = all point pointNames
+	var points = newBSet("POINTS");
+
+	// Set ROUTE = all route names
+	var routeB = newBSet("ROUTE");
+	
+	// Property ENTRY
+	var entry = newBProperty("ENTRY");
+	
+	// Property EXIT
+	var exit = newBProperty("EXIT");
+}
+
+//////// Transformation Rules ////////
+
+// Add unit names to ALLTRACK
+@greedy
+rule processUnits
+transform u : Bjoerner!Unit
+to se : BMachine!Element {
+
+	se.name = u.name;
+	alltrack.hasSetElements.add(se);
+}
+
+// Add all signal names to SIGNAL
+rule processSignals
+transform s : Bjoerner!Signal
+to se : BMachine!Element {
+
+	se.name = s.name;
+	signal.hasSetElements.add(se);
+}
+
+// Add all point pointNames to POINTS
+rule processPoints
+transform p : Bjoerner!Point
+to se : BMachine!Element {
+
+	se.name = p.pointName;
+	points.hasSetElements.add(se);
+}
+
+// Add all necessary route names to ROUTE
+rule processControlTable
+transform r : Bjoerner!Route
+to se : BMachine!Element {
+	
+	// only transform if route is in control table
+	guard : r.isNecessaryRoute()
+	
+	se.name = r.name;
+	routeB.hasSetElements.add(se); 
+}
+
+// Add end units to ENTRY and EXIT
+rule findEndUnits
+transform c : Bjoerner!Connector
+to pe : BMachine!PropElement, e : BMachine!Element {
+
+	// Only transform if connector has 1 unit
+	guard : c.numUnits() = 1
+	
+	// Find unit
+	var u : Bjoerner!Unit = c.findUnit();
+	e.name = u.name;
+	pe.hasDomainElements.add(e);
+	
+	// If unit has a signal add pe to ENTRY
+	if (u.hasSignals.size > 0) {entry.hasPropElements.add(pe);}
+	// Else add to EXIT
+	else {exit.hasPropElements.add(pe);}	
+}

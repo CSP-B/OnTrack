@@ -1,0 +1,420 @@
+////////
+// Displays the current status of the control table in the console, showing all routes in the hasRoutes list
+////////
+wizard DisplayControlTable {
+
+	guard : self.isTypeOf(ControlTable)
+	
+	title : "Display Control Table"
+	
+	do {self.printToConsole();}
+}
+
+////////
+// Adds all the possible Paths, UnitPathPairs and Routes to the track plan model
+// Additionally creates a ControlTable object and adds all Routes to its hasRoutes list
+// The contents of Control Table is then displayed in the console
+//
+// Routes are initially created with a 'dummy' first UPP as that of the controlling signal.
+// This simplifies the growing process as it is guaranteed that signals will be on a linear.
+// Once the growing process is complete the dummy UPP is removed from the route
+////////
+wizard CreateControlTable {
+	
+	guard : self.isTypeOf(RailDiagram) or self.isTypeOf(ControlTable)
+	
+	title : "Generate Control Table"
+	
+	do {
+		
+		// remove any previously generated routes, UPPs and paths
+		for (r in Route) { delete r;}
+		for (upp in UnitPathPair) { delete upp;}
+		for (p in Path) { delete p;}
+		
+		var rd = RailDiagram.all().first();
+		var ct : ControlTable;
+		
+		// if control table exists ensure route list is empty
+		if (rd.hasControlTable.isDefined()) {
+		
+			ct = rd.hasControlTable;
+			ct.hasRoutes = Sequence {};	
+		}
+		// else create new ControlTable
+		else {
+		
+			ct = new ControlTable;
+			rd.hasControlTable = ct;
+		}
+		
+		// for each unit generate all possible Paths and UPPs
+		for (u in Unit) {u.generateUnitUPP();}
+
+		// for each signal initialise a route (controlled by the signal)
+		for (s in Signal) {initialiseRoute(s);}
+
+		var growing = true;
+
+		// while routes are growing:
+		while (growing) {
+		
+			growing = false;
+			
+			// for each route
+			for (r in Route) {
+			
+				// get last UPP on route
+				var lastUPP = r.hasUPPs.last();
+			
+				// if last UPP has signal in forward direction and is not the first UPP
+				if (lastUPP.hasForwardSignal() and (r.hasUPPs.size() > 1)) {
+					
+					// stop route growing
+					continue;
+				}
+			
+				// get next unit
+				var nextUnit = r.nextUnit();
+				
+				// if no further unit available stop route growing
+				if (nextUnit = null) {continue;}
+				// if next unit is an end unit stop growing
+				if (nextUnit.isEnd()) {continue;}
+				// else at least one more iteration is needed
+				else {growing = true;}
+			
+				// identify next available UPPs
+				var nextUPPs = findUPPs(nextUnit, lastUPP.hasPath.hasPC2);
+			
+				// if 2nd UPP exists
+				if (nextUPPs.size() > 1) {
+			
+					//create clone of route and add 2nd UPP to new route
+					var r2 = cloneRoute(r);
+					r2.hasUPPs.add(nextUPPs.last());
+				}
+				
+				// add 1st UPP to route
+				r.hasUPPs.add(nextUPPs.first());
+			}
+		}		
+
+		// remove first 'dummy' UPP from routes
+		for (r in Route) {r.hasUPPs.removeAt(0);}
+
+		// identify normal and reverse points
+		for (r in Route) {
+
+			// for every UnitPathPair in the route
+			for (upp in r.hasUPPs) {
+		
+				var u = upp.hasUnit;
+				var p = upp.hasPath;
+			
+				// if the UPP is over a point
+				if (u.isTypeOf(Point)) {
+			
+					// if it enters/leaves via the reverse connector
+					if (u.hasC3 = p.hasPC1 or u.hasC3 = p.hasPC2) {
+						// add to reverse list
+						r.hasReversePoints.add(u);
+					}
+					else {
+						// add to normal list
+						r.hasNormalPoints.add(u);
+					}
+				}
+			}
+		}
+
+		// add all Routes to ControlTable
+		for (r in Route) {ct.hasRoutes.add(r);}
+		
+		// display control table in console
+		ct.printToConsole();
+	}
+} 
+			
+////////////////// operations //////////////////
+
+////////
+// returns a string identifying the connector
+// format is "Connector: unit1.name unit2.name"
+////////
+operation Connector toString() : String {
+
+	var output : String = "Connector:";
+	
+	for (u in self.hasUnit1) {
+		output = output.concat(" " + u.name);
+	}
+	
+	for (u in self.hasUnit2) {
+		output = output.concat(" " + u.name);
+	}
+	
+	for (u in self.hasPoint) {
+		output = output.concat(" " + u.name);
+	}
+	return output;
+}
+
+////////
+// creates all possible Path and UPP objects for the unit
+// 2 UPPs created per Linear, 4 per Point
+////////
+operation Unit generateUnitUPP() {
+	
+	// generate first path
+	var pp1 = new Path;
+	pp1.hasPC1 = self.hasC1;
+	pp1.hasPC2 = self.hasC2;
+	
+	// generate second path
+	var pp2 = new Path;
+	pp2.hasPC1 = self.hasC2;
+	pp2.hasPC2 = self.hasC1;
+	
+	// generate first UPP
+	var upp1 = new UnitPathPair;
+	upp1.hasUnit = self;
+	upp1.hasPath = pp1;
+	
+	// generate second UPP
+	var upp2 = new UnitPathPair;
+	upp2.hasUnit = self;
+	upp2.hasPath = pp2;
+	
+	// if unit is of type Point add extra Paths and UPPs
+	
+	if (self.isTypeOf(Point)) {
+	
+		// generate first point specific path
+		var pp3 = new Path;
+		pp3.hasPC1 = self.hasC1;
+		pp3.hasPC2 = self.hasC3;
+		
+		// generate second point specific path
+		var pp4 = new Path;
+		pp4.hasPC1 = self.hasC3;
+		pp4.hasPC2 = self.hasC1;
+		
+		// generate first point specific UPP
+		var upp3 = new UnitPathPair;
+		upp3.hasUnit = self;
+		upp3.hasPath = pp3;
+	
+		// generate second point specific UPP
+		var upp4 = new UnitPathPair;
+		upp4.hasUnit = self;
+		upp4.hasPath = pp4;
+	}	
+}
+
+////////
+// creates a route controlled by the input signal
+// note: sets a first 'dummy' UPP of the route used in route growing process
+////////
+operation initialiseRoute(s : Signal) {
+
+	var r = new Route;
+	// controlling signal
+	r.controlledBySignal = s;
+	s.controlsRoutes.add(r);
+	// name
+	r.name = nextRouteName(s);
+	// set first UPP to location of signal
+	r.hasUPPs.add(findUPP(s.placedOnLinear, s.placedAtConnector));
+}
+
+////////
+// creates and returns a new route which is a 'deep copy' of the input route
+////////
+operation cloneRoute(r : Route) : Route {
+
+	var r2 = new Route;
+	// controlling signal
+	var s = r.controlledBySignal;
+	r2.controlledBySignal = s;
+	s.controlsRoutes.add(r2);
+	// name
+	r2.name = nextRouteName(s);
+	// copy UPP list
+	r2.hasUPPs = r.hasUPPs.asSequence();
+	
+	return r2;
+}			
+
+////////
+// generates a name for a route, based on the name of the controlling signal
+// the name is that of the signal (without the 'S'),
+// appended by an alphabetic representation of the number of routes it now controls
+////////
+operation nextRouteName(s : Signal) : String {
+
+	var input : Integer = s.controlsRoutes.size() - 1;
+	var alpha : String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var output : String;
+	var count : Integer = 0;
+	// loop allows for any size input e.g. 5 = E, 32 = AF, 8834 = MAT
+	// probably a better way to do this...
+	while (input > 25) {
+		while (input > 25) {
+	
+			input = input - 26;
+			count = count + 1;
+		}
+	
+	output = alpha.charAt(input).asString().concat(output);
+	input = count-1;	
+	count = 0;
+	}
+	
+	output = alpha.charAt(input).asString().concat(output);
+	output = s.name.subString(1).concat(output);
+	
+	return output;
+}	
+
+////////
+// returns a UPP with unit u and outgoing connector c
+// note: there may be more than one possible result if u is a Point
+////////
+operation findUPP(u : Unit, c : Connector) : UnitPathPair {
+
+	for (upp in UnitPathPair) {
+	
+		if (upp.hasUnit = u and upp.hasPath.hasPC2 = c) {
+			
+			return upp;
+		}
+	}
+	// no such UPP
+	return null;
+}
+
+
+////////
+// returns all UPPs with unit u and incoming connector c
+// note: maximum possible size of returned collection is 2, for both points and crossovers
+////////
+operation findUPPs(u : Unit, c : Connector) : Sequence {
+
+	var result = Sequence {};
+	
+	for (upp in UnitPathPair) {
+	
+		if (upp.hasUnit = u and upp.hasPath.hasPC1 = c) {
+		
+			result.add(upp);
+		}
+	}
+	return result;
+}
+
+////////
+// returns the next unit in a route, for use in the route building process
+// note: may return null if the end of the route has been reached
+////////
+operation Route nextUnit() : Unit {
+
+	// last out-going connector of the route
+	var lastConnector = self.hasUPPs.last().hasPath.hasPC2;
+	// last unit in the route
+	var lastUnit = self.hasUPPs.last().hasUnit;
+	
+	for (upp in UnitPathPair) {
+		// if incoming connector of UPP is the same as lastConnector
+		// and is not on the same unit as lastUnit
+		if (upp.hasPath.hasPC1 = lastConnector and upp.hasUnit <> lastUnit) {
+		
+			return upp.hasUnit;
+		}
+	}
+	// no such unit
+	return null;
+}
+
+////////
+// returns true if UPP has a signal in forward direction
+// forward direction defined as signal controlling entry to unit following UPP
+////////
+operation UnitPathPair hasForwardSignal() : Boolean {
+
+	var unit = self.hasUnit;
+	var pc2 = self.hasPath.hasPC2;
+	
+	for (s in Signal) {
+	
+		if (s.placedOnLinear = unit and s.placedAtConnector = pc2) {
+		
+			return true;
+		}
+	}
+	return false;
+}
+
+////////
+// Outputs to the console the details of all the routes in the hasRoutes list
+////////
+operation ControlTable printToConsole() {
+
+	("Route : Normal : Reverse : Clear").println();
+		
+	for (r in self.hasRoutes) {
+		
+		r.name.print();
+		(" : ").print();
+			
+		for (p in r.hasNormalPoints) {(p.pointName + " ").print();}
+		(" : ").print();
+		
+		for (p in r.hasReversePoints) {(p.pointName + " ").print();}
+		(" : ").print();
+		
+		for (upp in r.hasUPPs) {(upp.hasUnit.name + " ").print();}
+		("").println();		
+	}
+	("").println();
+}
+
+////////
+// returns true if the unit is an end unit
+// Exit units occur when one of the unit's connectors is connected to only 1 unit
+////////
+operation Unit isEnd() : Boolean {
+	
+	// if any of the unit's connectors have just one unit return true
+	if (self.hasC1.numUnits() = 1) {
+		return true;
+	}
+	
+	if (self.hasC2.numUnits() = 1) {
+		return true;
+	}
+	
+	if (self.isTypeOf(Point)) {
+		
+		if (self.hasC3.numUnits() = 1) {
+			return true;
+		}
+	}
+	// otherwise false
+	return false;
+}
+
+////////
+// returns the number of units a connector is connected to
+// should be either 1 or 2
+////////
+operation Connector numUnits() : Integer {
+
+	var result : Integer = 0;
+	
+	result = result + self.hasUnit1.size();
+	result = result + self.hasUnit2.size();
+	result = result + self.hasPoint.size();
+	
+	return result;
+}

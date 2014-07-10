@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bjoernercomplete="http://bjoernercomplete/1.0">
+  <bjoernercomplete:RailDiagram>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.0" hasC2="/0/@hasConnectors.1" name="Entry1" hasSignals="/0/@hasSignals.0"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.1" hasC2="/0/@hasConnectors.2" name="AA" hasSignals="/0/@hasSignals.1"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.2" hasC2="/0/@hasConnectors.3" name="AB"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.3" hasC2="/0/@hasConnectors.4" name="AC" hasC3="/0/@hasConnectors.11" pointName="P101"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.4" hasC2="/0/@hasConnectors.5" name="AD" hasSignals="/0/@hasSignals.2"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.5" hasC2="/0/@hasConnectors.6" name="AE"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.6" hasC2="/0/@hasConnectors.7" name="Exit1"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.8" hasC2="/0/@hasConnectors.9" name="BZ"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.9" hasC2="/0/@hasConnectors.10" name="BY" hasSignals="/0/@hasSignals.3"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.10" hasC2="/0/@hasConnectors.12" name="BX" hasC3="/0/@hasConnectors.22" pointName="P102"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.11" name="BW1" hasC3="/0/@hasConnectors.14" pointName="P103"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.12" name="BW2" hasC3="/0/@hasConnectors.18" pointName="P104"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.14" hasC2="/0/@hasConnectors.15" name="BV"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.15" hasC2="/0/@hasConnectors.16" name="BU" hasSignals="/0/@hasSignals.6"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.16" hasC2="/0/@hasConnectors.17" name="Entry2" hasSignals="/0/@hasSignals.7"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.18" hasC2="/0/@hasConnectors.19" name="CM" hasSignals="/0/@hasSignals.8"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.19" hasC2="/0/@hasConnectors.20" name="CL"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.20" hasC2="/0/@hasConnectors.21" name="Exit3"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.22" hasC2="/0/@hasConnectors.23" name="DR"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.23" hasC2="/0/@hasConnectors.24" name="DP" hasSignals="/0/@hasSignals.4"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.24" hasC2="/0/@hasConnectors.25" name="Entry3" hasSignals="/0/@hasSignals.5"/>
+    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.26" hasC2="/0/@hasConnectors.8" name="Exit2"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.0"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.1" hasUnit2="/0/@hasUnits.0"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.2" hasUnit2="/0/@hasUnits.1"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.3" hasUnit2="/0/@hasUnits.2"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.4" hasUnit2="/0/@hasUnits.3"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.5" hasUnit2="/0/@hasUnits.4"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.6" hasUnit2="/0/@hasUnits.5"/>
+    <hasConnectors hasUnit2="/0/@hasUnits.6"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.7" hasUnit2="/0/@hasUnits.21"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.8" hasUnit2="/0/@hasUnits.7"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.9" hasUnit2="/0/@hasUnits.8"/>
+    <hasConnectors hasPoint="/0/@hasUnits.3" hasUnit2="/0/@hasUnits.10"/>
+    <hasConnectors hasUnit2="/0/@hasUnits.9 /0/@hasUnits.11"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.10 /0/@hasUnits.11"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.12" hasPoint="/0/@hasUnits.10"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.13" hasUnit2="/0/@hasUnits.12"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.14" hasUnit2="/0/@hasUnits.13"/>
+    <hasConnectors hasUnit2="/0/@hasUnits.14"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.15" hasPoint="/0/@hasUnits.11"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.16" hasUnit2="/0/@hasUnits.15"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.17" hasUnit2="/0/@hasUnits.16"/>
+    <hasConnectors hasUnit2="/0/@hasUnits.17"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.18" hasPoint="/0/@hasUnits.9"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.19" hasUnit2="/0/@hasUnits.18"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.20" hasUnit2="/0/@hasUnits.19"/>
+    <hasConnectors hasUnit2="/0/@hasUnits.20"/>
+    <hasConnectors hasUnit1="/0/@hasUnits.21"/>
+    <hasSignals controlsRoutes="/105" name="S1" placedOnLinear="/0/@hasUnits.0" placedAtConnector="/0/@hasConnectors.1"/>
+    <hasSignals controlsRoutes="/106 /114 /116" name="S3" placedOnLinear="/0/@hasUnits.1" placedAtConnector="/0/@hasConnectors.2"/>
+    <hasSignals controlsRoutes="/107" name="S5" placedOnLinear="/0/@hasUnits.4" placedAtConnector="/0/@hasConnectors.5"/>
+    <hasSignals controlsRoutes="/108" name="S2" placedOnLinear="/0/@hasUnits.8" placedAtConnector="/0/@hasConnectors.9"/>
+    <hasSignals controlsRoutes="/109" name="S16" placedOnLinear="/0/@hasUnits.19" placedAtConnector="/0/@hasConnectors.23"/>
+    <hasSignals controlsRoutes="/110" name="S19" placedOnLinear="/0/@hasUnits.20" placedAtConnector="/0/@hasConnectors.24"/>
+    <hasSignals controlsRoutes="/111 /115" name="S4" placedOnLinear="/0/@hasUnits.13" placedAtConnector="/0/@hasConnectors.15"/>
+    <hasSignals controlsRoutes="/112" name="S8" placedOnLinear="/0/@hasUnits.14" placedAtConnector="/0/@hasConnectors.16"/>
+    <hasSignals controlsRoutes="/113" name="S17" placedOnLinear="/0/@hasUnits.15" placedAtConnector="/0/@hasConnectors.19"/>
+    <hasControlTable hasRoutes="/105 /106 /107 /108 /109 /110 /111 /112 /113 /114 /115 /116"/>
+  </bjoernercomplete:RailDiagram>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.1" hasPC1="/0/@hasConnectors.0"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.0" hasPC1="/0/@hasConnectors.1"/>
+  <bjoernercomplete:UnitPathPair hasPath="/1" hasUnit="/0/@hasUnits.0"/>
+  <bjoernercomplete:UnitPathPair hasPath="/2" hasUnit="/0/@hasUnits.0"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.2" hasPC1="/0/@hasConnectors.1"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.1" hasPC1="/0/@hasConnectors.2"/>
+  <bjoernercomplete:UnitPathPair hasPath="/5" hasUnit="/0/@hasUnits.1"/>
+  <bjoernercomplete:UnitPathPair hasPath="/6" hasUnit="/0/@hasUnits.1"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.3" hasPC1="/0/@hasConnectors.2"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.2" hasPC1="/0/@hasConnectors.3"/>
+  <bjoernercomplete:UnitPathPair hasPath="/9" hasUnit="/0/@hasUnits.2"/>
+  <bjoernercomplete:UnitPathPair hasPath="/10" hasUnit="/0/@hasUnits.2"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.4" hasPC1="/0/@hasConnectors.3"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.3" hasPC1="/0/@hasConnectors.4"/>
+  <bjoernercomplete:UnitPathPair hasPath="/13" hasUnit="/0/@hasUnits.3"/>
+  <bjoernercomplete:UnitPathPair hasPath="/14" hasUnit="/0/@hasUnits.3"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.11" hasPC1="/0/@hasConnectors.3"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.3" hasPC1="/0/@hasConnectors.11"/>
+  <bjoernercomplete:UnitPathPair hasPath="/17" hasUnit="/0/@hasUnits.3"/>
+  <bjoernercomplete:UnitPathPair hasPath="/18" hasUnit="/0/@hasUnits.3"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.5" hasPC1="/0/@hasConnectors.4"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.4" hasPC1="/0/@hasConnectors.5"/>
+  <bjoernercomplete:UnitPathPair hasPath="/21" hasUnit="/0/@hasUnits.4"/>
+  <bjoernercomplete:UnitPathPair hasPath="/22" hasUnit="/0/@hasUnits.4"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.6" hasPC1="/0/@hasConnectors.5"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.5" hasPC1="/0/@hasConnectors.6"/>
+  <bjoernercomplete:UnitPathPair hasPath="/25" hasUnit="/0/@hasUnits.5"/>
+  <bjoernercomplete:UnitPathPair hasPath="/26" hasUnit="/0/@hasUnits.5"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.7" hasPC1="/0/@hasConnectors.6"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.6" hasPC1="/0/@hasConnectors.7"/>
+  <bjoernercomplete:UnitPathPair hasPath="/29" hasUnit="/0/@hasUnits.6"/>
+  <bjoernercomplete:UnitPathPair hasPath="/30" hasUnit="/0/@hasUnits.6"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.9" hasPC1="/0/@hasConnectors.8"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.8" hasPC1="/0/@hasConnectors.9"/>
+  <bjoernercomplete:UnitPathPair hasPath="/33" hasUnit="/0/@hasUnits.7"/>
+  <bjoernercomplete:UnitPathPair hasPath="/34" hasUnit="/0/@hasUnits.7"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.10" hasPC1="/0/@hasConnectors.9"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.9" hasPC1="/0/@hasConnectors.10"/>
+  <bjoernercomplete:UnitPathPair hasPath="/37" hasUnit="/0/@hasUnits.8"/>
+  <bjoernercomplete:UnitPathPair hasPath="/38" hasUnit="/0/@hasUnits.8"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.12" hasPC1="/0/@hasConnectors.10"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.10" hasPC1="/0/@hasConnectors.12"/>
+  <bjoernercomplete:UnitPathPair hasPath="/41" hasUnit="/0/@hasUnits.9"/>
+  <bjoernercomplete:UnitPathPair hasPath="/42" hasUnit="/0/@hasUnits.9"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.22" hasPC1="/0/@hasConnectors.10"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.10" hasPC1="/0/@hasConnectors.22"/>
+  <bjoernercomplete:UnitPathPair hasPath="/45" hasUnit="/0/@hasUnits.9"/>
+  <bjoernercomplete:UnitPathPair hasPath="/46" hasUnit="/0/@hasUnits.9"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.11" hasPC1="/0/@hasConnectors.13"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.13" hasPC1="/0/@hasConnectors.11"/>
+  <bjoernercomplete:UnitPathPair hasPath="/49" hasUnit="/0/@hasUnits.10"/>
+  <bjoernercomplete:UnitPathPair hasPath="/50" hasUnit="/0/@hasUnits.10"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.14" hasPC1="/0/@hasConnectors.13"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.13" hasPC1="/0/@hasConnectors.14"/>
+  <bjoernercomplete:UnitPathPair hasPath="/53" hasUnit="/0/@hasUnits.10"/>
+  <bjoernercomplete:UnitPathPair hasPath="/54" hasUnit="/0/@hasUnits.10"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.12" hasPC1="/0/@hasConnectors.13"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.13" hasPC1="/0/@hasConnectors.12"/>
+  <bjoernercomplete:UnitPathPair hasPath="/57" hasUnit="/0/@hasUnits.11"/>
+  <bjoernercomplete:UnitPathPair hasPath="/58" hasUnit="/0/@hasUnits.11"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.18" hasPC1="/0/@hasConnectors.13"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.13" hasPC1="/0/@hasConnectors.18"/>
+  <bjoernercomplete:UnitPathPair hasPath="/61" hasUnit="/0/@hasUnits.11"/>
+  <bjoernercomplete:UnitPathPair hasPath="/62" hasUnit="/0/@hasUnits.11"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.15" hasPC1="/0/@hasConnectors.14"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.14" hasPC1="/0/@hasConnectors.15"/>
+  <bjoernercomplete:UnitPathPair hasPath="/65" hasUnit="/0/@hasUnits.12"/>
+  <bjoernercomplete:UnitPathPair hasPath="/66" hasUnit="/0/@hasUnits.12"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.16" hasPC1="/0/@hasConnectors.15"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.15" hasPC1="/0/@hasConnectors.16"/>
+  <bjoernercomplete:UnitPathPair hasPath="/69" hasUnit="/0/@hasUnits.13"/>
+  <bjoernercomplete:UnitPathPair hasPath="/70" hasUnit="/0/@hasUnits.13"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.17" hasPC1="/0/@hasConnectors.16"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.16" hasPC1="/0/@hasConnectors.17"/>
+  <bjoernercomplete:UnitPathPair hasPath="/73" hasUnit="/0/@hasUnits.14"/>
+  <bjoernercomplete:UnitPathPair hasPath="/74" hasUnit="/0/@hasUnits.14"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.19" hasPC1="/0/@hasConnectors.18"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.18" hasPC1="/0/@hasConnectors.19"/>
+  <bjoernercomplete:UnitPathPair hasPath="/77" hasUnit="/0/@hasUnits.15"/>
+  <bjoernercomplete:UnitPathPair hasPath="/78" hasUnit="/0/@hasUnits.15"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.20" hasPC1="/0/@hasConnectors.19"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.19" hasPC1="/0/@hasConnectors.20"/>
+  <bjoernercomplete:UnitPathPair hasPath="/81" hasUnit="/0/@hasUnits.16"/>
+  <bjoernercomplete:UnitPathPair hasPath="/82" hasUnit="/0/@hasUnits.16"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.21" hasPC1="/0/@hasConnectors.20"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.20" hasPC1="/0/@hasConnectors.21"/>
+  <bjoernercomplete:UnitPathPair hasPath="/85" hasUnit="/0/@hasUnits.17"/>
+  <bjoernercomplete:UnitPathPair hasPath="/86" hasUnit="/0/@hasUnits.17"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.23" hasPC1="/0/@hasConnectors.22"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.22" hasPC1="/0/@hasConnectors.23"/>
+  <bjoernercomplete:UnitPathPair hasPath="/89" hasUnit="/0/@hasUnits.18"/>
+  <bjoernercomplete:UnitPathPair hasPath="/90" hasUnit="/0/@hasUnits.18"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.24" hasPC1="/0/@hasConnectors.23"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.23" hasPC1="/0/@hasConnectors.24"/>
+  <bjoernercomplete:UnitPathPair hasPath="/93" hasUnit="/0/@hasUnits.19"/>
+  <bjoernercomplete:UnitPathPair hasPath="/94" hasUnit="/0/@hasUnits.19"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.25" hasPC1="/0/@hasConnectors.24"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.24" hasPC1="/0/@hasConnectors.25"/>
+  <bjoernercomplete:UnitPathPair hasPath="/97" hasUnit="/0/@hasUnits.20"/>
+  <bjoernercomplete:UnitPathPair hasPath="/98" hasUnit="/0/@hasUnits.20"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.8" hasPC1="/0/@hasConnectors.26"/>
+  <bjoernercomplete:Path hasPC2="/0/@hasConnectors.26" hasPC1="/0/@hasConnectors.8"/>
+  <bjoernercomplete:UnitPathPair hasPath="/101" hasUnit="/0/@hasUnits.21"/>
+  <bjoernercomplete:UnitPathPair hasPath="/102" hasUnit="/0/@hasUnits.21"/>
+  <bjoernercomplete:Route hasUPPs="/7" controlledBySignal="/0/@hasSignals.0" name="1A"/>
+  <bjoernercomplete:Route hasUPPs="/11 /15 /23" controlledBySignal="/0/@hasSignals.1" name="3A" hasNormalPoints="/0/@hasUnits.3"/>
+  <bjoernercomplete:Route hasUPPs="/27" controlledBySignal="/0/@hasSignals.2" name="5A"/>
+  <bjoernercomplete:Route hasUPPs="/36" controlledBySignal="/0/@hasSignals.3" name="2A"/>
+  <bjoernercomplete:Route hasUPPs="/92 /48 /40" controlledBySignal="/0/@hasSignals.4" name="16A" hasReversePoints="/0/@hasUnits.9"/>
+  <bjoernercomplete:Route hasUPPs="/96" controlledBySignal="/0/@hasSignals.5" name="19A"/>
+  <bjoernercomplete:Route hasUPPs="/68 /56 /59 /44 /40" controlledBySignal="/0/@hasSignals.6" name="4A" hasNormalPoints="/0/@hasUnits.11 /0/@hasUnits.9" hasReversePoints="/0/@hasUnits.10"/>
+  <bjoernercomplete:Route hasUPPs="/72" controlledBySignal="/0/@hasSignals.7" name="8A"/>
+  <bjoernercomplete:Route hasUPPs="/83" controlledBySignal="/0/@hasSignals.8" name="17A"/>
+  <bjoernercomplete:Route hasUPPs="/11 /19 /52 /59 /44 /40" controlledBySignal="/0/@hasSignals.1" name="3B" hasNormalPoints="/0/@hasUnits.10 /0/@hasUnits.11 /0/@hasUnits.9" hasReversePoints="/0/@hasUnits.3"/>
+  <bjoernercomplete:Route hasUPPs="/68 /56 /63 /79" controlledBySignal="/0/@hasSignals.6" name="4B" hasReversePoints="/0/@hasUnits.10 /0/@hasUnits.11"/>
+  <bjoernercomplete:Route hasUPPs="/11 /19 /52 /63 /79" controlledBySignal="/0/@hasSignals.1" name="3C" hasNormalPoints="/0/@hasUnits.10" hasReversePoints="/0/@hasUnits.3 /0/@hasUnits.11"/>
+</xmi:XMI>

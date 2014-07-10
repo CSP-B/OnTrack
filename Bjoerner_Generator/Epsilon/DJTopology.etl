@@ -1,0 +1,166 @@
+import "SharedOperations.etl";
+
+pre {
+	// Modify Bjoerner model
+	prepareBjoerner();
+
+	// Main B Machine
+	new BMachine!Machine;
+
+	// Properties
+	var signal = newBProperty("signal");
+	var homeSignal = newBProperty("homeSignal");
+	var homePoints = newBProperty("homePoints");
+	var next = newBProperty("next");
+	var staticNext = newBProperty("staticNext");
+	var dynamicNext = newBProperty("dynamicNext");
+	
+	// Create extended property ~hasNext for each Bjoerner!UnitPathPair
+	// which is a list of all the possible succeeding UPPs
+	for (upp in Bjoerner!UnitPathPair) {upp.~hasNext = upp.findNext();}
+	
+	// this ordered set is populated initially and then property
+	// next populated from it so that no duplicate entries are created
+	var uniquePropElements = OrderedSet {};
+	
+	// populate uniquePropElements, starting at each entry upp
+	for (upp in getEntryUPPs()) {upp.checkNext();}
+	
+	// transfer uniquePropElements to next
+	for (elementPair in uniquePropElements) {
+	
+		var pe = new BMachine!PropElement;
+		newBDomainElement(elementPair.at(0).hasUnit.name, pe);
+		newBRangeElement(elementPair.at(1).hasUnit.name, pe);
+		next.hasPropElements.add(pe);
+	}
+	
+	// populate staticNext and dynamicNext
+	for (elementPair in uniquePropElements) {
+		
+		var upp1 : Bjoerner!UnitPathPair = elementPair.at(0);
+		var upp2 : Bjoerner!UnitPathPair = elementPair.at(1);
+		var isStatic : Boolean = true;
+		var pointPosition : String = "normal";
+		var pointName : String;
+		
+		// if upp2 is over a point
+		if (upp2.hasUnit.isTypeOf(Point)) {
+			pointName = upp2.hasUnit.pointName;
+			// if connector between upp1 and upp2 isn't point's Connector 1
+			if (not (upp2.hasPath.hasPC1 = upp2.hasUnit.hasC1)) {
+				isStatic = false;
+				if (upp2.hasPath.hasPC1 = upp2.hasUnit.hasC3) {pointPosition = "reverse";}
+			}
+		}	
+		
+		// if upp1 is over a point
+		if (upp1.hasUnit.isTypeOf(Point)) {
+			pointName = upp1.hasUnit.pointName;
+			// if connector between upp1 and upp2 isn't point's Connector 1
+			// (i.e. the main connector for a point that is always available)
+			if (not (upp1.hasPath.hasPC2 = upp1.hasUnit.hasC1)) {
+				isStatic = false;
+				if (upp1.hasPath.hasPC2 = upp1.hasUnit.hasC3) {pointPosition = "reverse";}
+				else if (upp1.hasPath.hasPC2 = upp1.hasUnit.hasC2) {pointPosition = "normal";}
+			}
+		}
+		
+		if (isStatic) {
+			// add to staticNext
+			var pe = new BMachine!PropElement;
+			newBDomainElement(upp1.hasUnit.name, pe);
+			newBRangeElement(upp2.hasUnit.name, pe);
+			staticNext.hasPropElements.add(pe);
+		}
+		else {
+			// add to dynamicNext
+			var pe = new BMachine!PropElement;
+			newBDomainElement(pointName, pe);
+			newBDomainElement(pointPosition, pe);
+			newBRangeElement(upp1.hasUnit.name, pe);
+			newBRangeElement(upp2.hasUnit.name, pe);
+			dynamicNext.hasPropElements.add(pe);
+		}
+	}
+}
+
+//////// Transformation Rules ////////
+
+rule populateSignal
+transform r : Bjoerner!Route
+to pe : BMachine!PropElement {
+	
+	// only transform if route is in control table
+	guard : r.isNecessaryRoute()
+	
+	// add property element to signal
+	signal.hasPropElements.add(pe);
+	// route name as domain element
+	newBDomainElement(r.name,pe);
+	// signal name as range element
+	newBRangeElement(r.controlledBySignal.name, pe);
+}
+
+rule populateHomeSignal
+transform s: Bjoerner!Signal
+to pe : BMachine!PropElement {
+
+	// add property element to homeSignal
+	homeSignal.hasPropElements.add(pe);
+	// signal name as domain element
+	newBDomainElement(s.name, pe);
+	// unit name as range element
+	newBRangeElement(s.placedOnLinear.name, pe);
+}
+
+rule populateHomePoints
+transform p : Bjoerner!Point
+to pe : BMachine!PropElement {
+
+	// add property element to homePoint
+	homePoints.hasPropElements.add(pe);
+	// pointName as domain element
+	newBDomainElement(p.pointName, pe);
+	// unit name as range element
+	newBRangeElement(p.name, pe);
+}
+
+
+////////
+// recursively checks successive UPPs and adds a upp pair to uniquePropElements
+// if UPP is an exit or leads to an exit
+////////
+operation Bjoerner!UnitPathPair checkNext() {
+
+	// for each next upp
+	for (upp in self.~hasNext) {
+		
+		// if UPP is an exit
+		if (upp.hasUnit.isExit()) {
+		
+			// create upp pair and add to uniquePropElements
+			var pair = Sequence {};
+			pair.add(self);
+			pair.add(upp);
+			uniquePropElements.add(pair);
+		
+			// add additional pair to loop exit unit
+			var pair = Sequence {};
+			pair.add(upp);
+			pair.add(upp);
+			uniquePropElements.add(pair);
+		}
+		else if (upp.leadsToExit()) {
+	
+			// create upp pair and add to uniquePropElements
+			var pair = Sequence {};
+			pair.add(self);
+			pair.add(upp);
+			uniquePropElements.add(pair);
+		
+			// checkNext()
+			upp.checkNext();
+		}
+	}	
+}

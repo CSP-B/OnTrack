@@ -1,0 +1,19 @@
+////////
+// Maximum number of trains required by the model is the number of routes in the control table + 1
+////////
+
+return (numRoutes() + 1);
+
+// returns the number of signal instances in the model (old method)
+operation numSignals() : Integer {
+
+	var signals = Bjoerner!Signal.all();
+	return signals.size();
+}
+
+// returns the number of routes in the control table
+operation numRoutes() : Integer {
+
+	var ct = Bjoerner!ControlTable.all().first();
+	return ct.hasRoutes.size();
+}

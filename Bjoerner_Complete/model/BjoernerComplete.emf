@@ -1,0 +1,69 @@
+@namespace(uri="http://bjoernercomplete/1.0", prefix="bjoernercomplete")
+package bjoernercomplete;
+
+class Node {
+  val Unit[*] hasUnits;
+  val Track[*] hasTracks;
+}
+
+class Unit {
+  ref Connector[1]#hasUnit1 hasC1;
+  ref Connector[1]#hasUnit2 hasC2;
+  attr String name;
+}
+
+class Linear extends Unit {
+  ref Signal[0..2]#placedOnLinear hasSignals;
+}
+
+class Point extends Unit {
+  ref Connector[1]#hasPoint hasC3;
+  attr String pointName;
+}
+
+class Connector {
+  ref Unit[0..2]#hasC1 hasUnit1;
+  ref Point[0..2]#hasC3 hasPoint;
+  ref Unit[0..2]#hasC2 hasUnit2;
+}
+
+class Track {
+  ref Linear[*] hasLinears;
+}
+
+class Path {
+  ref Connector[1] hasPC2;
+  ref Connector[1] hasPC1;
+}
+
+class UnitPathPair {
+  ref Path[1] hasPath;
+  ref Unit[1] hasUnit;
+}
+
+class Signal {
+  ref Route[*]#controlledBySignal controlsRoutes;
+  attr String name;
+  ref Linear[1]#hasSignals placedOnLinear;
+  ref Connector[1] placedAtConnector;
+}
+
+class Route {
+  ref UnitPathPair[*] hasUPPs;
+  ref Signal[1]#controlsRoutes controlledBySignal;
+  attr String name;
+  ref Point[*] hasNormalPoints;
+  ref Point[*] hasReversePoints;
+}
+
+class ControlTable {
+  ref Route[*] hasRoutes;
+}
+
+class RailDiagram {
+  val Unit[*] hasUnits;
+  val Connector[*] hasConnectors;
+  val Signal[*] hasSignals;
+  val ControlTable hasControlTable;
+}
+

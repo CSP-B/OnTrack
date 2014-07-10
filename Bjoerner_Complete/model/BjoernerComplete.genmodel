@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Bjoerner_Complete/src" modelPluginID="Bjoerner_Complete"
+    modelName="BjoernerComplete" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>BjoernerComplete.ecore</foreignModel>
+  <genPackages prefix="Bjoernercomplete" disposableProviderFactory="true" ecorePackage="BjoernerComplete.ecore#/">
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Node/hasUnits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Node/hasTracks"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Unit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Unit/hasC1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Unit/hasC2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BjoernerComplete.ecore#//Unit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BjoernerComplete.ecore#//Unit/length"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Linear">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Linear/hasSignals"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Point">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Point/hasC3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BjoernerComplete.ecore#//Point/pointName"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Connector/hasUnit1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Connector/hasPoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Connector/hasUnit2"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Track">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Track/hasLinears"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Path">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Path/hasPC2"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Path/hasPC1"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//UnitPathPair">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//UnitPathPair/hasPath"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//UnitPathPair/hasUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Signal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Signal/controlsRoutes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BjoernerComplete.ecore#//Signal/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Signal/placedOnLinear"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Signal/placedAtConnector"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//Route">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Route/hasUPPs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Route/controlledBySignal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BjoernerComplete.ecore#//Route/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Route/hasNormalPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//Route/hasReversePoints"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//ControlTable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//ControlTable/hasRoutes"/>
+    </genClasses>
+    <genClasses ecoreClass="BjoernerComplete.ecore#//RailDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//RailDiagram/hasUnits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//RailDiagram/hasConnectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//RailDiagram/hasSignals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BjoernerComplete.ecore#//RailDiagram/hasControlTable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

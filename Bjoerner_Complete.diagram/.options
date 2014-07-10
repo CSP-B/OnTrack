@@ -1,0 +1,7 @@
+# Tracing options for the Bjoerner_Complete.diagram plug-in
+
+# Common issues
+Bjoerner_Complete.diagram/debug=false
+
+# Visual IDs
+Bjoerner_Complete.diagram/debug/visualID=false

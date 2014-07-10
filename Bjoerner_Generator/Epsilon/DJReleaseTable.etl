@@ -1,0 +1,51 @@
+import "SharedOperations.etl";
+
+pre {
+	// Modify Bjoerner model
+	prepareBjoerner();
+
+	// Main B Machine
+	new BMachine!Machine;
+
+	// Property releaseTable
+	var releaseTable = newBProperty("releaseTable");
+}
+
+//////// Transformation Rules ////////
+
+// construct release table elements
+// when a train is on a track immediately after a point, the point is released
+rule populateReleaseTable
+transform r : Bjoerner!Route
+to pe : BMachine!PropElement {
+
+	// only transform if route is in control table
+	guard : r.isNecessaryRoute()
+	
+	// delete auto-generated BMachine!PropElement as we may want more than one
+	// bit of a bodge!!
+	delete pe;
+	
+	// for every upp in the route
+	for (upp in r.hasUPPs) {
+	
+		// if upp is over a point and a further upp exists
+		if (upp.hasUnit.isTypeOf(Bjoerner!Point) and hasMore) {
+	
+			// create new property element
+			var pe = new BMachine!PropElement;
+		
+			// add to releaseTable
+			releaseTable.hasPropElements.add(pe);
+		
+			// create new domain element with the succeeding unit name
+			newBDomainElement(r.hasUPPs.at(loopCount).hasUnit.name, pe);
+	
+			// create new range element with the route name
+			newBRangeElement(r.name, pe);
+		
+			// create new range element with the current upp point name
+			newBRangeElement(upp.hasUnit.pointName, pe);
+		}
+	}
+}

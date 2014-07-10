@@ -1,0 +1,110 @@
+import "SharedOperations.etl";
+
+pre {
+	// Modify Bjoerner model
+	prepareBjoerner();
+
+	// Main B Machine
+	new BMachine!Machine;
+
+	// Property normalTable
+	var normalTable = newBProperty("normalTable");
+	
+	// Property reverseTable
+	var reverseTable = newBProperty("reverseTable");
+	
+	// Property clearTable
+	var clearTable = newBProperty("clearTable");
+	
+	// Property lockTable
+	var lockTable = newBProperty("lockTable");
+}
+
+//////// Transformation Rules ////////
+
+// Add normal points to normalTable and lockTable
+rule populateNormalTable
+transform r : Bjoerner!Route
+to pe : BMachine!PropElement {
+
+	// only transform if route is in control table and has normal points
+	guard : r.isNecessaryRoute() and (r.hasNormalPoints.size() > 0)
+	
+	// delete auto-generated BMachine!PropElement as we may want more than one
+	// bit of a bodge!
+	delete pe;
+	
+	// for every normal point
+	for (p in r.hasNormalPoints) {
+	
+		// create new property element
+		var pe = new BMachine!PropElement;
+		
+		// add to both normalTable and lockTable
+		normalTable.hasPropElements.add(pe);
+		lockTable.hasPropElements.add(pe);
+	
+		// create new domain element
+		newBDomainElement(r.name, pe);
+	
+		// create new range element
+		newBRangeElement(p.pointName, pe);
+	}
+}
+
+// Add reverse points to reverseTable and lockTable
+rule populateReverseTable
+transform r : Bjoerner!Route
+to pe : BMachine!PropElement {
+
+	// only transform if route is in control table and has reverse points
+	guard : r.isNecessaryRoute() and (r.hasReversePoints.size() > 0)
+	
+	// delete auto-generated BMachine!PropElement as we may want more than one
+	// bit of a bodge!!
+	delete pe;
+	
+	// for every reverse point
+	for (p in r.hasReversePoints) {
+	
+		// create new property element
+		var pe = new BMachine!PropElement;
+		
+		// add to both reverseTable and lockTable
+		reverseTable.hasPropElements.add(pe);
+		lockTable.hasPropElements.add(pe);
+		
+		// create new domain element
+		newBDomainElement(r.name, pe);
+	
+		// create new range element
+		newBRangeElement(p.pointName, pe);
+	}
+}
+
+// Add clear tracks to clearTable
+rule populateClearTable
+transform r : Bjoerner!Route
+to pe : BMachine!PropElement {
+
+	// only transform if route is in control table
+	guard : r.isNecessaryRoute()
+	
+	// add pe to clearTable
+	clearTable.hasPropElements.add(pe);
+	
+	// create new domain element
+	newBDomainElement(r.name, pe);
+	
+	// create new range set
+	var set = new BMachine!BSet;
+	pe.hasRangeSet = set;
+	
+	// for every unit in the routes upp list
+	for (upp in r.hasUPPs) {
+	
+		// create new set element
+		newBSetElement(upp.hasUnit.name, set);
+	}
+
+}

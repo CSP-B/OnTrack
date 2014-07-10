@@ -1,0 +1,100 @@
+import "SharedOperations.etl";
+
+pre {
+	// modify Bjoerner model
+	prepareBjoerner();
+
+	// Main CSP script
+	new CSP!CSPScript;
+
+	// Datatype POS = all units + nullTrack
+	var pos = newCSPDatatype("POS");
+	// DatatypItemList for POS
+	var pos_list = newCSPDatatypeItemList(pos);
+
+	// Datatype ROUTE = all routes (data comes from control table)
+	var route = newCSPDatatype("ROUTE");
+	// DatatypeItemList for ROUTE
+	var route_list = newCSPDatatypeItemList(route);
+
+	// Set ENTRY = all entry units (end linears with a signal)
+	var entry = newCSPSet("ENTRY");
+
+	// Set EXIT = all exit units (end linears with no signal)
+	var exit = newCSPSet("EXIT");
+
+	// Set SIGNALHOMES = all units with signals
+	var shomes = newCSPSet("SIGNALHOMES");
+}
+
+//////// Transformation Rules ////////
+
+// Add unit names to POS
+@greedy
+rule processUnits
+transform u : Bjoerner!Unit
+to d : CSP!DatatypeItem {
+
+	d.name = u.name;
+	d.type = pos;
+	// if pos_list already has items
+	if (pos_list.firstItem.isDefined()) {
+		// link to previous item
+		d.preceeds = pos_list.firstItem;
+	}
+	// increase pos_list size and set new first item
+	pos_list.size = pos_list.size + 1;
+	pos_list.firstItem = d;
+}
+
+// Add necessary routes to ROUTES
+rule checkControlTable
+transform r : Bjoerner!Route
+to d : CSP!DatatypeItem {
+
+	// only transform if route is in control table
+	guard : r.isNecessaryRoute()
+	
+	d.name = r.name;
+	d.type = route;
+	// if route_list already has items
+	if (route_list.firstItem.isDefined()) {
+		// link to previous item
+		d.preceeds = route_list.firstItem;
+	}
+	// increase route_list size and set new first item
+	route_list.size = route_list.size + 1;
+	route_list.firstItem = d;
+}
+
+// Add end units to ENTRY and EXIT
+rule checkConnectors
+transform c : Bjoerner!Connector
+to s : CSP!SETElement, i : CSP!TypedItem {
+
+	// Only transform if connector has 1 unit
+	guard : c.numUnits() = 1
+
+	// Find unit
+	var u : Bjoerner!Unit = c.findUnit();
+	i.name = u.name;
+	s.item = i;
+	
+	// If unit has a signal add s to ENTRY set
+	if (u.hasSignals.size > 0) {entry.item.add(s);}
+	// Else add to EXIT set
+	else {exit.item.add(s);}
+}
+
+// Add linears with signals to SIGNALHOMES
+rule checkLinears
+transform l : Bjoerner!Linear
+to s : CSP!SETElement, i : CSP!TypedItem {
+
+	// Only transform if linear has signals
+	guard : l.hasSignals.size > 0
+
+	i.name = l.name;
+	s.item = i;
+	shomes.item.add(s);
+}

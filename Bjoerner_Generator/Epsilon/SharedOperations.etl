@@ -1,0 +1,249 @@
+////////
+// This program provides operations that can be used by ETL files that import it
+////////
+
+////////
+// prepares the Bjoerner model for transformation
+////////
+operation prepareBjoerner() {
+	
+	// Add nullTrack
+	var nullTrack = new Bjoerner!Linear;
+	nullTrack.name = "nullTrack";
+	
+	// Add underscore to route names
+	for (r in Bjoerner!Route) {r.name = "R_" + r.name;}
+}
+
+////////
+// creates a new CSP!SET and adds it to the main CSP!CSPScript
+// note: operation assumes a CSP!CSPScript already exists
+////////
+operation newCSPSet(setName : String) : CSP!SET {
+	
+	var s = new CSP!SET;
+	s.name = setName;
+	CSP!CSPScript.all().first().set.add(s);
+	
+	return s;
+}
+
+////////
+// creates a new CSP!Datatype and adds it to the main CSP!CSPScript
+// note: operation assumes a CSP!CSPScript already exists
+////////
+operation newCSPDatatype(name : String) : CSP!Datatype {
+
+	var dt = new CSP!Datatype;
+	dt.typeName = name;
+	CSP!CSPScript.all().first().dataType.add(dt);
+	
+	return dt;
+}
+
+////////
+// creates a new CSP!DatatypeItemList for the given CSP!Datatype element
+////////
+operation newCSPDatatypeItemList(dt : CSP!Datatype) : CSP!DatatypeItemList {
+
+	var list = new CSP!DatatypeItemList;
+	dt.itemList = list;
+	list.size = 0;
+	
+	return list;
+}
+
+////////
+// creates a new BMachine!BSet and adds it to the main BMachine!Machine
+// note: operation assumes a BMachine!Machine already exists
+////////
+operation newBSet(setName : String) : BMachine!BSet {
+	
+	var s = new BMachine!BSet;
+	s.name = setName;
+	BMachine!Machine.all().first().hasSets.add(s);
+	
+	return s;
+}
+
+////////
+// creates new BMachine!Element and adds it to the BMachine!Set
+////////
+operation newBSetElement(elementName : String, set : BMachine!BSet) {
+
+	var se = new BMachine!Element;
+	se.name = elementName;
+	set.hasSetElements.add(se);
+}
+
+////////
+// creates a new BMachine!Property and adds it to the main BMachine!Machine
+// note: operation assumes a BMachine!Machine already exists
+////////
+operation newBProperty(propName : String) : BMachine!Property {
+
+	var p = new BMachine!Property;
+	p.name = propName;
+	BMachine!Machine.all().first().hasProperties.add(p);
+	
+	return p;
+}
+
+////////
+// creates a new BMachine!Element and adds it
+// to the BMachine!PropElement hasDomainElements list
+////////
+operation newBDomainElement(elementName : String, pe : BMachine!PropElement) {
+
+	var de = new BMachine!Element;
+	de.name = elementName;
+	pe.hasDomainElements.add(de);
+}
+
+////////
+// creates a new BMachine!Element and adds it
+// to the BMachine!PropElement hasRangeElements list
+////////
+operation newBRangeElement(elementName : String, pe : BMachine!PropElement) {
+
+	var de = new BMachine!Element;
+	de.name = elementName;
+	pe.hasRangeElements.add(de);
+}
+
+////////
+// returns the number of units a connector is connected to
+// should be either 1 or 2
+////////
+operation Bjoerner!Connector numUnits() : Integer {
+
+	var result : Integer = 0;
+	
+	result = result + self.hasUnit1.size();
+	result = result + self.hasUnit2.size();
+	result = result + self.hasPoint.size();
+	
+	return result;
+}
+
+////////
+// returns the first unit found that is connected to the connector
+////////
+operation Bjoerner!Connector findUnit() : Bjoerner!Unit {
+
+	if (self.hasUnit1.size() > 0) {return self.hasUnit1.first();}
+	if (self.hasUnit2.size() > 0) {return self.hasUnit2.first();}
+	if (self.hasPoint.size() > 0) { return self.hasPoint.first();}
+	
+	return null;
+}
+
+////////
+// returns true if a control table exists and the route in question is in its hasRoutes list
+////////
+operation Bjoerner!Route isNecessaryRoute() : Boolean {
+
+	// if no control table exists return false
+	if (not Bjoerner!ControlTable.all().first().isDefined()) {return false;}
+	
+	var ct = Bjoerner!ControlTable.all().first();
+	
+	for (r in ct.hasRoutes) {
+	
+		if (self = r) {return true;}
+	}
+	
+	return false;
+}
+
+////////
+// returns true if the unit is an exit unit
+// Exit units occur when one of the unit's connectors is connected to only 1 unit
+// and the unit does not have a signal
+////////
+operation Bjoerner!Unit isExit() : Boolean {
+	
+	// if unit is linear and has a signal it cannot be an exit
+	if (self.isTypeOf(Bjoerner!Linear) and self.hasSignals.size() > 0) {return false;}
+	
+	// if any of the unit's connectors have just one unit return true
+	if (self.hasC1.numUnits() = 1) {return true;}
+	if (self.hasC2.numUnits() = 1) {return true;}
+	
+	if (self.isTypeOf(Bjoerner!Point)) {
+		
+		if (self.hasC3.numUnits() = 1) {return true;}
+	}
+	// otherwise false
+	return false;
+}
+
+////////
+// returns a list of upps that can follow from the input upp
+// can be 0, 1 or 2 in size only
+////////
+operation Bjoerner!UnitPathPair findNext() : Sequence {
+
+	var result = Sequence {};
+	
+	for (upp in Bjoerner!UnitPathPair) {
+	
+		if ((upp.hasPath.hasPC1 = self.hasPath.hasPC2) and (upp.hasUnit <> self.hasUnit)) {
+		
+			result.add(upp);
+		}
+	}
+	
+	return result;
+}
+
+////////
+// recursively follows UPPs until it finds an exit or other dead end
+// returns true if at least one exit unit is found
+////////
+operation Bjoerner!UnitPathPair leadsToExit() : Boolean {
+	
+	for (upp in self.~hasNext) {
+	
+		if (upp.leadsToExit()) {return true;}
+	}
+
+	
+	return self.hasUnit.isExit();
+}
+
+////////
+// returns a list of UPPs that represent all the entry points for a track plan
+// an entry UPP must have no preceeding UPPs and its unit must have a signal on it
+////////
+operation getEntryUPPs() : Sequence {
+
+	var result = Sequence {};
+	
+	for (c in Bjoerner!Connector) {
+	
+		if (c.numUnits() = 1) {
+		
+			var upp : Bjoerner!UnitPathPair = c.findUPP();
+			
+			if (upp.hasUnit.isTypeOf(Linear) and (upp.hasUnit.hasSignals.size() > 0)) {
+			
+				result.add(upp);
+			}
+		}
+	}
+	return result;
+}
+
+////////
+// returns a UPP with incoming connector c
+// note there may be more than one possible result if c is not at the end of a line
+////////
+operation Bjoerner!Connector findUPP() : Bjoerner!UnitPathPair {
+
+	for (upp in Bjoerner!UnitPathPair) {
+	
+	if (upp.hasPath.hasPC1 = self) {return upp;}
+	}
+	return null;
+}

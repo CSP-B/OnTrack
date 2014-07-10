@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bjoernercomplete.presentation.BjoernercompleteModelWizardID"
+            name="%_UI_BjoernercompleteModelWizard_label"
+            class="bjoernercomplete.presentation.BjoernercompleteModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BjoernercompleteModelFile.gif">
+         <description>%_UI_BjoernercompleteModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="bjoernercomplete.presentation.BjoernercompleteEditorID"
+            name="%_UI_BjoernercompleteEditor_label"
+            icon="icons/full/obj16/BjoernercompleteModelFile.gif"
+            extensions="bjoernercomplete"
+            class="bjoernercomplete.presentation.BjoernercompleteEditor"
+            contributorClass="bjoernercomplete.presentation.BjoernercompleteActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="Bjoerner_Complete.editor.contribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="Bjoerner_Complete.editor.menu1"
+               label="New Submenu"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="bjoerner_complete.editor.popup.actions.NewAction"
+               enablesFor="1"
+               id="Bjoerner_Complete.editor.newAction"
+               label="New Action"
+               menubarPath="Bjoerner_Complete.editor.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bmachine="http://bmachine/1.0">
+  <bmachine:Machine>
+    <hasProperties name="releaseTable" hasPropElements="/1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12 /13 /14"/>
+  </bmachine:Machine>
+  <bmachine:PropElement>
+    <hasDomainElements name="AD"/>
+    <hasRangeElements name="R_3A"/>
+    <hasRangeElements name="P101"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BY"/>
+    <hasRangeElements name="R_16A"/>
+    <hasRangeElements name="P102"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW2"/>
+    <hasRangeElements name="R_4A"/>
+    <hasRangeElements name="P103"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BX"/>
+    <hasRangeElements name="R_4A"/>
+    <hasRangeElements name="P104"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BY"/>
+    <hasRangeElements name="R_4A"/>
+    <hasRangeElements name="P102"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW1"/>
+    <hasRangeElements name="R_3B"/>
+    <hasRangeElements name="P101"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW2"/>
+    <hasRangeElements name="R_3B"/>
+    <hasRangeElements name="P103"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BX"/>
+    <hasRangeElements name="R_3B"/>
+    <hasRangeElements name="P104"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BY"/>
+    <hasRangeElements name="R_3B"/>
+    <hasRangeElements name="P102"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW2"/>
+    <hasRangeElements name="R_4B"/>
+    <hasRangeElements name="P103"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="CM"/>
+    <hasRangeElements name="R_4B"/>
+    <hasRangeElements name="P104"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW1"/>
+    <hasRangeElements name="R_3C"/>
+    <hasRangeElements name="P101"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="BW2"/>
+    <hasRangeElements name="R_3C"/>
+    <hasRangeElements name="P103"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="CM"/>
+    <hasRangeElements name="R_3C"/>
+    <hasRangeElements name="P104"/>
+  </bmachine:PropElement>
+</xmi:XMI>

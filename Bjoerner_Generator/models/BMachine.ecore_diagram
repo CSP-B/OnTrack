@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_32nF8ObREeG-8JnPRXaXEw" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_36LXUObREeG-8JnPRXaXEw" type="2001" fontName="Lucida Grande">
+    <children xmi:type="notation:DecorationNode" xmi:id="_36NMgObREeG-8JnPRXaXEw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36NzkObREeG-8JnPRXaXEw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36NzkebREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36NzkubREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36OaoObREeG-8JnPRXaXEw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36OaoebREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36OaoubREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36Oao-bREeG-8JnPRXaXEw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36OapObREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36OapebREeG-8JnPRXaXEw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="BMachine.ecore#//Machine"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36LXUebREeG-8JnPRXaXEw" x="342" y="54"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_36OapubREeG-8JnPRXaXEw" type="2001" fontName="Lucida Grande">
+    <children xmi:type="notation:DecorationNode" xmi:id="_36OaqObREeG-8JnPRXaXEw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36OaqebREeG-8JnPRXaXEw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36PBsObREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PBsebREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36PBsubREeG-8JnPRXaXEw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36PBs-bREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PBtObREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36PBtebREeG-8JnPRXaXEw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36PBtubREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PBt-bREeG-8JnPRXaXEw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="BMachine.ecore#//BSet"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36Oap-bREeG-8JnPRXaXEw" x="180" y="180"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_36PBuObREeG-8JnPRXaXEw" type="2001" fontName="Lucida Grande">
+    <children xmi:type="notation:DecorationNode" xmi:id="_36PBuubREeG-8JnPRXaXEw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36PowObREeG-8JnPRXaXEw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36PowebREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PowubREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36Pow-bREeG-8JnPRXaXEw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36PoxObREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PoxebREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36PoxubREeG-8JnPRXaXEw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36Pox-bREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36PoyObREeG-8JnPRXaXEw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="BMachine.ecore#//Element"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36PBuebREeG-8JnPRXaXEw" x="288" y="360"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_36PoyebREeG-8JnPRXaXEw" type="2001" fontName="Lucida Grande">
+    <children xmi:type="notation:DecorationNode" xmi:id="_36Poy-bREeG-8JnPRXaXEw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36QP0ObREeG-8JnPRXaXEw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36QP0ebREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36QP0ubREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36QP0-bREeG-8JnPRXaXEw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36QP1ObREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36QP1ebREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36QP1ubREeG-8JnPRXaXEw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36QP1-bREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36QP2ObREeG-8JnPRXaXEw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="BMachine.ecore#//Property"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36PoyubREeG-8JnPRXaXEw" x="396" y="162"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_36QP2ebREeG-8JnPRXaXEw" type="2001" fontName="Lucida Grande">
+    <children xmi:type="notation:DecorationNode" xmi:id="_36QP2-bREeG-8JnPRXaXEw" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36Q24ObREeG-8JnPRXaXEw" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36Q24ebREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36Q24ubREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36Q24-bREeG-8JnPRXaXEw" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36Q25ObREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36Q25ebREeG-8JnPRXaXEw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_36Q25ubREeG-8JnPRXaXEw" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_36Q25-bREeG-8JnPRXaXEw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_36Q26ObREeG-8JnPRXaXEw"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="BMachine.ecore#//PropElement"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_36QP2ubREeG-8JnPRXaXEw" x="405" y="261"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_32nF8ebREeG-8JnPRXaXEw"/>
+  <element xmi:type="ecore:EPackage" href="BMachine.ecore#/"/>
+</notation:Diagram>

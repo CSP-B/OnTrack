@@ -1,0 +1,63 @@
+<project>
+  <modelversion>4.0.0</modelversion>
+  <groupid>Bjoerner_Complete</groupid>
+  <artifactid>parent</artifactid>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <tycho.version>0.20.0</tycho.version>
+    <eclipse-repo.url>https://oss.sonatype.org/content/groups/public/</eclipse-repo.url>
+    <eclipse-repo.url>http://download.eclipse.org/releases/kepler</eclipse-repo.url>
+    <epsilon-repo.url>http://download.eclipse.org/epsilon/interim/</epsilon-repo.url>
+  </properties>
+
+  <modules>
+    <module>diagram</module>
+    <module>edit</module>
+    <module>editor</module>
+    <module>tests</module>
+  </modules>
+ 
+  <repositories>
+    <repository>
+        <id>eclipse-kepler</id>
+        <url>${eclipse-repo.url}</url>
+        <layout>p2</layout>
+    </repository>
+    <repository>
+        <id>eclipse-epsilon</id>
+        <url>${epsilon-repo.url}</url>
+        <layout>p2</layout>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>tycho-snapshots</id>
+      <url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+ 
+  <build>
+    <plugins>
+      <plugin>
+        <groupid>org.eclipse.tycho</groupid>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-surefire-plugin</artifactId>
+            <version>${tycho.version}</version>
+            <configuration>
+              <useUIHarness>true</useUIHarness>
+              <useUIThread>false</useUIThread>
+              <product>org.eclipse.sdk.ide</product>
+              <application>org.eclipse.ui.ide.workbench</application>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build> 
+</project>
