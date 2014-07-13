@@ -53,6 +53,8 @@ Right-click the `Bjoerner_Complete.diagram` project that you have imported above
 
 This will launch another Eclipse instance.
 
+See [Using OnTrack](https://github.com/lordqwerty/OnTrack/blob/master/Using%20OnTrack.md) for more details.
+
 ## References
 
 * [CSP||B](http://csp-b.org/)
