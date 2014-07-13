@@ -56,16 +56,19 @@ The generation process for CSPB||B and CASL have not yet been implemented as wiz
 
 `Bjoerner_Generator/src/tool/TrackScheme2CSPB.java`
 
-To run this generation process requires an input track plan model. Once a track plan and it's control table have been created in the track plan editor, copy and paste the .bjoernercomplete file to the Bjoerner_Generator/models folder in the original Eclipse window.
+To run this generation process requires an input track plan model. 
+
+Once a track plan and it's control table have been created in the track plan editor, copy and paste the `.bjoernercomplete` file to the `Bjoerner_Generator/models` folder in the original Eclipse window.
 
 Edit the main method of the java class so when the constructor is called the filename of the model is passed in.
 
-The generate() method performs translation of the model and processes one template file to produce output scripts. The main method is currently setup to process all files in the
-Bjoerner_Generator/templates folder. 
+The `generate()` method performs translation of the model and processes one template file to produce output scripts. 
 
-The program assumes that a corresponding .etl file exists in the Bjoerner_Generator/Epsilon with the same name as the template file. This controls the translation of the source model and an error will occur if not present.
+The main method is currently setup to process all files in the `Bjoerner_Generator/templates folder` 
 
-Generated scripts are created in the Bjoerner_Generator/output folder within a unique date_time folder.
+The program assumes that a corresponding `.etl` file exists in the `Bjoerner_Generator/Epsilon` with the same name as the template file. This controls the translation of the source model and an error will occur if not present.
+
+Generated scripts are created in the `Bjoerner_Generator/output` folder within a unique `date_time folder`.
 
 The program will produce multiple versions of the output files depending on how many trains are required for verification by the input model. This can be set to a fixed value by setting constant numTrains to a value greater than zero in the constants list. An upper-limit, MAX_TRAINS, can also be set.
 
