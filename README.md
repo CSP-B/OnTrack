@@ -3,9 +3,7 @@
 *Please be aware that OnTrack is still under active development and as such, several of the features are still implemented in a prototypical manner.*
 *If you experience any problems or have any questions on running any parts of the tool please contact: cspj@swansea.ac.uk*
 
-The OnTrack toolset automates workflows for railway verification, starting with graphical scheme plans and finishing with automatically generated formal models set up for verification. OnTrack is grounded on an established domain specification language (DSL) and is generic in the formal specification languages used. Using a DSL allows the formulation of abstractions that work for verification in several formal specification languages.
-
-OnTrack has been developed as a collaboration between the University of Surrey (Jorden Whitefield, Matthew Trumble, Helen Treharne and Steve Schneider) and the University of Swansea (Phil James and Markus Roggenbach).
+The OnTrack toolset automates workflows for railway verification, starting with graphical scheme plans and finishing with automatically generated formal models set up for verification. OnTrack is grounded on an established [domain specification language](https://en.wikipedia.org/wiki/Domain-specific_language) (DSL) and is generic in the formal specification languages used. Using a DSL allows the formulation of abstractions that work for verification in several formal specification languages.
 
 ## The Team
 
@@ -13,6 +11,8 @@ OnTrack has been developed as a collaboration between the University of Surrey (
 * [Professor Steve Schneider](http://www2.surrey.ac.uk/computing/people/steve_schneider/)
 * [Markus Roggenbach](http://www.cs.swan.ac.uk/~csmarkus/)
 * [Phillip James](http://cs.swan.ac.uk/~cspj/)
+* [Jorden Whitefield](http://uk.linkedin.com/in/jwhitefield/)
+* Matthew Trumble
 
 ## Prerequisites
 
