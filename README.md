@@ -18,14 +18,16 @@ OnTrack has been developed as a collaboration between the University of Surrey (
 
 The following is required to run these projects:
 
-* An Eclipse installation with EMF, GMF and Epsilon. A ready to use distribution with all the required components can be found on the Eclipse Epsilon [Download Page](http://www.eclipse.org/epsilon/download/)
+* [Eclipse Epsilon](http://www.eclipse.org/epsilon/download/)
 * [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 * [ProB](http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download)
 
 ## Running OnTrack
 
 To import the full OnTrack editor into your eclipse workspace, Select:
+
 `File -> Import -> Existing Projects into Workspace`
+
 Then select the following projects from the zip folder:
 
 * Bjoerner_Complete
@@ -36,6 +38,7 @@ Then select the following projects from the zip folder:
 * Bjoerner_Generator
 
 **Once imported, the Bjoerner_Generator project will have errors present.** 
+
 To solve these, remove all the external Jars from the libraries list in the Java Build Path for the project. Then click Add
 External Jars... and add all files in the
 GeneratorReferencedLibraries file.
@@ -45,6 +48,7 @@ GeneratorReferencedLibraries file.
 The project should now be error free!
 
 Right-click the `Bjoerner_Complete.diagram` project that you have imported above. Select:
+
 `Run as -> Eclipse Application`
 
 This will launch another Eclipse instance.
