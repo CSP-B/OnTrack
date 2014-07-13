@@ -56,5 +56,6 @@ This will launch another Eclipse instance.
 ## References
 
 * [CSP||B](http://csp-b.org/)
+* [CASL](http://www.informatik.uni-bremen.de/cofi/wiki/index.php/CoFI)
 * [CSP Book](http://www.usingcsp.com/cspbook.pdf)
 * [Epsilon](http://www.eclipse.org/epsilon/)
