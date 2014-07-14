@@ -296,17 +296,8 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPoint_HasC3() {
-		return (EReference)pointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPoint_PointName() {
-		return (EAttribute)pointEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)pointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -602,7 +593,7 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCrossing_HasC3() {
+	public EReference getCrossing_HasC3_Crossing() {
 		return (EReference)crossingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -611,7 +602,7 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCrossing_HasC4() {
+	public EReference getCrossing_HasC4_Crossing() {
 		return (EReference)crossingEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -693,7 +684,6 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		createEReference(trackEClass, TRACK__HAS_SIGNAL);
 
 		pointEClass = createEClass(POINT);
-		createEReference(pointEClass, POINT__HAS_C3);
 		createEAttribute(pointEClass, POINT__POINT_NAME);
 
 		connectorEClass = createEClass(CONNECTOR);
@@ -735,8 +725,8 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		createEReference(railDiagramEClass, RAIL_DIAGRAM__HAS_CONTROL_TABLE);
 
 		crossingEClass = createEClass(CROSSING);
-		createEReference(crossingEClass, CROSSING__HAS_C3);
-		createEReference(crossingEClass, CROSSING__HAS_C4);
+		createEReference(crossingEClass, CROSSING__HAS_C3_CROSSING);
+		createEReference(crossingEClass, CROSSING__HAS_C4_CROSSING);
 
 		terminalEClass = createEClass(TERMINAL);
 		createEReference(terminalEClass, TERMINAL__HAS_TERMINAL_SIGNAL);
@@ -793,12 +783,11 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		initEReference(getTrack_HasSignal(), this.getSignal(), null, "hasSignal", null, 0, 2, Track.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPoint_HasC3(), this.getConnector(), this.getConnector_HasPoint(), "hasC3", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPoint_PointName(), ecorePackage.getEString(), "pointName", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_HasUnit1(), this.getUnit(), this.getUnit_HasC1(), "hasUnit1", null, 0, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnector_HasPoint(), this.getPoint(), this.getPoint_HasC3(), "hasPoint", null, 0, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_HasPoint(), this.getPoint(), null, "hasPoint", null, 0, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_HasUnit2(), this.getUnit(), this.getUnit_HasC2(), "hasUnit2", null, 0, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnector_ID(), ecorePackage.getEString(), "ID", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -835,8 +824,8 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		initEReference(getRailDiagram_HasControlTable(), this.getControlTable(), null, "hasControlTable", null, 0, 1, RailDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crossingEClass, Crossing.class, "Crossing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCrossing_HasC3(), this.getUnit(), null, "hasC3", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCrossing_HasC4(), this.getUnit(), null, "hasC4", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_HasC3_Crossing(), this.getUnit(), null, "hasC3_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_HasC4_Crossing(), this.getUnit(), null, "hasC4_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(terminalEClass, Terminal.class, "Terminal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTerminal_HasTerminalSignal(), this.getSignal(), null, "hasTerminalSignal", null, 1, 1, Terminal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

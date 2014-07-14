@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link bjoernercomplete.impl.CrossingImpl#getHasC3 <em>Has C3</em>}</li>
- *   <li>{@link bjoernercomplete.impl.CrossingImpl#getHasC4 <em>Has C4</em>}</li>
+ *   <li>{@link bjoernercomplete.impl.CrossingImpl#getHasC3_Crossing <em>Has C3 Crossing</em>}</li>
+ *   <li>{@link bjoernercomplete.impl.CrossingImpl#getHasC4_Crossing <em>Has C4 Crossing</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CrossingImpl extends UnitImpl implements Crossing {
 	/**
-	 * The cached value of the '{@link #getHasC3() <em>Has C3</em>}' reference.
+	 * The cached value of the '{@link #getHasC3_Crossing() <em>Has C3 Crossing</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasC3()
+	 * @see #getHasC3_Crossing()
 	 * @generated
 	 * @ordered
 	 */
-	protected Unit hasC3;
+	protected Unit hasC3_Crossing;
 
 	/**
-	 * The cached value of the '{@link #getHasC4() <em>Has C4</em>}' reference.
+	 * The cached value of the '{@link #getHasC4_Crossing() <em>Has C4 Crossing</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHasC4()
+	 * @see #getHasC4_Crossing()
 	 * @generated
 	 * @ordered
 	 */
-	protected Unit hasC4;
+	protected Unit hasC4_Crossing;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,16 +72,16 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit getHasC3() {
-		if (hasC3 != null && hasC3.eIsProxy()) {
-			InternalEObject oldHasC3 = (InternalEObject)hasC3;
-			hasC3 = (Unit)eResolveProxy(oldHasC3);
-			if (hasC3 != oldHasC3) {
+	public Unit getHasC3_Crossing() {
+		if (hasC3_Crossing != null && hasC3_Crossing.eIsProxy()) {
+			InternalEObject oldHasC3_Crossing = (InternalEObject)hasC3_Crossing;
+			hasC3_Crossing = (Unit)eResolveProxy(oldHasC3_Crossing);
+			if (hasC3_Crossing != oldHasC3_Crossing) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CROSSING__HAS_C3, oldHasC3, hasC3));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CROSSING__HAS_C3_CROSSING, oldHasC3_Crossing, hasC3_Crossing));
 			}
 		}
-		return hasC3;
+		return hasC3_Crossing;
 	}
 
 	/**
@@ -89,8 +89,8 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit basicGetHasC3() {
-		return hasC3;
+	public Unit basicGetHasC3_Crossing() {
+		return hasC3_Crossing;
 	}
 
 	/**
@@ -98,11 +98,11 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHasC3(Unit newHasC3) {
-		Unit oldHasC3 = hasC3;
-		hasC3 = newHasC3;
+	public void setHasC3_Crossing(Unit newHasC3_Crossing) {
+		Unit oldHasC3_Crossing = hasC3_Crossing;
+		hasC3_Crossing = newHasC3_Crossing;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CROSSING__HAS_C3, oldHasC3, hasC3));
+			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CROSSING__HAS_C3_CROSSING, oldHasC3_Crossing, hasC3_Crossing));
 	}
 
 	/**
@@ -110,16 +110,16 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit getHasC4() {
-		if (hasC4 != null && hasC4.eIsProxy()) {
-			InternalEObject oldHasC4 = (InternalEObject)hasC4;
-			hasC4 = (Unit)eResolveProxy(oldHasC4);
-			if (hasC4 != oldHasC4) {
+	public Unit getHasC4_Crossing() {
+		if (hasC4_Crossing != null && hasC4_Crossing.eIsProxy()) {
+			InternalEObject oldHasC4_Crossing = (InternalEObject)hasC4_Crossing;
+			hasC4_Crossing = (Unit)eResolveProxy(oldHasC4_Crossing);
+			if (hasC4_Crossing != oldHasC4_Crossing) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CROSSING__HAS_C4, oldHasC4, hasC4));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CROSSING__HAS_C4_CROSSING, oldHasC4_Crossing, hasC4_Crossing));
 			}
 		}
-		return hasC4;
+		return hasC4_Crossing;
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit basicGetHasC4() {
-		return hasC4;
+	public Unit basicGetHasC4_Crossing() {
+		return hasC4_Crossing;
 	}
 
 	/**
@@ -136,11 +136,11 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHasC4(Unit newHasC4) {
-		Unit oldHasC4 = hasC4;
-		hasC4 = newHasC4;
+	public void setHasC4_Crossing(Unit newHasC4_Crossing) {
+		Unit oldHasC4_Crossing = hasC4_Crossing;
+		hasC4_Crossing = newHasC4_Crossing;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CROSSING__HAS_C4, oldHasC4, hasC4));
+			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CROSSING__HAS_C4_CROSSING, oldHasC4_Crossing, hasC4_Crossing));
 	}
 
 	/**
@@ -151,12 +151,12 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BjoernercompletePackage.CROSSING__HAS_C3:
-				if (resolve) return getHasC3();
-				return basicGetHasC3();
-			case BjoernercompletePackage.CROSSING__HAS_C4:
-				if (resolve) return getHasC4();
-				return basicGetHasC4();
+			case BjoernercompletePackage.CROSSING__HAS_C3_CROSSING:
+				if (resolve) return getHasC3_Crossing();
+				return basicGetHasC3_Crossing();
+			case BjoernercompletePackage.CROSSING__HAS_C4_CROSSING:
+				if (resolve) return getHasC4_Crossing();
+				return basicGetHasC4_Crossing();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,11 +169,11 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BjoernercompletePackage.CROSSING__HAS_C3:
-				setHasC3((Unit)newValue);
+			case BjoernercompletePackage.CROSSING__HAS_C3_CROSSING:
+				setHasC3_Crossing((Unit)newValue);
 				return;
-			case BjoernercompletePackage.CROSSING__HAS_C4:
-				setHasC4((Unit)newValue);
+			case BjoernercompletePackage.CROSSING__HAS_C4_CROSSING:
+				setHasC4_Crossing((Unit)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BjoernercompletePackage.CROSSING__HAS_C3:
-				setHasC3((Unit)null);
+			case BjoernercompletePackage.CROSSING__HAS_C3_CROSSING:
+				setHasC3_Crossing((Unit)null);
 				return;
-			case BjoernercompletePackage.CROSSING__HAS_C4:
-				setHasC4((Unit)null);
+			case BjoernercompletePackage.CROSSING__HAS_C4_CROSSING:
+				setHasC4_Crossing((Unit)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +205,10 @@ public class CrossingImpl extends UnitImpl implements Crossing {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BjoernercompletePackage.CROSSING__HAS_C3:
-				return hasC3 != null;
-			case BjoernercompletePackage.CROSSING__HAS_C4:
-				return hasC4 != null;
+			case BjoernercompletePackage.CROSSING__HAS_C3_CROSSING:
+				return hasC3_Crossing != null;
+			case BjoernercompletePackage.CROSSING__HAS_C4_CROSSING:
+				return hasC4_Crossing != null;
 		}
 		return super.eIsSet(featureID);
 	}

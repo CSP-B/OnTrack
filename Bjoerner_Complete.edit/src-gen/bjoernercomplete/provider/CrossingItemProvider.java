@@ -55,26 +55,26 @@ public class CrossingItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHasC3PropertyDescriptor(object);
-			addHasC4PropertyDescriptor(object);
+			addHasC3_CrossingPropertyDescriptor(object);
+			addHasC4_CrossingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Has C3 feature.
+	 * This adds a property descriptor for the Has C3 Crossing feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasC3PropertyDescriptor(Object object) {
+	protected void addHasC3_CrossingPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Crossing_hasC3_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasC3_feature", "_UI_Crossing_type"),
-				 BjoernercompletePackage.Literals.CROSSING__HAS_C3,
+				 getString("_UI_Crossing_hasC3_Crossing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasC3_Crossing_feature", "_UI_Crossing_type"),
+				 BjoernercompletePackage.Literals.CROSSING__HAS_C3_CROSSING,
 				 true,
 				 false,
 				 true,
@@ -84,19 +84,19 @@ public class CrossingItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Has C4 feature.
+	 * This adds a property descriptor for the Has C4 Crossing feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHasC4PropertyDescriptor(Object object) {
+	protected void addHasC4_CrossingPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Crossing_hasC4_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasC4_feature", "_UI_Crossing_type"),
-				 BjoernercompletePackage.Literals.CROSSING__HAS_C4,
+				 getString("_UI_Crossing_hasC4_Crossing_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasC4_Crossing_feature", "_UI_Crossing_type"),
+				 BjoernercompletePackage.Literals.CROSSING__HAS_C4_CROSSING,
 				 true,
 				 false,
 				 true,

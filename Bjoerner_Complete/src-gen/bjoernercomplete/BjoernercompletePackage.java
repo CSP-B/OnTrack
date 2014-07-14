@@ -258,22 +258,13 @@ public interface BjoernercompletePackage extends EPackage {
 	int POINT__LENGTH = UNIT__LENGTH;
 
 	/**
-	 * The feature id for the '<em><b>Has C3</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POINT__HAS_C3 = UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Point Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINT__POINT_NAME = UNIT_FEATURE_COUNT + 1;
+	int POINT__POINT_NAME = UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Point</em>' class.
@@ -282,7 +273,7 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINT_FEATURE_COUNT = UNIT_FEATURE_COUNT + 2;
+	int POINT_FEATURE_COUNT = UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -680,22 +671,22 @@ public interface BjoernercompletePackage extends EPackage {
 	int CROSSING__LENGTH = UNIT__LENGTH;
 
 	/**
-	 * The feature id for the '<em><b>Has C3</b></em>' reference.
+	 * The feature id for the '<em><b>Has C3 Crossing</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING__HAS_C3 = UNIT_FEATURE_COUNT + 0;
+	int CROSSING__HAS_C3_CROSSING = UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Has C4</b></em>' reference.
+	 * The feature id for the '<em><b>Has C4 Crossing</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING__HAS_C4 = UNIT_FEATURE_COUNT + 1;
+	int CROSSING__HAS_C4_CROSSING = UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Crossing</em>' class.
@@ -933,17 +924,6 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPoint();
-
-	/**
-	 * Returns the meta object for the reference '{@link bjoernercomplete.Point#getHasC3 <em>Has C3</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Has C3</em>'.
-	 * @see bjoernercomplete.Point#getHasC3()
-	 * @see #getPoint()
-	 * @generated
-	 */
-	EReference getPoint_HasC3();
 
 	/**
 	 * Returns the meta object for the attribute '{@link bjoernercomplete.Point#getPointName <em>Point Name</em>}'.
@@ -1301,26 +1281,26 @@ public interface BjoernercompletePackage extends EPackage {
 	EClass getCrossing();
 
 	/**
-	 * Returns the meta object for the reference '{@link bjoernercomplete.Crossing#getHasC3 <em>Has C3</em>}'.
+	 * Returns the meta object for the reference '{@link bjoernercomplete.Crossing#getHasC3_Crossing <em>Has C3 Crossing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Has C3</em>'.
-	 * @see bjoernercomplete.Crossing#getHasC3()
+	 * @return the meta object for the reference '<em>Has C3 Crossing</em>'.
+	 * @see bjoernercomplete.Crossing#getHasC3_Crossing()
 	 * @see #getCrossing()
 	 * @generated
 	 */
-	EReference getCrossing_HasC3();
+	EReference getCrossing_HasC3_Crossing();
 
 	/**
-	 * Returns the meta object for the reference '{@link bjoernercomplete.Crossing#getHasC4 <em>Has C4</em>}'.
+	 * Returns the meta object for the reference '{@link bjoernercomplete.Crossing#getHasC4_Crossing <em>Has C4 Crossing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Has C4</em>'.
-	 * @see bjoernercomplete.Crossing#getHasC4()
+	 * @return the meta object for the reference '<em>Has C4 Crossing</em>'.
+	 * @see bjoernercomplete.Crossing#getHasC4_Crossing()
 	 * @see #getCrossing()
 	 * @generated
 	 */
-	EReference getCrossing_HasC4();
+	EReference getCrossing_HasC4_Crossing();
 
 	/**
 	 * Returns the meta object for class '{@link bjoernercomplete.Terminal <em>Terminal</em>}'.
@@ -1481,14 +1461,6 @@ public interface BjoernercompletePackage extends EPackage {
 		 * @generated
 		 */
 		EClass POINT = eINSTANCE.getPoint();
-
-		/**
-		 * The meta object literal for the '<em><b>Has C3</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POINT__HAS_C3 = eINSTANCE.getPoint_HasC3();
 
 		/**
 		 * The meta object literal for the '<em><b>Point Name</b></em>' attribute feature.
@@ -1771,20 +1743,20 @@ public interface BjoernercompletePackage extends EPackage {
 		EClass CROSSING = eINSTANCE.getCrossing();
 
 		/**
-		 * The meta object literal for the '<em><b>Has C3</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Has C3 Crossing</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CROSSING__HAS_C3 = eINSTANCE.getCrossing_HasC3();
+		EReference CROSSING__HAS_C3_CROSSING = eINSTANCE.getCrossing_HasC3_Crossing();
 
 		/**
-		 * The meta object literal for the '<em><b>Has C4</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Has C4 Crossing</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CROSSING__HAS_C4 = eINSTANCE.getCrossing_HasC4();
+		EReference CROSSING__HAS_C4_CROSSING = eINSTANCE.getCrossing_HasC4_Crossing();
 
 		/**
 		 * The meta object literal for the '{@link bjoernercomplete.impl.TerminalImpl <em>Terminal</em>}' class.

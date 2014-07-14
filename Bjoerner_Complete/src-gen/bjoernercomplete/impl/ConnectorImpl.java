@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -128,7 +129,7 @@ public class ConnectorImpl extends EObjectImpl implements Connector {
 	 */
 	public EList<Point> getHasPoint() {
 		if (hasPoint == null) {
-			hasPoint = new EObjectWithInverseResolvingEList<Point>(Point.class, this, BjoernercompletePackage.CONNECTOR__HAS_POINT, BjoernercompletePackage.POINT__HAS_C3);
+			hasPoint = new EObjectResolvingEList<Point>(Point.class, this, BjoernercompletePackage.CONNECTOR__HAS_POINT);
 		}
 		return hasPoint;
 	}
@@ -177,8 +178,6 @@ public class ConnectorImpl extends EObjectImpl implements Connector {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasUnit1()).basicAdd(otherEnd, msgs);
-			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasPoint()).basicAdd(otherEnd, msgs);
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasUnit2()).basicAdd(otherEnd, msgs);
 		}
@@ -195,8 +194,6 @@ public class ConnectorImpl extends EObjectImpl implements Connector {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
 				return ((InternalEList<?>)getHasUnit1()).basicRemove(otherEnd, msgs);
-			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
-				return ((InternalEList<?>)getHasPoint()).basicRemove(otherEnd, msgs);
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
 				return ((InternalEList<?>)getHasUnit2()).basicRemove(otherEnd, msgs);
 		}

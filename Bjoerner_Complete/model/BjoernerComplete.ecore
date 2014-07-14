@@ -19,17 +19,21 @@
         eType="#//Signal" eOpposite="#//Signal/placedOnTrack"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasSignal" upperBound="2"
         eType="#//Signal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTrackDirection" lowerBound="1"
+        upperBound="2" eType="#//Direction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Point" eSuperTypes="#//Unit">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3" lowerBound="1" eType="#//Connector"
-        eOpposite="#//Connector/hasPoint"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3_Point" lowerBound="1"
+        eType="#//Connector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasPointDirection" lowerBound="2"
+        upperBound="4" eType="#//Direction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit1" upperBound="2"
         eType="#//Unit" eOpposite="#//Unit/hasC1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasPoint" upperBound="2"
-        eType="#//Point" eOpposite="#//Point/hasC3"/>
+        eType="#//Point"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit2" upperBound="2"
         eType="#//Unit" eOpposite="#//Unit/hasC2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -85,8 +89,12 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Crossing" eSuperTypes="#//Unit">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3" lowerBound="1" eType="#//Unit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC4" lowerBound="1" eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3_Crossing" lowerBound="1"
+        eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasC4_Crossing" lowerBound="1"
+        eType="#//Unit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasCrossingDirection" lowerBound="2"
+        upperBound="4" eType="#//Direction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//Track">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasTerminalSignal" lowerBound="1"

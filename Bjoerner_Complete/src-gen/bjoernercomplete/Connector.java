@@ -47,7 +47,6 @@ public interface Connector extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Has Point</b></em>' reference list.
 	 * The list contents are of type {@link bjoernercomplete.Point}.
-	 * It is bidirectional and its opposite is '{@link bjoernercomplete.Point#getHasC3 <em>Has C3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Has Point</em>' reference list isn't clear,
@@ -56,8 +55,7 @@ public interface Connector extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Has Point</em>' reference list.
 	 * @see bjoernercomplete.BjoernercompletePackage#getConnector_HasPoint()
-	 * @see bjoernercomplete.Point#getHasC3
-	 * @model opposite="hasC3" upper="2"
+	 * @model upper="2"
 	 * @generated
 	 */
 	EList<Point> getHasPoint();
