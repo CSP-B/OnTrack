@@ -4,8 +4,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
         eType="#//Unit" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTracks" upperBound="-1"
-        eType="#//Track.1" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasC1" lowerBound="1" eType="#//Connector"
@@ -35,12 +33,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit2" upperBound="2"
         eType="#//Unit" eOpposite="#//Unit/hasC2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Track">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasLinears" upperBound="-1"
-        eType="#//Track">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData"/>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasPC2" lowerBound="1"
