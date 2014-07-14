@@ -3,19 +3,17 @@
 package bjoernercomplete.tests;
 
 import bjoernercomplete.BjoernercompleteFactory;
-import bjoernercomplete.Track;
-
-import junit.framework.TestCase;
+import bjoernercomplete.Crossing;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Track</b></em>'.
+ * A test case for the model object '<em><b>Crossing</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class TrackTest extends UnitTest {
+public class CrossingTest extends UnitTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -23,28 +21,28 @@ public class TrackTest extends UnitTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(TrackTest.class);
+		TestRunner.run(CrossingTest.class);
 	}
 
 	/**
-	 * Constructs a new Track test case with the given name.
+	 * Constructs a new Crossing test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TrackTest(String name) {
+	public CrossingTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Track test case.
+	 * Returns the fixture for this Crossing test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected Track getFixture() {
-		return (Track)fixture;
+	protected Crossing getFixture() {
+		return (Crossing)fixture;
 	}
 
 	/**
@@ -55,7 +53,7 @@ public class TrackTest extends UnitTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BjoernercompleteFactory.eINSTANCE.createTrack());
+		setFixture(BjoernercompleteFactory.eINSTANCE.createCrossing());
 	}
 
 	/**
@@ -69,4 +67,4 @@ public class TrackTest extends UnitTest {
 		setFixture(null);
 	}
 
-} //TrackTest
+} //CrossingTest

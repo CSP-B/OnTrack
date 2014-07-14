@@ -3,7 +3,7 @@
 package bjoernercomplete.tests;
 
 import bjoernercomplete.BjoernercompleteFactory;
-import bjoernercomplete.Track;
+import bjoernercomplete.Direction;
 
 import junit.framework.TestCase;
 
@@ -11,11 +11,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Track</b></em>'.
+ * A test case for the model object '<em><b>Direction</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class TrackTest extends UnitTest {
+public class DirectionTest extends TestCase {
+
+	/**
+	 * The fixture for this Direction test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Direction fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -23,28 +31,37 @@ public class TrackTest extends UnitTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(TrackTest.class);
+		TestRunner.run(DirectionTest.class);
 	}
 
 	/**
-	 * Constructs a new Track test case with the given name.
+	 * Constructs a new Direction test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TrackTest(String name) {
+	public DirectionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Track test case.
+	 * Sets the fixture for this Direction test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected Track getFixture() {
-		return (Track)fixture;
+	protected void setFixture(Direction fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Direction test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Direction getFixture() {
+		return fixture;
 	}
 
 	/**
@@ -55,7 +72,7 @@ public class TrackTest extends UnitTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BjoernercompleteFactory.eINSTANCE.createTrack());
+		setFixture(BjoernercompleteFactory.eINSTANCE.createDirection());
 	}
 
 	/**
@@ -69,4 +86,4 @@ public class TrackTest extends UnitTest {
 		setFixture(null);
 	}
 
-} //TrackTest
+} //DirectionTest

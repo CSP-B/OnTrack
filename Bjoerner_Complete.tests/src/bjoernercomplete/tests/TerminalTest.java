@@ -3,19 +3,17 @@
 package bjoernercomplete.tests;
 
 import bjoernercomplete.BjoernercompleteFactory;
-import bjoernercomplete.Track;
-
-import junit.framework.TestCase;
+import bjoernercomplete.Terminal;
 
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Track</b></em>'.
+ * A test case for the model object '<em><b>Terminal</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class TrackTest extends UnitTest {
+public class TerminalTest extends TrackTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -23,28 +21,28 @@ public class TrackTest extends UnitTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(TrackTest.class);
+		TestRunner.run(TerminalTest.class);
 	}
 
 	/**
-	 * Constructs a new Track test case with the given name.
+	 * Constructs a new Terminal test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TrackTest(String name) {
+	public TerminalTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Track test case.
+	 * Returns the fixture for this Terminal test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected Track getFixture() {
-		return (Track)fixture;
+	protected Terminal getFixture() {
+		return (Terminal)fixture;
 	}
 
 	/**
@@ -55,7 +53,7 @@ public class TrackTest extends UnitTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(BjoernercompleteFactory.eINSTANCE.createTrack());
+		setFixture(BjoernercompleteFactory.eINSTANCE.createTerminal());
 	}
 
 	/**
@@ -69,4 +67,4 @@ public class TrackTest extends UnitTest {
 		setFixture(null);
 	}
 
-} //TrackTest
+} //TerminalTest
