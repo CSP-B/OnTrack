@@ -61,3 +61,7 @@ See [Using OnTrack](https://github.com/lordqwerty/OnTrack/blob/master/Using%20On
 * [CASL](http://www.informatik.uni-bremen.de/cofi/wiki/index.php/CoFI)
 * [CSP Book](http://www.usingcsp.com/cspbook.pdf)
 * [Epsilon](http://www.eclipse.org/epsilon/)
+
+# To do
+
+* Update GMF files once all the EMFs have been updated. 
