@@ -33,3 +33,7 @@ local.properties
 
 # Mac OS X junk
 .DS_Store
+
+# Maven
+log/
+target/
