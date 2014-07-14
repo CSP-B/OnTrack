@@ -25,7 +25,7 @@ cspScript1 := CSP!CSPScript.all().at(0);
 %]
 
 -- datatype definitions corresponding to those given in the Context.mch
-datatype TRAIN =#foreach ($String in $trains) $String #if ($foreach.hasNext)|#end#end
+datatype TRAIN = albert | bertie
 
 datatype SIGNAL = red | green
 [%
