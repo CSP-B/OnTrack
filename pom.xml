@@ -10,7 +10,7 @@
 		<tycho-version>0.20.0</tycho-version>
 		<eclipse-repo.url>https://oss.sonatype.org/content/groups/public/</eclipse-repo.url>
 		<eclipse-repo.url>http://download.eclipse.org/releases/kepler</eclipse-repo.url>
-		<epsilon-repo.url>http://download.eclipse.org/epsilon/interim/</epsilon-repo.url>
+		<epsilon-repo.url>http://download.eclipse.org/epsilon/interim</epsilon-repo.url>
 		<swtbot-repo.url> http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-repo.url>
 	</properties>
 
