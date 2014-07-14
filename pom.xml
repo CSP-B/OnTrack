@@ -11,6 +11,7 @@
 		<eclipse-repo.url>https://oss.sonatype.org/content/groups/public/</eclipse-repo.url>
 		<eclipse-repo.url>http://download.eclipse.org/releases/kepler</eclipse-repo.url>
 		<epsilon-repo.url>http://download.eclipse.org/epsilon/interim/</epsilon-repo.url>
+		<swtbot-repo.url> http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-repo.url>
 	</properties>
 
 	<modules>
@@ -26,6 +27,11 @@
 		<repository>
 			<id>eclipse-kepler</id>
 			<url>${eclipse-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>eclipse-swtbot</id>
+			<url>${swtbot-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
