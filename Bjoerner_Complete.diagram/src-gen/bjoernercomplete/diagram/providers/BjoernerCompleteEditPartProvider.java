@@ -4,6 +4,7 @@ import org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider;
 
 import bjoernercomplete.diagram.edit.parts.BjoernerCompleteEditPartFactory;
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
 import bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry;
 
 /**
@@ -17,7 +18,7 @@ public class BjoernerCompleteEditPartProvider extends DefaultEditPartProvider {
 	public BjoernerCompleteEditPartProvider() {
 		super(new BjoernerCompleteEditPartFactory(),
 				BjoernerCompleteVisualIDRegistry.TYPED_INSTANCE,
-				ConnectorEditPart.MODEL_ID);
+				RailDiagramEditPart.MODEL_ID);
 	}
 
 }

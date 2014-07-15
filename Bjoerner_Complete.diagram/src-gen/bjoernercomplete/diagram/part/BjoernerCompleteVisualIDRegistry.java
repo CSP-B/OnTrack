@@ -9,7 +9,19 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.Connector;
+import bjoernercomplete.RailDiagram;
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.ConnectorIDEditPart;
+import bjoernercomplete.diagram.edit.parts.ControlTableEditPart;
+import bjoernercomplete.diagram.edit.parts.CrossingEditPart;
+import bjoernercomplete.diagram.edit.parts.CrossingNameEditPart;
+import bjoernercomplete.diagram.edit.parts.PointEditPart;
+import bjoernercomplete.diagram.edit.parts.PointNameEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
+import bjoernercomplete.diagram.edit.parts.SignalEditPart;
+import bjoernercomplete.diagram.edit.parts.SignalNameEditPart;
+import bjoernercomplete.diagram.edit.parts.TerminalEditPart;
+import bjoernercomplete.diagram.edit.parts.TerminalNameEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -30,8 +42,8 @@ public class BjoernerCompleteVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (ConnectorEditPart.MODEL_ID.equals(view.getType())) {
-				return ConnectorEditPart.VISUAL_ID;
+			if (RailDiagramEditPart.MODEL_ID.equals(view.getType())) {
+				return RailDiagramEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
@@ -86,10 +98,10 @@ public class BjoernerCompleteVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (BjoernercompletePackage.eINSTANCE.getConnector().isSuperTypeOf(
+		if (BjoernercompletePackage.eINSTANCE.getRailDiagram().isSuperTypeOf(
 				domainElement.eClass())
-				&& isDiagram((Connector) domainElement)) {
-			return ConnectorEditPart.VISUAL_ID;
+				&& isDiagram((RailDiagram) domainElement)) {
+			return RailDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -103,21 +115,47 @@ public class BjoernerCompleteVisualIDRegistry {
 		}
 		String containerModelID = bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry
 				.getModelID(containerView);
-		if (!ConnectorEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!RailDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (ConnectorEditPart.MODEL_ID.equals(containerModelID)) {
+		if (RailDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = ConnectorEditPart.VISUAL_ID;
+				containerVisualID = RailDiagramEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
+		case RailDiagramEditPart.VISUAL_ID:
+			if (BjoernercompletePackage.eINSTANCE.getTerminal().isSuperTypeOf(
+					domainElement.eClass())) {
+				return TerminalEditPart.VISUAL_ID;
+			}
+			if (BjoernercompletePackage.eINSTANCE.getCrossing().isSuperTypeOf(
+					domainElement.eClass())) {
+				return CrossingEditPart.VISUAL_ID;
+			}
+			if (BjoernercompletePackage.eINSTANCE.getConnector().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ConnectorEditPart.VISUAL_ID;
+			}
+			if (BjoernercompletePackage.eINSTANCE.getSignal().isSuperTypeOf(
+					domainElement.eClass())) {
+				return SignalEditPart.VISUAL_ID;
+			}
+			if (BjoernercompletePackage.eINSTANCE.getPoint().isSuperTypeOf(
+					domainElement.eClass())) {
+				return PointEditPart.VISUAL_ID;
+			}
+			if (BjoernercompletePackage.eINSTANCE.getControlTable()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return ControlTableEditPart.VISUAL_ID;
+			}
+			break;
 		}
 		return -1;
 	}
@@ -128,21 +166,66 @@ public class BjoernerCompleteVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry
 				.getModelID(containerView);
-		if (!ConnectorEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!RailDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (ConnectorEditPart.MODEL_ID.equals(containerModelID)) {
+		if (RailDiagramEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry
 					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = ConnectorEditPart.VISUAL_ID;
+				containerVisualID = RailDiagramEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
+		case RailDiagramEditPart.VISUAL_ID:
+			if (TerminalEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CrossingEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConnectorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (SignalEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ControlTableEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case TerminalEditPart.VISUAL_ID:
+			if (TerminalNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CrossingEditPart.VISUAL_ID:
+			if (CrossingNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ConnectorEditPart.VISUAL_ID:
+			if (ConnectorIDEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case SignalEditPart.VISUAL_ID:
+			if (SignalNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case PointEditPart.VISUAL_ID:
+			if (PointNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -163,7 +246,7 @@ public class BjoernerCompleteVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(Connector element) {
+	private static boolean isDiagram(RailDiagram element) {
 		return true;
 	}
 
@@ -192,8 +275,15 @@ public class BjoernerCompleteVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case ConnectorEditPart.VISUAL_ID:
+		case RailDiagramEditPart.VISUAL_ID:
 			return false;
+		case TerminalEditPart.VISUAL_ID:
+		case ControlTableEditPart.VISUAL_ID:
+		case SignalEditPart.VISUAL_ID:
+		case ConnectorEditPart.VISUAL_ID:
+		case PointEditPart.VISUAL_ID:
+		case CrossingEditPart.VISUAL_ID:
+			return true;
 		default:
 			break;
 		}

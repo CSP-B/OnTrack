@@ -52,7 +52,9 @@ import org.eclipse.ui.part.FileEditorInput;
 
 import bjoernercomplete.BjoernercompleteFactory;
 import bjoernercomplete.Connector;
+import bjoernercomplete.RailDiagram;
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
 
 /**
  * @generated
@@ -159,13 +161,13 @@ public class BjoernerCompleteDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				Connector model = createInitialModel();
+				RailDiagram model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
 						.createDiagram(
 								model,
-								ConnectorEditPart.MODEL_ID,
+								RailDiagramEditPart.MODEL_ID,
 								BjoernerCompleteDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
@@ -206,8 +208,8 @@ public class BjoernerCompleteDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Connector createInitialModel() {
-		return BjoernercompleteFactory.eINSTANCE.createConnector();
+	private static RailDiagram createInitialModel() {
+		return BjoernercompleteFactory.eINSTANCE.createRailDiagram();
 	}
 
 	/**
@@ -216,7 +218,8 @@ public class BjoernerCompleteDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static void attachModelToResource(Connector model, Resource resource) {
+	private static void attachModelToResource(RailDiagram model,
+			Resource resource) {
 		resource.getContents().add(model);
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
 
 /**
  * @generated
@@ -91,7 +92,7 @@ public class BjoernerCompleteInitDiagramFileAction implements
 		Wizard wizard = new BjoernerCompleteNewDiagramFileWizard(
 				domainModelURI, diagramRoot, editingDomain);
 		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle,
-				ConnectorEditPart.MODEL_ID));
+				RailDiagramEditPart.MODEL_ID));
 		BjoernerCompleteDiagramEditorUtil.runWizard(getShell(), wizard,
 				"InitDiagramFile"); //$NON-NLS-1$
 	}

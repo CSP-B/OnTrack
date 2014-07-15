@@ -20,6 +20,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import bjoernercomplete.diagram.edit.policies.BjoernerCompleteBaseItemSemanticEditPolicy;
 import bjoernercomplete.diagram.providers.ElementInitializers;
 import bjoernercomplete.provider.BjoernercompleteItemProviderAdapterFactory;
 
@@ -57,6 +58,11 @@ public class BjoernerCompleteDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private BjoernerCompleteBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
 	private ElementInitializers initializers;
 
 	/**
@@ -82,6 +88,7 @@ public class BjoernerCompleteDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
 		initializers = null;
 		instance = null;
 		super.stop(context);
@@ -197,6 +204,21 @@ public class BjoernerCompleteDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new BjoernerCompleteDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	 * @generated
+	 */
+	public BjoernerCompleteBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(
+			BjoernerCompleteBaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
 	}
 
 	/**

@@ -29,6 +29,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
 
 /**
  * @generated
@@ -67,7 +68,7 @@ public class BjoernerCompleteNewDiagramFileWizard extends Wizard {
 		myFileCreationPage
 				.setDescription(NLS
 						.bind(Messages.BjoernerCompleteNewDiagramFileWizard_CreationPageDescription,
-								ConnectorEditPart.MODEL_ID));
+								RailDiagramEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension()
 				.lastSegment());
@@ -129,7 +130,7 @@ public class BjoernerCompleteNewDiagramFileWizard extends Wizard {
 				int diagramVID = BjoernerCompleteVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage
 								.getModelElement());
-				if (diagramVID != ConnectorEditPart.VISUAL_ID) {
+				if (diagramVID != RailDiagramEditPart.VISUAL_ID) {
 					return CommandResult
 							.newErrorCommandResult(Messages.BjoernerCompleteNewDiagramFileWizard_IncorrectRootError);
 				}
@@ -137,7 +138,7 @@ public class BjoernerCompleteNewDiagramFileWizard extends Wizard {
 						.createDiagram(
 								diagramRootElementSelectionPage
 										.getModelElement(),
-								ConnectorEditPart.MODEL_ID,
+								RailDiagramEditPart.MODEL_ID,
 								BjoernerCompleteDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
@@ -195,7 +196,7 @@ public class BjoernerCompleteNewDiagramFileWizard extends Wizard {
 					.provides(
 							new CreateDiagramViewOperation(
 									new EObjectAdapter(getModelElement()),
-									ConnectorEditPart.MODEL_ID,
+									RailDiagramEditPart.MODEL_ID,
 									BjoernerCompleteDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: Messages.BjoernerCompleteNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);

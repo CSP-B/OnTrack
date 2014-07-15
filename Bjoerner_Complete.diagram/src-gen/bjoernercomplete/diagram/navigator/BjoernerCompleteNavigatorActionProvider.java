@@ -23,6 +23,7 @@ import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 import org.eclipse.ui.part.FileEditorInput;
 
 import bjoernercomplete.diagram.edit.parts.ConnectorEditPart;
+import bjoernercomplete.diagram.edit.parts.RailDiagramEditPart;
 import bjoernercomplete.diagram.part.BjoernerCompleteDiagramEditor;
 import bjoernercomplete.diagram.part.BjoernerCompleteDiagramEditorPlugin;
 import bjoernercomplete.diagram.part.BjoernerCompleteVisualIDRegistry;
@@ -125,7 +126,7 @@ public class BjoernerCompleteNavigatorActionProvider extends
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
-					if (ConnectorEditPart.MODEL_ID
+					if (RailDiagramEditPart.MODEL_ID
 							.equals(BjoernerCompleteVisualIDRegistry
 									.getModelID(diagram))) {
 						myDiagram = diagram;

@@ -12,7 +12,7 @@ public class BjoernerCompleteNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 1002;
+	private static final int GROUP_CATEGORY = 4022;
 
 	/**
 	 * @generated

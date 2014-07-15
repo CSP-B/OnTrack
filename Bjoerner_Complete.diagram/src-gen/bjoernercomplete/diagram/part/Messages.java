@@ -248,102 +248,122 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String UnitHasC11CreationTool_title;
+	public static String Unit1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String UnitHasC11CreationTool_desc;
+	public static String Unit1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String UnitHasC22CreationTool_title;
+	public static String Track2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String UnitHasC22CreationTool_desc;
+	public static String Track2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Linear3CreationTool_title;
+	public static String Point3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Linear3CreationTool_desc;
+	public static String Point3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Point4CreationTool_title;
+	public static String Connector4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Point4CreationTool_desc;
+	public static String Connector4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PointHasC35CreationTool_title;
+	public static String ConnectorHasUnit15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PointHasC35CreationTool_desc;
+	public static String ConnectorHasUnit15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Connector6CreationTool_title;
+	public static String ConnectorHasPoint6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Connector6CreationTool_desc;
+	public static String ConnectorHasPoint6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Signal7CreationTool_title;
+	public static String ConnectorHasUnit27CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Signal7CreationTool_desc;
+	public static String ConnectorHasUnit27CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SignalPlacedOnLinear8CreationTool_title;
+	public static String Signal8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SignalPlacedOnLinear8CreationTool_desc;
+	public static String Signal8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SignalPlacedAtConnector9CreationTool_title;
+	public static String ControlTable9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SignalPlacedAtConnector9CreationTool_desc;
+	public static String ControlTable9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ControlTable10CreationTool_title;
+	public static String ControlTableHasRoutes10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ControlTable10CreationTool_desc;
+	public static String ControlTableHasRoutes10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Crossing11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Crossing11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Terminal12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Terminal12CreationTool_desc;
 
 	/**
 	 * @generated
@@ -353,7 +373,242 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_RailDiagram_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Terminal_2001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Terminal_2001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ControlTable_2002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Signal_2003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Signal_2003_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_2004_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_2004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Point_2005_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Point_2005_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Crossing_2006_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Crossing_2006_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PointHasC3_Point_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PointHasC3_Point_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CrossingHasCrossingDirection_4002_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TrackHasTrackDirection_4003_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PointHasPointDirection_4004_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedOnTrack_4005_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedOnTrack_4005_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TrackHasSignal_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TrackHasSignal_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedAt_4007_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedAt_4007_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasPoint_4008_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasPoint_4008_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CrossingHasC3_Crossing_4009_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CrossingHasC3_Crossing_4009_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasUnit2_4010_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasUnit2_4010_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_UnitHasC1_4011_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_UnitHasC1_4011_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_UnitHasC2_4012_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_UnitHasC2_4012_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ControlTableHasRoutes_4013_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CrossingHasC4_Crossing_4014_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CrossingHasC4_Crossing_4014_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasUnit1_4015_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConnectorHasUnit1_4015_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedAtConnector_4016_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalPlacedAtConnector_4016_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TerminalHasTerminalSignal_4017_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TerminalHasTerminalSignal_4017_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TrackHasSignals_4018_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TrackHasSignals_4018_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalControlsRoutes_4019_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_SignalHasDirection_4020_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageFormatParser_InvalidInputError;
 
 	/**
 	 * @generated

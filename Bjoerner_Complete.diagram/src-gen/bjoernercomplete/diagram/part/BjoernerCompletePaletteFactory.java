@@ -1,9 +1,17 @@
 package bjoernercomplete.diagram.part;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
+import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import bjoernercomplete.diagram.providers.BjoernerCompleteElementTypes;
 
 /**
  * @generated
@@ -25,130 +33,275 @@ public class BjoernerCompletePaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(
 				Messages.Bjoernercomplete1Group_title);
 		paletteContainer.setId("createBjoernercomplete1Group"); //$NON-NLS-1$
-		paletteContainer.add(createUnitHasC11CreationTool());
-		paletteContainer.add(createUnitHasC22CreationTool());
-		paletteContainer.add(createLinear3CreationTool());
-		paletteContainer.add(createPoint4CreationTool());
-		paletteContainer.add(createPointHasC35CreationTool());
-		paletteContainer.add(createConnector6CreationTool());
-		paletteContainer.add(createSignal7CreationTool());
-		paletteContainer.add(createSignalPlacedOnLinear8CreationTool());
-		paletteContainer.add(createSignalPlacedAtConnector9CreationTool());
-		paletteContainer.add(createControlTable10CreationTool());
+		paletteContainer.add(createUnit1CreationTool());
+		paletteContainer.add(createTrack2CreationTool());
+		paletteContainer.add(createPoint3CreationTool());
+		paletteContainer.add(createConnector4CreationTool());
+		paletteContainer.add(createConnectorHasUnit15CreationTool());
+		paletteContainer.add(createConnectorHasPoint6CreationTool());
+		paletteContainer.add(createConnectorHasUnit27CreationTool());
+		paletteContainer.add(createSignal8CreationTool());
+		paletteContainer.add(createControlTable9CreationTool());
+		paletteContainer.add(createControlTableHasRoutes10CreationTool());
+		paletteContainer.add(createCrossing11CreationTool());
+		paletteContainer.add(createTerminal12CreationTool());
 		return paletteContainer;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createUnitHasC11CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.UnitHasC11CreationTool_title,
-				Messages.UnitHasC11CreationTool_desc, null, null) {
-		};
-		entry.setId("createUnitHasC11CreationTool"); //$NON-NLS-1$
+	private ToolEntry createUnit1CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Unit1CreationTool_title,
+				Messages.Unit1CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.Terminal_2001));
+		entry.setId("createUnit1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.Terminal_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createUnitHasC22CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.UnitHasC22CreationTool_title,
-				Messages.UnitHasC22CreationTool_desc, null, null) {
-		};
-		entry.setId("createUnitHasC22CreationTool"); //$NON-NLS-1$
+	private ToolEntry createTrack2CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Track2CreationTool_title,
+				Messages.Track2CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.Crossing_2006));
+		entry.setId("createTrack2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.Crossing_2006));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createLinear3CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Linear3CreationTool_title,
-				Messages.Linear3CreationTool_desc, null, null) {
-		};
-		entry.setId("createLinear3CreationTool"); //$NON-NLS-1$
+	private ToolEntry createPoint3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Point3CreationTool_title,
+				Messages.Point3CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.Connector_2004));
+		entry.setId("createPoint3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.Connector_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPoint4CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Point4CreationTool_title,
-				Messages.Point4CreationTool_desc, null, null) {
-		};
-		entry.setId("createPoint4CreationTool"); //$NON-NLS-1$
+	private ToolEntry createConnector4CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Connector4CreationTool_title,
+				Messages.Connector4CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.Signal_2003));
+		entry.setId("createConnector4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.Signal_2003));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPointHasC35CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.PointHasC35CreationTool_title,
-				Messages.PointHasC35CreationTool_desc, null, null) {
-		};
-		entry.setId("createPointHasC35CreationTool"); //$NON-NLS-1$
+	private ToolEntry createConnectorHasUnit15CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.ConnectorHasUnit15CreationTool_title,
+				Messages.ConnectorHasUnit15CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.Point_2005));
+		entry.setId("createConnectorHasUnit15CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.Point_2005));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createConnector6CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Connector6CreationTool_title,
-				Messages.Connector6CreationTool_desc, null, null) {
-		};
-		entry.setId("createConnector6CreationTool"); //$NON-NLS-1$
+	private ToolEntry createConnectorHasPoint6CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.ConnectorHasPoint6CreationTool_title,
+				Messages.ConnectorHasPoint6CreationTool_desc,
+				Collections
+						.singletonList(BjoernerCompleteElementTypes.ControlTable_2002));
+		entry.setId("createConnectorHasPoint6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.ControlTable_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSignal7CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.Signal7CreationTool_title,
-				Messages.Signal7CreationTool_desc, null, null) {
-		};
-		entry.setId("createSignal7CreationTool"); //$NON-NLS-1$
+	private ToolEntry createConnectorHasUnit27CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
+		types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.ConnectorHasUnit27CreationTool_title,
+				Messages.ConnectorHasUnit27CreationTool_desc, types);
+		entry.setId("createConnectorHasUnit27CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSignalPlacedOnLinear8CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				Messages.SignalPlacedOnLinear8CreationTool_title,
-				Messages.SignalPlacedOnLinear8CreationTool_desc, null, null) {
-		};
-		entry.setId("createSignalPlacedOnLinear8CreationTool"); //$NON-NLS-1$
+	private ToolEntry createSignal8CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.ControlTableHasRoutes_4013);
+		types.add(BjoernerCompleteElementTypes.TrackHasTrackDirection_4003);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.Signal8CreationTool_title,
+				Messages.Signal8CreationTool_desc, types);
+		entry.setId("createSignal8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.ControlTableHasRoutes_4013));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSignalPlacedAtConnector9CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				Messages.SignalPlacedAtConnector9CreationTool_title,
-				Messages.SignalPlacedAtConnector9CreationTool_desc, null, null) {
-		};
-		entry.setId("createSignalPlacedAtConnector9CreationTool"); //$NON-NLS-1$
+	private ToolEntry createControlTable9CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
+		types.add(BjoernerCompleteElementTypes.PointHasC3_Point_4001);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.ControlTable9CreationTool_title,
+				Messages.ControlTable9CreationTool_desc, types);
+		entry.setId("createControlTable9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.SignalPlacedAt_4007));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createControlTable10CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				Messages.ControlTable10CreationTool_title,
-				Messages.ControlTable10CreationTool_desc, null, null) {
-		};
-		entry.setId("createControlTable10CreationTool"); //$NON-NLS-1$
+	private ToolEntry createControlTableHasRoutes10CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
+		types.add(BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.ControlTableHasRoutes10CreationTool_title,
+				Messages.ControlTableHasRoutes10CreationTool_desc, types);
+		entry.setId("createControlTableHasRoutes10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createCrossing11CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009);
+		types.add(BjoernerCompleteElementTypes.ConnectorHasPoint_4008);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.Crossing11CreationTool_title,
+				Messages.Crossing11CreationTool_desc, types);
+		entry.setId("createCrossing11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTerminal12CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(BjoernerCompleteElementTypes.CrossingHasCrossingDirection_4002);
+		types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.Terminal12CreationTool_title,
+				Messages.Terminal12CreationTool_desc, types);
+		entry.setId("createTerminal12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(BjoernerCompleteElementTypes
+				.getImageDescriptor(BjoernerCompleteElementTypes.CrossingHasCrossingDirection_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class NodeToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> elementTypes;
+
+		/**
+		 * @generated
+		 */
+		private NodeToolEntry(String title, String description,
+				List<IElementType> elementTypes) {
+			super(title, description, null, null);
+			this.elementTypes = elementTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class LinkToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> relationshipTypes;
+
+		/**
+		 * @generated
+		 */
+		private LinkToolEntry(String title, String description,
+				List<IElementType> relationshipTypes) {
+			super(title, description, null, null);
+			this.relationshipTypes = relationshipTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
 	}
 
 }

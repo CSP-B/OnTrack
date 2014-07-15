@@ -1,194 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="bjoernercomplete">
-  <figures
-      name="Default">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="UnitHasC1TargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="UnitHasC2TargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="PointHasC3TargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="SignalPlacedOnLinearTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="SignalPlacedAtConnectorTargetDecoration"/>
-    <descriptors
-        name="UnitHasC1Figure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="UnitHasC1Figure"
-          lineWidth="3"
-          lineKind="LINE_DASH">
-        <maximumSize
-            dx="1"
-            dy="3"/>
-        <size
-            x="2"
-            y="3"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="bjoernercomplete">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ConnectorHasUnit1TargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ConnectorHasPointTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ConnectorHasUnit2TargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ControlTableHasRoutesTargetDecoration"/>
+    <descriptors name="UnitFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="UnitFigure">
+        <children xsi:type="gmfgraph:Label" name="UnitNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="UnitLengthFigure" text="&lt;...>"/>
       </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors
-        name="UnitHasC2Figure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="UnitHasC2Figure"
-          lineWidth="3"
-          lineKind="LINE_DASH"/>
+    <descriptors name="TrackFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TrackFigure">
+        <children xsi:type="gmfgraph:Label" name="TrackNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="TrackLengthFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors
-        name="PointHasC3Figure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PointHasC3Figure"
-          lineWidth="3"
-          lineKind="LINE_DASH"/>
+    <descriptors name="PointFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="PointFigure">
+        <children xsi:type="gmfgraph:Label" name="PointNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="PointLengthFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="PointPointNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
     </descriptors>
-    <descriptors
-        name="SignalPlacedOnLinearFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="SignalPlacedOnLinearFigure"
-          targetDecoration="//@figures.0/@figures.3"/>
+    <descriptors name="ConnectorFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ConnectorFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="ConnectorIDFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors
-        name="SignalPlacedAtConnectorFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="SignalPlacedAtConnectorFigure"
-          targetDecoration="//@figures.0/@figures.4"/>
+    <descriptors name="ConnectorHasUnit1Figure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorHasUnit1Figure" targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
-    <descriptors
-        name="ControlTableFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ControlTableFigure"/>
+    <descriptors name="ConnectorHasPointFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorHasPointFigure" targetDecoration="//@figures.0/@figures.1"/>
+    </descriptors>
+    <descriptors name="ConnectorHasUnit2Figure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConnectorHasUnit2Figure" targetDecoration="//@figures.0/@figures.2"/>
+    </descriptors>
+    <descriptors name="SignalFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SignalFigure">
+        <children xsi:type="gmfgraph:Label" name="SignalNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ControlTableFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ControlTableFigure"/>
+    </descriptors>
+    <descriptors name="ControlTableHasRoutesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ControlTableHasRoutesFigure" targetDecoration="//@figures.0/@figures.3"/>
+    </descriptors>
+    <descriptors name="CrossingFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CrossingFigure">
+        <children xsi:type="gmfgraph:Label" name="CrossingNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="CrossingLengthFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="TerminalFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TerminalFigure">
+        <children xsi:type="gmfgraph:Label" name="TerminalNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="TerminalLengthFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
-  <figures
-      name="SVGFigures"
-      implementationBundle="org.eclipse.gmf.runtime.lite.svg">
-    <descriptors
-        name="SigSVG">
-      <actualFigure
-          xsi:type="gmfgraph:SVGFigure"
-          name="SignalSVG"
-          documentURI="platform:/plugin/Bjoerner_Complete.diagram/images/signal.svg"/>
-    </descriptors>
-    <descriptors
-        name="ConSVG">
-      <actualFigure
-          xsi:type="gmfgraph:SVGFigure"
-          name="ConSVG"
-          documentURI="platform:/plugin/Bjoerner_Complete.diagram/images/con.svg">
-        <preferredSize
-            dx="5"
-            dy="15"/>
-        <size
-            x="5"
-            y="15"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="LinearSVG">
-      <actualFigure
-          xsi:type="gmfgraph:SVGFigure"
-          name="LinearSVG"
-          documentURI="platform:/plugin/Bjoerner_Complete.diagram/images/linear.svg"/>
-    </descriptors>
-    <descriptors
-        name="PointSVG">
-      <actualFigure
-          xsi:type="gmfgraph:SVGFigure"
-          name="PointSVG"
-          documentURI="platform:/plugin/Bjoerner_Complete.diagram/images/point.svg"
-          noCanvasWidth="true"
-          noCanvasHeight="true"/>
-    </descriptors>
-    <descriptors
-        name="figtest">
-      <actualFigure
-          xsi:type="gmfgraph:ScalablePolygon"
-          lineWidth="3">
-        <foregroundColor
-            xsi:type="gmfgraph:RGBColor"/>
-        <size
-            x="30"
-            y="20"/>
-        <template
-            y="10"/>
-        <template
-            x="40"
-            y="10"/>
-        <template
-            x="15"
-            y="10"/>
-        <template
-            x="40"/>
-        <template
-            x="15"
-            y="10"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors
-        name="PathFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PathFigure"/>
-    </descriptors>
-  </figures>
-  <nodes
-      name="Linear"
-      figure="LinearSVG"/>
-  <nodes
-      name="Point"
-      figure="PointSVG"/>
-  <nodes
-      name="Connector"
-      figure="ConSVG"/>
-  <nodes
-      name="Signal"
-      figure="SigSVG"/>
-  <nodes
-      name="ControlTable"
-      figure="ControlTableFigure"/>
-  <connections
-      name="UnitHasC1"
-      figure="UnitHasC1Figure"/>
-  <connections
-      name="UnitHasC2"
-      figure="UnitHasC2Figure"/>
-  <connections
-      name="PointHasC3"
-      figure="PointHasC3Figure"/>
-  <connections
-      name="SignalPlacedOnLinear"
-      figure="SignalPlacedOnLinearFigure"/>
-  <connections
-      name="SignalPlacedAtConnector"
-      figure="SignalPlacedAtConnectorFigure"/>
-  <connections
-      name="Path"
-      figure="PathFigure"/>
-  <labels
-      name="LinearName"
-      figure="LinearSVG"/>
-  <labels
-      name="PointName"
-      figure="PointSVG"/>
-  <labels
-      name="PointPointName"
-      figure="PointSVG"/>
-  <labels
-      name="SignalName"
-      figure="SigSVG"/>
+  <nodes name="Connector" figure="ConnectorFigure"/>
+  <nodes name="ControlTable" figure="ControlTableFigure"/>
+  <connections name="Unit" figure="UnitFigure"/>
+  <connections name="Track" figure="TrackFigure"/>
+  <connections name="Point" figure="PointFigure"/>
+  <connections name="ConnectorHasUnit1" figure="ConnectorHasUnit1Figure"/>
+  <connections name="ConnectorHasPoint" figure="ConnectorHasPointFigure"/>
+  <connections name="ConnectorHasUnit2" figure="ConnectorHasUnit2Figure"/>
+  <connections name="Signal" figure="SignalFigure"/>
+  <connections name="ControlTableHasRoutes" figure="ControlTableHasRoutesFigure"/>
+  <connections name="Crossing" figure="CrossingFigure"/>
+  <connections name="Terminal" figure="TerminalFigure"/>
+  <labels name="UnitName" figure="UnitFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="UnitLength" figure="UnitFigure" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="TrackName" figure="TrackFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="TrackLength" figure="TrackFigure" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="PointName" figure="PointFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="PointLength" figure="PointFigure" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels name="PointPointName" figure="PointFigure" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <labels name="ConnectorID" figure="ConnectorFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="SignalName" figure="SignalFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="CrossingName" figure="CrossingFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="CrossingLength" figure="CrossingFigure" accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+  <labels name="TerminalName" figure="TerminalFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="TerminalLength" figure="TerminalFigure" accessor="//@figures.0/@descriptors.11/@accessors.1"/>
 </gmfgraph:Canvas>
