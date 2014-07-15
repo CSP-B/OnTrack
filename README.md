@@ -33,7 +33,7 @@ Clone the repository using the link on the right. E.g:
 git clone git@github.com:lordqwerty/OnTrack.git
 ```
 
-Change to the directory and run `maven clean install`. 
+Change to the directory and run `mvn clean install`. 
 
 Once complete open Eclipse and import the full OnTrack editor into your eclipse workspace, Select:
 
@@ -62,7 +62,3 @@ See [Using OnTrack](https://github.com/lordqwerty/OnTrack/blob/master/Using%20On
 * [CASL](http://www.informatik.uni-bremen.de/cofi/wiki/index.php/CoFI)
 * [CSP Book](http://www.usingcsp.com/cspbook.pdf)
 * [Epsilon](http://www.eclipse.org/epsilon/)
-
-# To do
-
-* Update GMF files once all the EMFs have been updated. 
