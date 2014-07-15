@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: bjoernercomplete.provider.BjoernerCompleteEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: bjoernercomplete.provider
 Require-Bundle: org.eclipse.core.runtime,
  Bjoerner_Complete;visibility:=reexport,
