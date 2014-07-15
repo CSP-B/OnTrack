@@ -287,6 +287,15 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTrack_HasTrackDirection() {
+		return (EReference)trackEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPoint() {
 		return pointEClass;
 	}
@@ -298,6 +307,24 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 */
 	public EAttribute getPoint_PointName() {
 		return (EAttribute)pointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPoint_HasC3_Point() {
+		return (EReference)pointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPoint_HasPointDirection() {
+		return (EReference)pointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -611,6 +638,15 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCrossing_HasCrossingDirection() {
+		return (EReference)crossingEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTerminal() {
 		return terminalEClass;
 	}
@@ -682,9 +718,12 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		trackEClass = createEClass(TRACK);
 		createEReference(trackEClass, TRACK__HAS_SIGNALS);
 		createEReference(trackEClass, TRACK__HAS_SIGNAL);
+		createEReference(trackEClass, TRACK__HAS_TRACK_DIRECTION);
 
 		pointEClass = createEClass(POINT);
 		createEAttribute(pointEClass, POINT__POINT_NAME);
+		createEReference(pointEClass, POINT__HAS_C3_POINT);
+		createEReference(pointEClass, POINT__HAS_POINT_DIRECTION);
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEReference(connectorEClass, CONNECTOR__HAS_UNIT1);
@@ -727,6 +766,7 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		crossingEClass = createEClass(CROSSING);
 		createEReference(crossingEClass, CROSSING__HAS_C3_CROSSING);
 		createEReference(crossingEClass, CROSSING__HAS_C4_CROSSING);
+		createEReference(crossingEClass, CROSSING__HAS_CROSSING_DIRECTION);
 
 		terminalEClass = createEClass(TERMINAL);
 		createEReference(terminalEClass, TERMINAL__HAS_TERMINAL_SIGNAL);
@@ -768,7 +808,7 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		crossingEClass.getESuperTypes().add(this.getUnit());
 		terminalEClass.getESuperTypes().add(this.getTrack());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNode_HasUnits(), this.getUnit(), null, "hasUnits", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -781,9 +821,12 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		initEClass(trackEClass, Track.class, "Track", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrack_HasSignals(), this.getSignal(), this.getSignal_PlacedOnTrack(), "hasSignals", null, 0, 2, Track.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrack_HasSignal(), this.getSignal(), null, "hasSignal", null, 0, 2, Track.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrack_HasTrackDirection(), this.getDirection(), null, "hasTrackDirection", null, 1, 2, Track.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPoint_PointName(), ecorePackage.getEString(), "pointName", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPoint_HasC3_Point(), this.getConnector(), null, "hasC3_Point", null, 1, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPoint_HasPointDirection(), this.getDirection(), null, "hasPointDirection", null, 2, 4, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_HasUnit1(), this.getUnit(), this.getUnit_HasC1(), "hasUnit1", null, 0, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -824,8 +867,9 @@ public class BjoernercompletePackageImpl extends EPackageImpl implements Bjoerne
 		initEReference(getRailDiagram_HasControlTable(), this.getControlTable(), null, "hasControlTable", null, 0, 1, RailDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(crossingEClass, Crossing.class, "Crossing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCrossing_HasC3_Crossing(), this.getUnit(), null, "hasC3_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCrossing_HasC4_Crossing(), this.getUnit(), null, "hasC4_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_HasC3_Crossing(), this.getConnector(), null, "hasC3_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_HasC4_Crossing(), this.getConnector(), null, "hasC4_Crossing", null, 1, 1, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCrossing_HasCrossingDirection(), this.getDirection(), null, "hasCrossingDirection", null, 2, 4, Crossing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(terminalEClass, Terminal.class, "Terminal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTerminal_HasTerminalSignal(), this.getSignal(), null, "hasTerminalSignal", null, 1, 1, Terminal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -57,6 +57,7 @@ public class CrossingItemProvider
 
 			addHasC3_CrossingPropertyDescriptor(object);
 			addHasC4_CrossingPropertyDescriptor(object);
+			addHasCrossingDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +98,28 @@ public class CrossingItemProvider
 				 getString("_UI_Crossing_hasC4_Crossing_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasC4_Crossing_feature", "_UI_Crossing_type"),
 				 BjoernercompletePackage.Literals.CROSSING__HAS_C4_CROSSING,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Crossing Direction feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCrossingDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Crossing_hasCrossingDirection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Crossing_hasCrossingDirection_feature", "_UI_Crossing_type"),
+				 BjoernercompletePackage.Literals.CROSSING__HAS_CROSSING_DIRECTION,
 				 true,
 				 false,
 				 true,

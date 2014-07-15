@@ -58,6 +58,8 @@ public class PointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPointNamePropertyDescriptor(object);
+			addHasC3_PointPropertyDescriptor(object);
+			addHasPointDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +82,50 @@ public class PointItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has C3 Point feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasC3_PointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Point_hasC3_Point_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Point_hasC3_Point_feature", "_UI_Point_type"),
+				 BjoernercompletePackage.Literals.POINT__HAS_C3_POINT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Point Direction feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasPointDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Point_hasPointDirection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Point_hasPointDirection_feature", "_UI_Point_type"),
+				 BjoernercompletePackage.Literals.POINT__HAS_POINT_DIRECTION,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

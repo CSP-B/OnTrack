@@ -139,6 +139,12 @@
             y="10"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="PathFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="PathFigure"/>
+    </descriptors>
   </figures>
   <nodes
       name="Linear"
@@ -170,12 +176,19 @@
   <connections
       name="SignalPlacedAtConnector"
       figure="SignalPlacedAtConnectorFigure"/>
+  <connections
+      name="Path"
+      figure="PathFigure"/>
   <labels
-      name="LinearName"/>
+      name="LinearName"
+      figure="LinearSVG"/>
   <labels
-      name="PointName"/>
+      name="PointName"
+      figure="PointSVG"/>
   <labels
-      name="PointPointName"/>
+      name="PointPointName"
+      figure="PointSVG"/>
   <labels
-      name="SignalName"/>
+      name="SignalName"
+      figure="SigSVG"/>
 </gmfgraph:Canvas>

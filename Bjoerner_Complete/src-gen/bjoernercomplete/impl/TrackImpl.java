@@ -3,6 +3,7 @@
 package bjoernercomplete.impl;
 
 import bjoernercomplete.BjoernercompletePackage;
+import bjoernercomplete.Direction;
 import bjoernercomplete.Signal;
 import bjoernercomplete.Track;
 
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link bjoernercomplete.impl.TrackImpl#getHasSignals <em>Has Signals</em>}</li>
  *   <li>{@link bjoernercomplete.impl.TrackImpl#getHasSignal <em>Has Signal</em>}</li>
+ *   <li>{@link bjoernercomplete.impl.TrackImpl#getHasTrackDirection <em>Has Track Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +55,16 @@ public class TrackImpl extends UnitImpl implements Track {
 	 * @ordered
 	 */
 	protected EList<Signal> hasSignal;
+
+	/**
+	 * The cached value of the '{@link #getHasTrackDirection() <em>Has Track Direction</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHasTrackDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Direction> hasTrackDirection;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +114,18 @@ public class TrackImpl extends UnitImpl implements Track {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Direction> getHasTrackDirection() {
+		if (hasTrackDirection == null) {
+			hasTrackDirection = new EObjectResolvingEList<Direction>(Direction.class, this, BjoernercompletePackage.TRACK__HAS_TRACK_DIRECTION);
+		}
+		return hasTrackDirection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -138,6 +162,8 @@ public class TrackImpl extends UnitImpl implements Track {
 				return getHasSignals();
 			case BjoernercompletePackage.TRACK__HAS_SIGNAL:
 				return getHasSignal();
+			case BjoernercompletePackage.TRACK__HAS_TRACK_DIRECTION:
+				return getHasTrackDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,6 +185,10 @@ public class TrackImpl extends UnitImpl implements Track {
 				getHasSignal().clear();
 				getHasSignal().addAll((Collection<? extends Signal>)newValue);
 				return;
+			case BjoernercompletePackage.TRACK__HAS_TRACK_DIRECTION:
+				getHasTrackDirection().clear();
+				getHasTrackDirection().addAll((Collection<? extends Direction>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -177,6 +207,9 @@ public class TrackImpl extends UnitImpl implements Track {
 			case BjoernercompletePackage.TRACK__HAS_SIGNAL:
 				getHasSignal().clear();
 				return;
+			case BjoernercompletePackage.TRACK__HAS_TRACK_DIRECTION:
+				getHasTrackDirection().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,6 +226,8 @@ public class TrackImpl extends UnitImpl implements Track {
 				return hasSignals != null && !hasSignals.isEmpty();
 			case BjoernercompletePackage.TRACK__HAS_SIGNAL:
 				return hasSignal != null && !hasSignal.isEmpty();
+			case BjoernercompletePackage.TRACK__HAS_TRACK_DIRECTION:
+				return hasTrackDirection != null && !hasTrackDirection.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

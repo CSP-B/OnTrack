@@ -5,15 +5,10 @@ package bjoernercomplete.impl;
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.Connector;
 import bjoernercomplete.Direction;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -29,7 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class DirectionImpl extends EObjectImpl implements Direction {
+public class DirectionImpl extends MinimalEObjectImpl.Container implements Direction {
 	/**
 	 * The cached value of the '{@link #getHasConnectors() <em>Has Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->

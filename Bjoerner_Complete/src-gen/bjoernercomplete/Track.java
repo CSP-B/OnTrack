@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link bjoernercomplete.Track#getHasSignals <em>Has Signals</em>}</li>
  *   <li>{@link bjoernercomplete.Track#getHasSignal <em>Has Signal</em>}</li>
+ *   <li>{@link bjoernercomplete.Track#getHasTrackDirection <em>Has Track Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,5 +56,21 @@ public interface Track extends Unit {
 	 * @generated
 	 */
 	EList<Signal> getHasSignal();
+
+	/**
+	 * Returns the value of the '<em><b>Has Track Direction</b></em>' reference list.
+	 * The list contents are of type {@link bjoernercomplete.Direction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Has Track Direction</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Has Track Direction</em>' reference list.
+	 * @see bjoernercomplete.BjoernercompletePackage#getTrack_HasTrackDirection()
+	 * @model required="true" upper="2"
+	 * @generated
+	 */
+	EList<Direction> getHasTrackDirection();
 
 } // Track

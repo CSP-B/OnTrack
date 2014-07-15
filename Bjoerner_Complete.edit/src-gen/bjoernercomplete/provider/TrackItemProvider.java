@@ -57,6 +57,7 @@ public class TrackItemProvider
 
 			addHasSignalsPropertyDescriptor(object);
 			addHasSignalPropertyDescriptor(object);
+			addHasTrackDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +98,28 @@ public class TrackItemProvider
 				 getString("_UI_Track_hasSignal_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Track_hasSignal_feature", "_UI_Track_type"),
 				 BjoernercompletePackage.Literals.TRACK__HAS_SIGNAL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Has Track Direction feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasTrackDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Track_hasTrackDirection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Track_hasTrackDirection_feature", "_UI_Track_type"),
+				 BjoernercompletePackage.Literals.TRACK__HAS_TRACK_DIRECTION,
 				 true,
 				 false,
 				 true,

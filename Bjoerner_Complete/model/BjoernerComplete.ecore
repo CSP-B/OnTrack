@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bjoernercomplete" nsURI="http://bjoernercomplete/1.0" nsPrefix="bjoernercomplete">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bjoernercomplete" nsURI="http://bjoernercomplete/1.0.0.qualifier"
+    nsPrefix="bjoernercomplete">
   <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
         eType="#//Unit" containment="true"/>
@@ -90,9 +91,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Crossing" eSuperTypes="#//Unit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3_Crossing" lowerBound="1"
-        eType="#//Unit"/>
+        eType="#//Connector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasC4_Crossing" lowerBound="1"
-        eType="#//Unit"/>
+        eType="#//Connector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasCrossingDirection" lowerBound="2"
         upperBound="4" eType="#//Direction"/>
   </eClassifiers>

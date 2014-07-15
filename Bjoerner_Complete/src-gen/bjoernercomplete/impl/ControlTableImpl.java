@@ -5,15 +5,10 @@ package bjoernercomplete.impl;
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.ControlTable;
 import bjoernercomplete.Route;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -29,7 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class ControlTableImpl extends EObjectImpl implements ControlTable {
+public class ControlTableImpl extends MinimalEObjectImpl.Container implements ControlTable {
 	/**
 	 * The cached value of the '{@link #getHasRoutes() <em>Has Routes</em>}' reference list.
 	 * <!-- begin-user-doc -->

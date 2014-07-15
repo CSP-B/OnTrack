@@ -37,7 +37,7 @@ public interface BjoernercompletePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://bjoernercomplete/1.0";
+	String eNS_URI = "http://bjoernercomplete/1.0.0.qualifier";
 
 	/**
 	 * The package namespace name.
@@ -82,6 +82,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int NODE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.UnitImpl <em>Unit</em>}' class.
@@ -137,6 +146,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.TrackImpl <em>Track</em>}' class.
@@ -203,13 +221,31 @@ public interface BjoernercompletePackage extends EPackage {
 	int TRACK__HAS_SIGNAL = UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Has Track Direction</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACK__HAS_TRACK_DIRECTION = UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Track</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACK_FEATURE_COUNT = UNIT_FEATURE_COUNT + 2;
+	int TRACK_FEATURE_COUNT = UNIT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Track</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACK_OPERATION_COUNT = UNIT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.PointImpl <em>Point</em>}' class.
@@ -267,13 +303,40 @@ public interface BjoernercompletePackage extends EPackage {
 	int POINT__POINT_NAME = UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Has C3 Point</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT__HAS_C3_POINT = UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Has Point Direction</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT__HAS_POINT_DIRECTION = UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POINT_FEATURE_COUNT = UNIT_FEATURE_COUNT + 1;
+	int POINT_FEATURE_COUNT = UNIT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_OPERATION_COUNT = UNIT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -331,6 +394,15 @@ public interface BjoernercompletePackage extends EPackage {
 	int CONNECTOR_FEATURE_COUNT = 4;
 
 	/**
+	 * The number of operations of the '<em>Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.PathImpl <em>Path</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -368,6 +440,15 @@ public interface BjoernercompletePackage extends EPackage {
 	int PATH_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.UnitPathPairImpl <em>Unit Path Pair</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,6 +484,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_PATH_PAIR_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Unit Path Pair</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_PATH_PAIR_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.SignalImpl <em>Signal</em>}' class.
@@ -478,6 +568,15 @@ public interface BjoernercompletePackage extends EPackage {
 	int SIGNAL_FEATURE_COUNT = 6;
 
 	/**
+	 * The number of operations of the '<em>Signal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.RouteImpl <em>Route</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,6 +641,15 @@ public interface BjoernercompletePackage extends EPackage {
 	int ROUTE_FEATURE_COUNT = 5;
 
 	/**
+	 * The number of operations of the '<em>Route</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.ControlTableImpl <em>Control Table</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -568,6 +676,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_TABLE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Control Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_TABLE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.RailDiagramImpl <em>Rail Diagram</em>}' class.
@@ -623,6 +740,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int RAIL_DIAGRAM_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Rail Diagram</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAIL_DIAGRAM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.CrossingImpl <em>Crossing</em>}' class.
@@ -689,13 +815,31 @@ public interface BjoernercompletePackage extends EPackage {
 	int CROSSING__HAS_C4_CROSSING = UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Has Crossing Direction</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING__HAS_CROSSING_DIRECTION = UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Crossing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CROSSING_FEATURE_COUNT = UNIT_FEATURE_COUNT + 2;
+	int CROSSING_FEATURE_COUNT = UNIT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Crossing</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CROSSING_OPERATION_COUNT = UNIT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.TerminalImpl <em>Terminal</em>}' class.
@@ -762,6 +906,15 @@ public interface BjoernercompletePackage extends EPackage {
 	int TERMINAL__HAS_SIGNAL = TRACK__HAS_SIGNAL;
 
 	/**
+	 * The feature id for the '<em><b>Has Track Direction</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL__HAS_TRACK_DIRECTION = TRACK__HAS_TRACK_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Has Terminal Signal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,6 +931,15 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int TERMINAL_FEATURE_COUNT = TRACK_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Terminal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERMINAL_OPERATION_COUNT = TRACK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link bjoernercomplete.impl.DirectionImpl <em>Direction</em>}' class.
@@ -806,6 +968,16 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @ordered
 	 */
 	int DIRECTION_FEATURE_COUNT = 1;
+
+
+	/**
+	 * The number of operations of the '<em>Direction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTION_OPERATION_COUNT = 0;
 
 
 	/**
@@ -916,6 +1088,17 @@ public interface BjoernercompletePackage extends EPackage {
 	EReference getTrack_HasSignal();
 
 	/**
+	 * Returns the meta object for the reference list '{@link bjoernercomplete.Track#getHasTrackDirection <em>Has Track Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Has Track Direction</em>'.
+	 * @see bjoernercomplete.Track#getHasTrackDirection()
+	 * @see #getTrack()
+	 * @generated
+	 */
+	EReference getTrack_HasTrackDirection();
+
+	/**
 	 * Returns the meta object for class '{@link bjoernercomplete.Point <em>Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -935,6 +1118,28 @@ public interface BjoernercompletePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPoint_PointName();
+
+	/**
+	 * Returns the meta object for the reference '{@link bjoernercomplete.Point#getHasC3_Point <em>Has C3 Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Has C3 Point</em>'.
+	 * @see bjoernercomplete.Point#getHasC3_Point()
+	 * @see #getPoint()
+	 * @generated
+	 */
+	EReference getPoint_HasC3_Point();
+
+	/**
+	 * Returns the meta object for the reference list '{@link bjoernercomplete.Point#getHasPointDirection <em>Has Point Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Has Point Direction</em>'.
+	 * @see bjoernercomplete.Point#getHasPointDirection()
+	 * @see #getPoint()
+	 * @generated
+	 */
+	EReference getPoint_HasPointDirection();
 
 	/**
 	 * Returns the meta object for class '{@link bjoernercomplete.Connector <em>Connector</em>}'.
@@ -1303,6 +1508,17 @@ public interface BjoernercompletePackage extends EPackage {
 	EReference getCrossing_HasC4_Crossing();
 
 	/**
+	 * Returns the meta object for the reference list '{@link bjoernercomplete.Crossing#getHasCrossingDirection <em>Has Crossing Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Has Crossing Direction</em>'.
+	 * @see bjoernercomplete.Crossing#getHasCrossingDirection()
+	 * @see #getCrossing()
+	 * @generated
+	 */
+	EReference getCrossing_HasCrossingDirection();
+
+	/**
 	 * Returns the meta object for class '{@link bjoernercomplete.Terminal <em>Terminal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1453,6 +1669,14 @@ public interface BjoernercompletePackage extends EPackage {
 		EReference TRACK__HAS_SIGNAL = eINSTANCE.getTrack_HasSignal();
 
 		/**
+		 * The meta object literal for the '<em><b>Has Track Direction</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACK__HAS_TRACK_DIRECTION = eINSTANCE.getTrack_HasTrackDirection();
+
+		/**
 		 * The meta object literal for the '{@link bjoernercomplete.impl.PointImpl <em>Point</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1469,6 +1693,22 @@ public interface BjoernercompletePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute POINT__POINT_NAME = eINSTANCE.getPoint_PointName();
+
+		/**
+		 * The meta object literal for the '<em><b>Has C3 Point</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POINT__HAS_C3_POINT = eINSTANCE.getPoint_HasC3_Point();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Point Direction</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POINT__HAS_POINT_DIRECTION = eINSTANCE.getPoint_HasPointDirection();
 
 		/**
 		 * The meta object literal for the '{@link bjoernercomplete.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -1757,6 +1997,14 @@ public interface BjoernercompletePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CROSSING__HAS_C4_CROSSING = eINSTANCE.getCrossing_HasC4_Crossing();
+
+		/**
+		 * The meta object literal for the '<em><b>Has Crossing Direction</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CROSSING__HAS_CROSSING_DIRECTION = eINSTANCE.getCrossing_HasCrossingDirection();
 
 		/**
 		 * The meta object literal for the '{@link bjoernercomplete.impl.TerminalImpl <em>Terminal</em>}' class.

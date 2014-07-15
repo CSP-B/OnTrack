@@ -5,15 +5,12 @@ package bjoernercomplete.impl;
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.Connector;
 import bjoernercomplete.Unit;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +28,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class UnitImpl extends EObjectImpl implements Unit {
+public class UnitImpl extends MinimalEObjectImpl.Container implements Unit {
 	/**
 	 * The cached value of the '{@link #getHasC1() <em>Has C1</em>}' reference.
 	 * <!-- begin-user-doc -->

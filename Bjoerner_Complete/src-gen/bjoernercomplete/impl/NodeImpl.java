@@ -5,18 +5,12 @@ package bjoernercomplete.impl;
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.Node;
 import bjoernercomplete.Unit;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class NodeImpl extends EObjectImpl implements Node {
+public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	/**
 	 * The cached value of the '{@link #getHasUnits() <em>Has Units</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

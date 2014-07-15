@@ -15,12 +15,12 @@
 	</properties>
 
 	<modules>
+		<module>Bjoerner_Generator</module>
 		<module>Bjoerner_Complete</module>
-		<module>Bjoerner_Complete.diagram</module>
 		<module>Bjoerner_Complete.edit</module>
 		<module>Bjoerner_Complete.editor</module>
+		<module>Bjoerner_Complete.diagram</module>
 		<module>Bjoerner_Complete.tests</module>
-		<module>Bjoerner_Generator</module>
 	</modules>
 
 	<repositories>

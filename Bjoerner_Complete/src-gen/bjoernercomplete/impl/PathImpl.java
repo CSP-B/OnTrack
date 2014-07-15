@@ -5,14 +5,11 @@ package bjoernercomplete.impl;
 import bjoernercomplete.BjoernercompletePackage;
 import bjoernercomplete.Connector;
 import bjoernercomplete.Path;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class PathImpl extends EObjectImpl implements Path {
+public class PathImpl extends MinimalEObjectImpl.Container implements Path {
 	/**
 	 * The cached value of the '{@link #getHasPC2() <em>Has PC2</em>}' reference.
 	 * <!-- begin-user-doc -->

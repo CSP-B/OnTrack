@@ -217,8 +217,7 @@
       <viewProvider class="bjoernercomplete.diagram.providers.BjoernerCompleteViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="BjoernerComplete"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
       </viewProvider>
    </extension>
 
@@ -230,13 +229,13 @@
             <method name="getType()" value="BjoernerComplete"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004,4005"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -249,13 +248,8 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="bjoernercomplete.diagram.providers.BjoernerCompleteModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="bjoernercomplete.diagram.edit.parts.RailDiagramEditPart" id="RailDiagram_1000"/>
-         <object class="bjoernercomplete.diagram.edit.parts.ConnectorEditPart" id="Connector_2001"/>
-         <object class="bjoernercomplete.diagram.edit.parts.LinearEditPart" id="Linear_2002"/>
-         <object class="bjoernercomplete.diagram.edit.parts.SignalEditPart" id="Signal_2003"/>
-         <object class="bjoernercomplete.diagram.edit.parts.PointEditPart" id="Point_2004"/>
-         <object class="bjoernercomplete.diagram.edit.parts.ControlTableEditPart" id="ControlTable_2005"/>
-         <context elements="RailDiagram_1000,Connector_2001,Linear_2002,Signal_2003,Point_2004,ControlTable_2005,"/>
+         <object class="bjoernercomplete.diagram.edit.parts.ConnectorEditPart" id="Connector_1000"/>
+         <context elements="Connector_1000,,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -266,119 +260,18 @@
       </IconProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <?gmfgen generated="true"?>
-      <ParserProvider class="bjoernercomplete.diagram.providers.BjoernerCompleteParserProvider">
-         <Priority name="Lowest"/>
-      </ParserProvider>
-   </extension>
-
+   
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <metamodelType
-               id="Bjoerner_Complete.diagram.RailDiagram_1000"
-               name="%metatype.name.RailDiagram_1000"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RailDiagram"
-               edithelper="bjoernercomplete.diagram.edit.helpers.RailDiagramEditHelper">
-            <param name="semanticHint" value="1000"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.Connector_2001"
-               name="%metatype.name.Connector_2001"
+               id="Bjoerner_Complete.diagram.Connector_1000"
+               name="%metatype.name.Connector_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Connector"
                edithelper="bjoernercomplete.diagram.edit.helpers.ConnectorEditHelper">
-            <param name="semanticHint" value="2001"/>
+            <param name="semanticHint" value="1000"/>
          </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.Linear_2002"
-               name="%metatype.name.Linear_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Linear"
-               edithelper="bjoernercomplete.diagram.edit.helpers.LinearEditHelper">
-            <param name="semanticHint" value="2002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.Signal_2003"
-               name="%metatype.name.Signal_2003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Signal"
-               edithelper="bjoernercomplete.diagram.edit.helpers.SignalEditHelper">
-            <param name="semanticHint" value="2003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.Point_2004"
-               name="%metatype.name.Point_2004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Point"
-               edithelper="bjoernercomplete.diagram.edit.helpers.PointEditHelper">
-            <param name="semanticHint" value="2004"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.ControlTable_2005"
-               name="%metatype.name.ControlTable_2005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ControlTable"
-               edithelper="bjoernercomplete.diagram.edit.helpers.ControlTableEditHelper">
-            <param name="semanticHint" value="2005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <specializationType
-               id="Bjoerner_Complete.diagram.SignalPlacedOnLinear_4001"
-               name="%metatype.name.SignalPlacedOnLinear_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4001"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <specializationType
-               id="Bjoerner_Complete.diagram.UnitHasC1_4002"
-               name="%metatype.name.UnitHasC1_4002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4002"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <specializationType
-               id="Bjoerner_Complete.diagram.UnitHasC2_4003"
-               name="%metatype.name.UnitHasC2_4003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4003"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <specializationType
-               id="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4004"
-               name="%metatype.name.SignalPlacedAtConnector_4004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4004"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0">
-         <specializationType
-               id="Bjoerner_Complete.diagram.PointHasC3_4005"
-               name="%metatype.name.PointHasC3_4005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4005"/>
-         </specializationType>
       </metamodel>
    </extension>
 
@@ -392,17 +285,7 @@
          </enablement>
       </clientContext> 
       <binding context="Bjoerner_Complete.diagram.TypeContext">
-         <elementType ref="Bjoerner_Complete.diagram.RailDiagram_1000"/>
-         <elementType ref="Bjoerner_Complete.diagram.Connector_2001"/>
-         <elementType ref="Bjoerner_Complete.diagram.Linear_2002"/>
-         <elementType ref="Bjoerner_Complete.diagram.Signal_2003"/>
-         <elementType ref="Bjoerner_Complete.diagram.Point_2004"/>
-         <elementType ref="Bjoerner_Complete.diagram.ControlTable_2005"/>
-         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedOnLinear_4001"/>
-         <elementType ref="Bjoerner_Complete.diagram.UnitHasC1_4002"/>
-         <elementType ref="Bjoerner_Complete.diagram.UnitHasC2_4003"/>
-         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4004"/>
-         <elementType ref="Bjoerner_Complete.diagram.PointHasC3_4005"/>
+         <elementType ref="Bjoerner_Complete.diagram.Connector_1000"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -550,7 +433,7 @@
                <and>
                   <with variable="activePartId"><equals value="bjoernercomplete.diagram.part.BjoernerCompleteDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="bjoernercomplete.diagram.edit.parts.RailDiagramEditPart"/>
+                     <instanceof value="bjoernercomplete.diagram.edit.parts.ConnectorEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
