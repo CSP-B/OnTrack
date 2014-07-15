@@ -20,7 +20,6 @@
 		<module>Bjoerner_Complete.edit</module>
 		<module>Bjoerner_Complete.editor</module>
 		<module>Bjoerner_Complete.diagram</module>
-		<module>Bjoerner_Complete.tests</module>
 	</modules>
 
 	<repositories>
