@@ -33,7 +33,11 @@ Clone the repository using the link on the right. E.g:
 git clone git@github.com:lordqwerty/OnTrack.git
 ```
 
-Change to the directory and run `mvn clean install`. 
+Change to the directory and run the following:
+
+* `mvn eclipse:eclipse`
+
+* `mvn clean install`
 
 Once complete open Eclipse and import the full OnTrack editor into your eclipse workspace, Select:
 
