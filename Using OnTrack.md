@@ -24,14 +24,16 @@ Select BjoernerComplete diagram and confirm a name. This will create two files:
 	2. bjoernercomplete_diagram file.
 
 A track plan can be constructed using the elements from the `palette window`.
-Some example files can also be copy/pasted from the Bjoerner_Complete.zip:
+Some example files can also be copy/pasted from:
 
 * Bjoerner_Generator/models/doublejunction.bjoernercomplete
 * Bjoerner_Generator/models/doublejunction.bjoernercomplete_diagram
 
-To generate the Control Table for the track plan, a wizard currently needs to be imported. Copy the following file from the *Bjoerner_Complete.zip* to the new project:
+To generate the Control Table for the track plan, a wizard currently needs to be imported. Copy the following file from:
 
 `Bjoerner_Generator/Epsilon/Bjoerner_Complete_Wizards.ewl`
+
+To the new project.
 
 To register the wizard, select:
 
