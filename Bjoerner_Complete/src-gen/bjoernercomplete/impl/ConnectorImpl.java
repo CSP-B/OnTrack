@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,14 +34,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector {
 	/**
-	 * The cached value of the '{@link #getHasUnit1() <em>Has Unit1</em>}' reference list.
+	 * The cached value of the '{@link #getHasUnit1() <em>Has Unit1</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHasUnit1()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Unit> hasUnit1;
+	protected Unit hasUnit1;
 
 	/**
 	 * The cached value of the '{@link #getHasPoint() <em>Has Point</em>}' reference list.
@@ -56,14 +54,14 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	protected EList<Point> hasPoint;
 
 	/**
-	 * The cached value of the '{@link #getHasUnit2() <em>Has Unit2</em>}' reference list.
+	 * The cached value of the '{@link #getHasUnit2() <em>Has Unit2</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHasUnit2()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Unit> hasUnit2;
+	protected Unit hasUnit2;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
@@ -109,11 +107,59 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Unit> getHasUnit1() {
-		if (hasUnit1 == null) {
-			hasUnit1 = new EObjectWithInverseResolvingEList<Unit>(Unit.class, this, BjoernercompletePackage.CONNECTOR__HAS_UNIT1, BjoernercompletePackage.UNIT__HAS_C1);
+	public Unit getHasUnit1() {
+		if (hasUnit1 != null && hasUnit1.eIsProxy()) {
+			InternalEObject oldHasUnit1 = (InternalEObject)hasUnit1;
+			hasUnit1 = (Unit)eResolveProxy(oldHasUnit1);
+			if (hasUnit1 != oldHasUnit1) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CONNECTOR__HAS_UNIT1, oldHasUnit1, hasUnit1));
+			}
 		}
 		return hasUnit1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Unit basicGetHasUnit1() {
+		return hasUnit1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasUnit1(Unit newHasUnit1, NotificationChain msgs) {
+		Unit oldHasUnit1 = hasUnit1;
+		hasUnit1 = newHasUnit1;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CONNECTOR__HAS_UNIT1, oldHasUnit1, newHasUnit1);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasUnit1(Unit newHasUnit1) {
+		if (newHasUnit1 != hasUnit1) {
+			NotificationChain msgs = null;
+			if (hasUnit1 != null)
+				msgs = ((InternalEObject)hasUnit1).eInverseRemove(this, BjoernercompletePackage.UNIT__HAS_C1, Unit.class, msgs);
+			if (newHasUnit1 != null)
+				msgs = ((InternalEObject)newHasUnit1).eInverseAdd(this, BjoernercompletePackage.UNIT__HAS_C1, Unit.class, msgs);
+			msgs = basicSetHasUnit1(newHasUnit1, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CONNECTOR__HAS_UNIT1, newHasUnit1, newHasUnit1));
 	}
 
 	/**
@@ -133,11 +179,59 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Unit> getHasUnit2() {
-		if (hasUnit2 == null) {
-			hasUnit2 = new EObjectWithInverseResolvingEList<Unit>(Unit.class, this, BjoernercompletePackage.CONNECTOR__HAS_UNIT2, BjoernercompletePackage.UNIT__HAS_C2);
+	public Unit getHasUnit2() {
+		if (hasUnit2 != null && hasUnit2.eIsProxy()) {
+			InternalEObject oldHasUnit2 = (InternalEObject)hasUnit2;
+			hasUnit2 = (Unit)eResolveProxy(oldHasUnit2);
+			if (hasUnit2 != oldHasUnit2) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BjoernercompletePackage.CONNECTOR__HAS_UNIT2, oldHasUnit2, hasUnit2));
+			}
 		}
 		return hasUnit2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Unit basicGetHasUnit2() {
+		return hasUnit2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHasUnit2(Unit newHasUnit2, NotificationChain msgs) {
+		Unit oldHasUnit2 = hasUnit2;
+		hasUnit2 = newHasUnit2;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CONNECTOR__HAS_UNIT2, oldHasUnit2, newHasUnit2);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHasUnit2(Unit newHasUnit2) {
+		if (newHasUnit2 != hasUnit2) {
+			NotificationChain msgs = null;
+			if (hasUnit2 != null)
+				msgs = ((InternalEObject)hasUnit2).eInverseRemove(this, BjoernercompletePackage.UNIT__HAS_C2, Unit.class, msgs);
+			if (newHasUnit2 != null)
+				msgs = ((InternalEObject)newHasUnit2).eInverseAdd(this, BjoernercompletePackage.UNIT__HAS_C2, Unit.class, msgs);
+			msgs = basicSetHasUnit2(newHasUnit2, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BjoernercompletePackage.CONNECTOR__HAS_UNIT2, newHasUnit2, newHasUnit2));
 	}
 
 	/**
@@ -171,9 +265,13 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasUnit1()).basicAdd(otherEnd, msgs);
+				if (hasUnit1 != null)
+					msgs = ((InternalEObject)hasUnit1).eInverseRemove(this, BjoernercompletePackage.UNIT__HAS_C1, Unit.class, msgs);
+				return basicSetHasUnit1((Unit)otherEnd, msgs);
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHasUnit2()).basicAdd(otherEnd, msgs);
+				if (hasUnit2 != null)
+					msgs = ((InternalEObject)hasUnit2).eInverseRemove(this, BjoernercompletePackage.UNIT__HAS_C2, Unit.class, msgs);
+				return basicSetHasUnit2((Unit)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -187,9 +285,9 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				return ((InternalEList<?>)getHasUnit1()).basicRemove(otherEnd, msgs);
+				return basicSetHasUnit1(null, msgs);
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				return ((InternalEList<?>)getHasUnit2()).basicRemove(otherEnd, msgs);
+				return basicSetHasUnit2(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,11 +301,13 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				return getHasUnit1();
+				if (resolve) return getHasUnit1();
+				return basicGetHasUnit1();
 			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
 				return getHasPoint();
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				return getHasUnit2();
+				if (resolve) return getHasUnit2();
+				return basicGetHasUnit2();
 			case BjoernercompletePackage.CONNECTOR__ID:
 				return getID();
 		}
@@ -224,16 +324,14 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				getHasUnit1().clear();
-				getHasUnit1().addAll((Collection<? extends Unit>)newValue);
+				setHasUnit1((Unit)newValue);
 				return;
 			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
 				getHasPoint().clear();
 				getHasPoint().addAll((Collection<? extends Point>)newValue);
 				return;
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				getHasUnit2().clear();
-				getHasUnit2().addAll((Collection<? extends Unit>)newValue);
+				setHasUnit2((Unit)newValue);
 				return;
 			case BjoernercompletePackage.CONNECTOR__ID:
 				setID((String)newValue);
@@ -251,13 +349,13 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				getHasUnit1().clear();
+				setHasUnit1((Unit)null);
 				return;
 			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
 				getHasPoint().clear();
 				return;
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				getHasUnit2().clear();
+				setHasUnit2((Unit)null);
 				return;
 			case BjoernercompletePackage.CONNECTOR__ID:
 				setID(ID_EDEFAULT);
@@ -275,11 +373,11 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT1:
-				return hasUnit1 != null && !hasUnit1.isEmpty();
+				return hasUnit1 != null;
 			case BjoernercompletePackage.CONNECTOR__HAS_POINT:
 				return hasPoint != null && !hasPoint.isEmpty();
 			case BjoernercompletePackage.CONNECTOR__HAS_UNIT2:
-				return hasUnit2 != null && !hasUnit2.isEmpty();
+				return hasUnit2 != null;
 			case BjoernercompletePackage.CONNECTOR__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}

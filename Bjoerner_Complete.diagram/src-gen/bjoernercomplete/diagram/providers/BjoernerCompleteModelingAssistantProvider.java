@@ -44,12 +44,12 @@ public class BjoernerCompleteModelingAssistantProvider extends
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof RailDiagramEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
+			types.add(BjoernerCompleteElementTypes.Connector_2004);
 			types.add(BjoernerCompleteElementTypes.Terminal_2001);
 			types.add(BjoernerCompleteElementTypes.Crossing_2006);
-			types.add(BjoernerCompleteElementTypes.Connector_2004);
+			types.add(BjoernerCompleteElementTypes.ControlTable_2002);
 			types.add(BjoernerCompleteElementTypes.Signal_2003);
 			types.add(BjoernerCompleteElementTypes.Point_2005);
-			types.add(BjoernerCompleteElementTypes.ControlTable_2002);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -61,14 +61,14 @@ public class BjoernerCompleteModelingAssistantProvider extends
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConnectorEditPart) {
+			return ((ConnectorEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof TerminalEditPart) {
 			return ((TerminalEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof CrossingEditPart) {
 			return ((CrossingEditPart) sourceEditPart).getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof ConnectorEditPart) {
-			return ((ConnectorEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof SignalEditPart) {
 			return ((SignalEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -85,14 +85,14 @@ public class BjoernerCompleteModelingAssistantProvider extends
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ConnectorEditPart) {
+			return ((ConnectorEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof TerminalEditPart) {
 			return ((TerminalEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof CrossingEditPart) {
 			return ((CrossingEditPart) targetEditPart).getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof ConnectorEditPart) {
-			return ((ConnectorEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof SignalEditPart) {
 			return ((SignalEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -112,16 +112,16 @@ public class BjoernerCompleteModelingAssistantProvider extends
 				.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConnectorEditPart) {
+			return ((ConnectorEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof TerminalEditPart) {
 			return ((TerminalEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof CrossingEditPart) {
 			return ((CrossingEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof ConnectorEditPart) {
-			return ((ConnectorEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof SignalEditPart) {
@@ -142,16 +142,16 @@ public class BjoernerCompleteModelingAssistantProvider extends
 			IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof ConnectorEditPart) {
+			return ((ConnectorEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof TerminalEditPart) {
 			return ((TerminalEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof CrossingEditPart) {
 			return ((CrossingEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof ConnectorEditPart) {
-			return ((ConnectorEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof SignalEditPart) {
@@ -172,16 +172,16 @@ public class BjoernerCompleteModelingAssistantProvider extends
 			IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ConnectorEditPart) {
+			return ((ConnectorEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof TerminalEditPart) {
 			return ((TerminalEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof CrossingEditPart) {
 			return ((CrossingEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof ConnectorEditPart) {
-			return ((ConnectorEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof SignalEditPart) {

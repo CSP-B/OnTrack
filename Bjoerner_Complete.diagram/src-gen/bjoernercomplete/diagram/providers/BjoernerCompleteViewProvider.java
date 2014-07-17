@@ -168,12 +168,12 @@ public class BjoernerCompleteViewProvider extends AbstractProvider implements
 					return false; // foreign diagram
 				}
 				switch (visualID) {
+				case ConnectorEditPart.VISUAL_ID:
 				case TerminalEditPart.VISUAL_ID:
 				case CrossingEditPart.VISUAL_ID:
-				case ConnectorEditPart.VISUAL_ID:
+				case ControlTableEditPart.VISUAL_ID:
 				case SignalEditPart.VISUAL_ID:
 				case PointEditPart.VISUAL_ID:
-				case ControlTableEditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != BjoernerCompleteVisualIDRegistry
 									.getNodeVisualID(op.getContainerView(),
@@ -186,12 +186,12 @@ public class BjoernerCompleteViewProvider extends AbstractProvider implements
 				}
 			}
 		}
-		return TerminalEditPart.VISUAL_ID == visualID
+		return ConnectorEditPart.VISUAL_ID == visualID
+				|| TerminalEditPart.VISUAL_ID == visualID
 				|| CrossingEditPart.VISUAL_ID == visualID
-				|| ConnectorEditPart.VISUAL_ID == visualID
+				|| ControlTableEditPart.VISUAL_ID == visualID
 				|| SignalEditPart.VISUAL_ID == visualID
-				|| PointEditPart.VISUAL_ID == visualID
-				|| ControlTableEditPart.VISUAL_ID == visualID;
+				|| PointEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -250,23 +250,23 @@ public class BjoernerCompleteViewProvider extends AbstractProvider implements
 					.getVisualID(semanticHint);
 		}
 		switch (visualID) {
+		case ConnectorEditPart.VISUAL_ID:
+			return createConnector_2004(domainElement, containerView, index,
+					persisted, preferencesHint);
 		case TerminalEditPart.VISUAL_ID:
 			return createTerminal_2001(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case CrossingEditPart.VISUAL_ID:
 			return createCrossing_2006(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case ConnectorEditPart.VISUAL_ID:
-			return createConnector_2004(domainElement, containerView, index,
+		case ControlTableEditPart.VISUAL_ID:
+			return createControlTable_2002(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case SignalEditPart.VISUAL_ID:
 			return createSignal_2003(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case PointEditPart.VISUAL_ID:
 			return createPoint_2005(domainElement, containerView, index,
-					persisted, preferencesHint);
-		case ControlTableEditPart.VISUAL_ID:
-			return createControlTable_2002(domainElement, containerView, index,
 					persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -282,44 +282,17 @@ public class BjoernerCompleteViewProvider extends AbstractProvider implements
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (BjoernerCompleteVisualIDRegistry.getVisualID(elementTypeHint)) {
-		case ConnectorHasUnit1EditPart.VISUAL_ID:
-			return createConnectorHasUnit1_4015(containerView, index,
+		case SignalPlacedAtConnectorEditPart.VISUAL_ID:
+			return createSignalPlacedAtConnector_4016(containerView, index,
 					persisted, preferencesHint);
-		case ControlTableHasRoutesEditPart.VISUAL_ID:
-			return createControlTableHasRoutes_4013(containerView, index,
-					persisted, preferencesHint);
-		case SignalPlacedAtEditPart.VISUAL_ID:
-			return createSignalPlacedAt_4007(containerView, index, persisted,
+		case TrackHasSignalEditPart.VISUAL_ID:
+			return createTrackHasSignal_4006(containerView, index, persisted,
 					preferencesHint);
-		case TerminalHasTerminalSignalEditPart.VISUAL_ID:
-			return createTerminalHasTerminalSignal_4017(containerView, index,
-					persisted, preferencesHint);
-		case CrossingHasC3_CrossingEditPart.VISUAL_ID:
-			return createCrossingHasC3_Crossing_4009(containerView, index,
-					persisted, preferencesHint);
-		case CrossingHasCrossingDirectionEditPart.VISUAL_ID:
-			return createCrossingHasCrossingDirection_4002(containerView,
-					index, persisted, preferencesHint);
-		case UnitHasC2EditPart.VISUAL_ID:
-			return createUnitHasC2_4012(containerView, index, persisted,
-					preferencesHint);
-		case CrossingHasC4_CrossingEditPart.VISUAL_ID:
-			return createCrossingHasC4_Crossing_4014(containerView, index,
-					persisted, preferencesHint);
-		case SignalControlsRoutesEditPart.VISUAL_ID:
-			return createSignalControlsRoutes_4019(containerView, index,
-					persisted, preferencesHint);
-		case ConnectorHasUnit2EditPart.VISUAL_ID:
-			return createConnectorHasUnit2_4010(containerView, index,
-					persisted, preferencesHint);
-		case PointHasPointDirectionEditPart.VISUAL_ID:
-			return createPointHasPointDirection_4004(containerView, index,
-					persisted, preferencesHint);
 		case SignalPlacedOnTrackEditPart.VISUAL_ID:
 			return createSignalPlacedOnTrack_4005(containerView, index,
 					persisted, preferencesHint);
-		case TrackHasSignalsEditPart.VISUAL_ID:
-			return createTrackHasSignals_4018(containerView, index, persisted,
+		case UnitHasC1EditPart.VISUAL_ID:
+			return createUnitHasC1_4011(containerView, index, persisted,
 					preferencesHint);
 		case TrackHasTrackDirectionEditPart.VISUAL_ID:
 			return createTrackHasTrackDirection_4003(containerView, index,
@@ -327,21 +300,48 @@ public class BjoernerCompleteViewProvider extends AbstractProvider implements
 		case PointHasC3_PointEditPart.VISUAL_ID:
 			return createPointHasC3_Point_4001(containerView, index, persisted,
 					preferencesHint);
-		case SignalPlacedAtConnectorEditPart.VISUAL_ID:
-			return createSignalPlacedAtConnector_4016(containerView, index,
+		case SignalControlsRoutesEditPart.VISUAL_ID:
+			return createSignalControlsRoutes_4019(containerView, index,
 					persisted, preferencesHint);
-		case ConnectorHasPointEditPart.VISUAL_ID:
-			return createConnectorHasPoint_4008(containerView, index,
+		case SignalPlacedAtEditPart.VISUAL_ID:
+			return createSignalPlacedAt_4007(containerView, index, persisted,
+					preferencesHint);
+		case ControlTableHasRoutesEditPart.VISUAL_ID:
+			return createControlTableHasRoutes_4013(containerView, index,
 					persisted, preferencesHint);
-		case UnitHasC1EditPart.VISUAL_ID:
-			return createUnitHasC1_4011(containerView, index, persisted,
+		case ConnectorHasUnit2EditPart.VISUAL_ID:
+			return createConnectorHasUnit2_4010(containerView, index,
+					persisted, preferencesHint);
+		case CrossingHasC3_CrossingEditPart.VISUAL_ID:
+			return createCrossingHasC3_Crossing_4009(containerView, index,
+					persisted, preferencesHint);
+		case PointHasPointDirectionEditPart.VISUAL_ID:
+			return createPointHasPointDirection_4004(containerView, index,
+					persisted, preferencesHint);
+		case ConnectorHasUnit1EditPart.VISUAL_ID:
+			return createConnectorHasUnit1_4015(containerView, index,
+					persisted, preferencesHint);
+		case TerminalHasTerminalSignalEditPart.VISUAL_ID:
+			return createTerminalHasTerminalSignal_4017(containerView, index,
+					persisted, preferencesHint);
+		case TrackHasSignalsEditPart.VISUAL_ID:
+			return createTrackHasSignals_4018(containerView, index, persisted,
 					preferencesHint);
-		case TrackHasSignalEditPart.VISUAL_ID:
-			return createTrackHasSignal_4006(containerView, index, persisted,
-					preferencesHint);
+		case CrossingHasC4_CrossingEditPart.VISUAL_ID:
+			return createCrossingHasC4_Crossing_4014(containerView, index,
+					persisted, preferencesHint);
 		case SignalHasDirectionEditPart.VISUAL_ID:
 			return createSignalHasDirection_4020(containerView, index,
 					persisted, preferencesHint);
+		case UnitHasC2EditPart.VISUAL_ID:
+			return createUnitHasC2_4012(containerView, index, persisted,
+					preferencesHint);
+		case ConnectorHasPointEditPart.VISUAL_ID:
+			return createConnectorHasPoint_4008(containerView, index,
+					persisted, preferencesHint);
+		case CrossingHasCrossingDirectionEditPart.VISUAL_ID:
+			return createCrossingHasCrossingDirection_4002(containerView,
+					index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;

@@ -110,8 +110,8 @@ public class ConnectorHasUnit1ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getHasUnit1().remove(getOldTarget());
-		getNewSource().getHasUnit1().add(getOldTarget());
+		getOldSource().setHasUnit1(null);
+		getNewSource().setHasUnit1(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -119,8 +119,7 @@ public class ConnectorHasUnit1ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getHasUnit1().remove(getOldTarget());
-		getOldSource().getHasUnit1().add(getNewTarget());
+		getOldSource().setHasUnit1(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

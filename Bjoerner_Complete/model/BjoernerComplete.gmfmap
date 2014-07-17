@@ -8,6 +8,26 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
+        href="BjoernerComplete.ecore#//RailDiagram/hasConnectors"/>
+    <ownedChild>
+      <domainMetaElement
+          href="BjoernerComplete.ecore#//Connector"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="BjoernerComplete.gmfgraph#ConnectorID"/>
+        <features
+            href="BjoernerComplete.ecore#//Connector/ID"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="BjoernerComplete.gmfgraph#Connector"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
         href="BjoernerComplete.ecore#//RailDiagram/hasUnits"/>
     <ownedChild>
       <domainMetaElement
@@ -21,7 +41,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="BjoernerComplete.gmfgraph#Connector"/>
     </ownedChild>
@@ -41,29 +61,22 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
           href="BjoernerComplete.gmfgraph#Connector"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="BjoernerComplete.ecore#//RailDiagram/hasConnectors"/>
+        href="BjoernerComplete.ecore#//RailDiagram/hasControlTable"/>
     <ownedChild>
       <domainMetaElement
-          href="BjoernerComplete.ecore#//Connector"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="BjoernerComplete.gmfgraph#ConnectorID"/>
-        <features
-            href="BjoernerComplete.ecore#//Connector/ID"/>
-      </labelMappings>
+          href="BjoernerComplete.ecore#//ControlTable"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
-          href="BjoernerComplete.gmfgraph#Connector"/>
+          href="BjoernerComplete.gmfgraph#ControlTable"/>
     </ownedChild>
   </nodes>
   <nodes>
@@ -81,7 +94,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="BjoernerComplete.gmfgraph#Connector"/>
     </ownedChild>
@@ -101,22 +114,9 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.4"/>
-      <diagramNode
-          href="BjoernerComplete.gmfgraph#Connector"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="BjoernerComplete.ecore#//RailDiagram/hasControlTable"/>
-    <ownedChild>
-      <domainMetaElement
-          href="BjoernerComplete.ecore#//ControlTable"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
           href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
-          href="BjoernerComplete.gmfgraph#ControlTable"/>
+          href="BjoernerComplete.gmfgraph#Connector"/>
     </ownedChild>
   </nodes>
   <links>
@@ -124,20 +124,20 @@
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.6"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#ConnectorHasUnit1"/>
+        href="BjoernerComplete.gmfgraph#Signal"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Connector/hasUnit1"/>
+        href="BjoernerComplete.ecore#//Signal/placedAtConnector"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.7"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#ControlTableHasRoutes"/>
+        href="BjoernerComplete.gmfgraph#Track"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//ControlTable/hasRoutes"/>
+        href="BjoernerComplete.ecore#//Track/hasSignal"/>
   </links>
   <links>
     <tool
@@ -147,67 +147,67 @@
         href="BjoernerComplete.gmfgraph#Signal"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Signal/placedAt"/>
+        href="BjoernerComplete.ecore#//Signal/placedOnTrack"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.9"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Terminal"/>
+        href="BjoernerComplete.gmfgraph#Unit"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Terminal/hasTerminalSignal"/>
+        href="BjoernerComplete.ecore#//Unit/hasC1"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.10"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Crossing"/>
+        href="BjoernerComplete.gmfgraph#Track"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Crossing/hasC3_Crossing"/>
+        href="BjoernerComplete.ecore#//Track/hasTrackDirection"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.11"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Crossing"/>
+        href="BjoernerComplete.gmfgraph#Point"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Crossing/hasCrossingDirection"/>
+        href="BjoernerComplete.ecore#//Point/hasC3_Point"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Unit"/>
+        href="BjoernerComplete.gmfgraph#Signal"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Unit/hasC2"/>
+        href="BjoernerComplete.ecore#//Signal/controlsRoutes"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Crossing"/>
+        href="BjoernerComplete.gmfgraph#Signal"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Crossing/hasC4_Crossing"/>
+        href="BjoernerComplete.ecore#//Signal/placedAt"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Signal"/>
+        href="BjoernerComplete.gmfgraph#ControlTableHasRoutes"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Signal/controlsRoutes"/>
+        href="BjoernerComplete.ecore#//ControlTable/hasRoutes"/>
   </links>
   <links>
     <tool
@@ -224,6 +224,16 @@
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.4"/>
     <diagramLink
+        href="BjoernerComplete.gmfgraph#Crossing"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="BjoernerComplete.ecore#//Crossing/hasC3_Crossing"/>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.5"/>
+    <diagramLink
         href="BjoernerComplete.gmfgraph#Point"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
@@ -232,17 +242,27 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.5"/>
+        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.6"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Signal"/>
+        href="BjoernerComplete.gmfgraph#ConnectorHasUnit1"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Signal/placedOnTrack"/>
+        href="BjoernerComplete.ecore#//Connector/hasUnit1"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.6"/>
+        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.7"/>
+    <diagramLink
+        href="BjoernerComplete.gmfgraph#Terminal"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="BjoernerComplete.ecore#//Terminal/hasTerminalSignal"/>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.8"/>
     <diagramLink
         href="BjoernerComplete.gmfgraph#Track"/>
     <linkMetaFeature
@@ -252,42 +272,22 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.7"/>
-    <diagramLink
-        href="BjoernerComplete.gmfgraph#Track"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Track/hasTrackDirection"/>
-  </links>
-  <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.8"/>
-    <diagramLink
-        href="BjoernerComplete.gmfgraph#Point"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Point/hasC3_Point"/>
-  </links>
-  <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.9"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Signal"/>
+        href="BjoernerComplete.gmfgraph#Crossing"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Signal/placedAtConnector"/>
+        href="BjoernerComplete.ecore#//Crossing/hasC4_Crossing"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.10"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#ConnectorHasUnit1"/>
+        href="BjoernerComplete.gmfgraph#Signal"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Connector/hasPoint"/>
+        href="BjoernerComplete.ecore#//Signal/hasDirection"/>
   </links>
   <links>
     <tool
@@ -297,27 +297,27 @@
         href="BjoernerComplete.gmfgraph#Unit"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Unit/hasC1"/>
+        href="BjoernerComplete.ecore#//Unit/hasC2"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.0"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Track"/>
+        href="BjoernerComplete.gmfgraph#ConnectorHasUnit1"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Track/hasSignal"/>
+        href="BjoernerComplete.ecore#//Connector/hasPoint"/>
   </links>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
         href="BjoernerComplete.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
-        href="BjoernerComplete.gmfgraph#Signal"/>
+        href="BjoernerComplete.gmfgraph#Crossing"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="BjoernerComplete.ecore#//Signal/hasDirection"/>
+        href="BjoernerComplete.ecore#//Crossing/hasCrossingDirection"/>
   </links>
   <diagram>
     <diagramCanvas

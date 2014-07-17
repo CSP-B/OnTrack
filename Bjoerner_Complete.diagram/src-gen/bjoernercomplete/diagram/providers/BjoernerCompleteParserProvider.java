@@ -123,12 +123,12 @@ public class BjoernerCompleteParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
+		case ConnectorIDEditPart.VISUAL_ID:
+			return getConnectorID_5003Parser();
 		case TerminalNameEditPart.VISUAL_ID:
 			return getTerminalName_5001Parser();
 		case CrossingNameEditPart.VISUAL_ID:
 			return getCrossingName_5002Parser();
-		case ConnectorIDEditPart.VISUAL_ID:
-			return getConnectorID_5003Parser();
 		case SignalNameEditPart.VISUAL_ID:
 			return getSignalName_5004Parser();
 		case PointNameEditPart.VISUAL_ID:

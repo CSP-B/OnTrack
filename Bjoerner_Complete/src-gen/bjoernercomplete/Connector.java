@@ -27,8 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Connector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Has Unit1</b></em>' reference list.
-	 * The list contents are of type {@link bjoernercomplete.Unit}.
+	 * Returns the value of the '<em><b>Has Unit1</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link bjoernercomplete.Unit#getHasC1 <em>Has C1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -36,13 +35,24 @@ public interface Connector extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Unit1</em>' reference list.
+	 * @return the value of the '<em>Has Unit1</em>' reference.
+	 * @see #setHasUnit1(Unit)
 	 * @see bjoernercomplete.BjoernercompletePackage#getConnector_HasUnit1()
 	 * @see bjoernercomplete.Unit#getHasC1
-	 * @model opposite="hasC1" upper="2"
+	 * @model opposite="hasC1"
 	 * @generated
 	 */
-	EList<Unit> getHasUnit1();
+	Unit getHasUnit1();
+
+	/**
+	 * Sets the value of the '{@link bjoernercomplete.Connector#getHasUnit1 <em>Has Unit1</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Unit1</em>' reference.
+	 * @see #getHasUnit1()
+	 * @generated
+	 */
+	void setHasUnit1(Unit value);
 
 	/**
 	 * Returns the value of the '<em><b>Has Point</b></em>' reference list.
@@ -61,8 +71,7 @@ public interface Connector extends EObject {
 	EList<Point> getHasPoint();
 
 	/**
-	 * Returns the value of the '<em><b>Has Unit2</b></em>' reference list.
-	 * The list contents are of type {@link bjoernercomplete.Unit}.
+	 * Returns the value of the '<em><b>Has Unit2</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link bjoernercomplete.Unit#getHasC2 <em>Has C2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -70,13 +79,24 @@ public interface Connector extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Has Unit2</em>' reference list.
+	 * @return the value of the '<em>Has Unit2</em>' reference.
+	 * @see #setHasUnit2(Unit)
 	 * @see bjoernercomplete.BjoernercompletePackage#getConnector_HasUnit2()
 	 * @see bjoernercomplete.Unit#getHasC2
-	 * @model opposite="hasC2" upper="2"
+	 * @model opposite="hasC2"
 	 * @generated
 	 */
-	EList<Unit> getHasUnit2();
+	Unit getHasUnit2();
+
+	/**
+	 * Sets the value of the '{@link bjoernercomplete.Connector#getHasUnit2 <em>Has Unit2</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Has Unit2</em>' reference.
+	 * @see #getHasUnit2()
+	 * @generated
+	 */
+	void setHasUnit2(Unit value);
 
 	/**
 	 * Returns the value of the '<em><b>ID</b></em>' attribute.

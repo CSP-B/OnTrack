@@ -131,6 +131,10 @@ public class BjoernerCompleteVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case RailDiagramEditPart.VISUAL_ID:
+			if (BjoernercompletePackage.eINSTANCE.getConnector().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ConnectorEditPart.VISUAL_ID;
+			}
 			if (BjoernercompletePackage.eINSTANCE.getTerminal().isSuperTypeOf(
 					domainElement.eClass())) {
 				return TerminalEditPart.VISUAL_ID;
@@ -139,9 +143,9 @@ public class BjoernerCompleteVisualIDRegistry {
 					domainElement.eClass())) {
 				return CrossingEditPart.VISUAL_ID;
 			}
-			if (BjoernercompletePackage.eINSTANCE.getConnector().isSuperTypeOf(
-					domainElement.eClass())) {
-				return ConnectorEditPart.VISUAL_ID;
+			if (BjoernercompletePackage.eINSTANCE.getControlTable()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return ControlTableEditPart.VISUAL_ID;
 			}
 			if (BjoernercompletePackage.eINSTANCE.getSignal().isSuperTypeOf(
 					domainElement.eClass())) {
@@ -150,10 +154,6 @@ public class BjoernerCompleteVisualIDRegistry {
 			if (BjoernercompletePackage.eINSTANCE.getPoint().isSuperTypeOf(
 					domainElement.eClass())) {
 				return PointEditPart.VISUAL_ID;
-			}
-			if (BjoernercompletePackage.eINSTANCE.getControlTable()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return ControlTableEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -182,13 +182,16 @@ public class BjoernerCompleteVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case RailDiagramEditPart.VISUAL_ID:
+			if (ConnectorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (TerminalEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (CrossingEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ConnectorEditPart.VISUAL_ID == nodeVisualID) {
+			if (ControlTableEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (SignalEditPart.VISUAL_ID == nodeVisualID) {
@@ -197,7 +200,9 @@ public class BjoernerCompleteVisualIDRegistry {
 			if (PointEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ControlTableEditPart.VISUAL_ID == nodeVisualID) {
+			break;
+		case ConnectorEditPart.VISUAL_ID:
+			if (ConnectorIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -208,11 +213,6 @@ public class BjoernerCompleteVisualIDRegistry {
 			break;
 		case CrossingEditPart.VISUAL_ID:
 			if (CrossingNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ConnectorEditPart.VISUAL_ID:
-			if (ConnectorIDEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

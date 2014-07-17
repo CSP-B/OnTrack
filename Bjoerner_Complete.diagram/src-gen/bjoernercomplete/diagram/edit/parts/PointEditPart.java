@@ -254,9 +254,9 @@ public class PointEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
-		types.add(BjoernerCompleteElementTypes.PointHasC3_Point_4001);
 		types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+		types.add(BjoernerCompleteElementTypes.PointHasC3_Point_4001);
+		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		return types;
 	}
 
@@ -267,13 +267,13 @@ public class PointEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
+			types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
 			types.add(BjoernerCompleteElementTypes.PointHasC3_Point_4001);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		}
 		return types;
 	}
@@ -283,11 +283,11 @@ public class PointEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
+		if (relationshipType == BjoernerCompleteElementTypes.UnitHasC1_4011) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		} else if (relationshipType == BjoernerCompleteElementTypes.PointHasC3_Point_4001) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC1_4011) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		}
 		return types;
@@ -298,8 +298,8 @@ public class PointEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
 		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit2_4010);
+		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
 		types.add(BjoernerCompleteElementTypes.ConnectorHasPoint_4008);
 		return types;
 	}
@@ -309,9 +309,9 @@ public class PointEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
+		if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit2_4010) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit2_4010) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasPoint_4008) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);

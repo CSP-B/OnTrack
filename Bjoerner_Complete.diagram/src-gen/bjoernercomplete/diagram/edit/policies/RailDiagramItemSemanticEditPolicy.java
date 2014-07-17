@@ -32,24 +32,24 @@ public class RailDiagramItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
+		if (BjoernerCompleteElementTypes.Connector_2004 == req.getElementType()) {
+			return getGEFWrapper(new ConnectorCreateCommand(req));
+		}
 		if (BjoernerCompleteElementTypes.Terminal_2001 == req.getElementType()) {
 			return getGEFWrapper(new TerminalCreateCommand(req));
 		}
 		if (BjoernerCompleteElementTypes.Crossing_2006 == req.getElementType()) {
 			return getGEFWrapper(new CrossingCreateCommand(req));
 		}
-		if (BjoernerCompleteElementTypes.Connector_2004 == req.getElementType()) {
-			return getGEFWrapper(new ConnectorCreateCommand(req));
+		if (BjoernerCompleteElementTypes.ControlTable_2002 == req
+				.getElementType()) {
+			return getGEFWrapper(new ControlTableCreateCommand(req));
 		}
 		if (BjoernerCompleteElementTypes.Signal_2003 == req.getElementType()) {
 			return getGEFWrapper(new SignalCreateCommand(req));
 		}
 		if (BjoernerCompleteElementTypes.Point_2005 == req.getElementType()) {
 			return getGEFWrapper(new PointCreateCommand(req));
-		}
-		if (BjoernerCompleteElementTypes.ControlTable_2002 == req
-				.getElementType()) {
-			return getGEFWrapper(new ControlTableCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
