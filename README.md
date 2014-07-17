@@ -3,7 +3,7 @@
 *Please be aware that OnTrack is still under active development and as such, several of the features are still implemented in a prototypical manner.*
 *If you experience any problems or have any questions on running any parts of the tool please contact: cspj@swansea.ac.uk*
 
-[![Build Status](https://travis-ci.org/lordqwerty/OnTrack.svg?branch=master)](https://travis-ci.org/lordqwerty/OnTrack)
+[![Build Status](https://travis-ci.org/CSP-B/OnTrack.svg?branch=master)](https://travis-ci.org/CSP-B/OnTrack)
 
 The OnTrack toolset automates workflows for railway verification, starting with graphical scheme plans and finishing with automatically generated formal models set up for verification. OnTrack is grounded on an established [domain specification language](https://en.wikipedia.org/wiki/Domain-specific_language) (DSL) and is generic in the formal specification languages used. Using a DSL allows the formulation of abstractions that work for verification in several formal specification languages.
 
