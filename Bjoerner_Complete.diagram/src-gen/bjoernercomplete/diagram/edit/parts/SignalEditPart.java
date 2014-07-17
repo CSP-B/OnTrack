@@ -254,9 +254,9 @@ public class SignalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
-		types.add(BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005);
 		types.add(BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016);
+		types.add(BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005);
+		types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
 		return types;
 	}
 
@@ -266,14 +266,14 @@ public class SignalEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof TerminalEditPart) {
-			types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
+		if (targetEditPart instanceof ConnectorEditPart) {
+			types.add(BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016);
 		}
 		if (targetEditPart instanceof TerminalEditPart) {
 			types.add(BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005);
 		}
-		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016);
+		if (targetEditPart instanceof TerminalEditPart) {
+			types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
 		}
 		return types;
 	}
@@ -283,12 +283,12 @@ public class SignalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedAt_4007) {
-			types.add(BjoernerCompleteElementTypes.Terminal_2001);
+		if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016) {
+			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		} else if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005) {
 			types.add(BjoernerCompleteElementTypes.Terminal_2001);
-		} else if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016) {
-			types.add(BjoernerCompleteElementTypes.Connector_2004);
+		} else if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedAt_4007) {
+			types.add(BjoernerCompleteElementTypes.Terminal_2001);
 		}
 		return types;
 	}
@@ -298,9 +298,9 @@ public class SignalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(BjoernerCompleteElementTypes.TrackHasSignal_4006);
 		types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
 		types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
-		types.add(BjoernerCompleteElementTypes.TrackHasSignal_4006);
 		return types;
 	}
 
@@ -309,11 +309,11 @@ public class SignalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017) {
+		if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignal_4006) {
+			types.add(BjoernerCompleteElementTypes.Terminal_2001);
+		} else if (relationshipType == BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017) {
 			types.add(BjoernerCompleteElementTypes.Terminal_2001);
 		} else if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignals_4018) {
-			types.add(BjoernerCompleteElementTypes.Terminal_2001);
-		} else if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignal_4006) {
 			types.add(BjoernerCompleteElementTypes.Terminal_2001);
 		}
 		return types;

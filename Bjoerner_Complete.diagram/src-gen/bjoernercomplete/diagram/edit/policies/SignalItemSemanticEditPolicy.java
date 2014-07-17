@@ -65,6 +65,14 @@ public class SignalItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == TrackHasSignalEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == TerminalHasTerminalSignalEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
@@ -81,26 +89,10 @@ public class SignalItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == TrackHasSignalEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalPlacedAtEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalControlsRoutesEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalPlacedAtConnectorEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -116,7 +108,15 @@ public class SignalItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalPlacedAtConnectorEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalControlsRoutesEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == SignalPlacedAtEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -160,6 +160,25 @@ public class SignalItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
+				.getElementType()) {
+			return getGEFWrapper(new SignalPlacedAtConnectorCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
+				.getElementType()) {
+			return getGEFWrapper(new SignalPlacedOnTrackCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.SignalControlsRoutes_4019 == req
+				.getElementType()) {
+			return getGEFWrapper(new SignalControlsRoutesCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		if (BjoernerCompleteElementTypes.SignalPlacedAt_4007 == req
 				.getElementType()) {
 			return getGEFWrapper(new SignalPlacedAtCreateCommand(req,
@@ -169,26 +188,7 @@ public class SignalItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.SignalControlsRoutes_4019 == req
-				.getElementType()) {
-			return getGEFWrapper(new SignalControlsRoutesCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
-				.getElementType()) {
-			return getGEFWrapper(new SignalPlacedOnTrackCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
 		if (BjoernerCompleteElementTypes.TrackHasSignals_4018 == req
-				.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
-				.getElementType()) {
-			return getGEFWrapper(new SignalPlacedAtConnectorCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
 				.getElementType()) {
 			return null;
 		}
@@ -205,6 +205,23 @@ public class SignalItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
+				.getElementType()) {
+			return getGEFWrapper(new TrackHasSignalCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.SignalControlsRoutes_4019 == req
+				.getElementType()) {
+			return null;
+		}
 		if (BjoernerCompleteElementTypes.SignalPlacedAt_4007 == req
 				.getElementType()) {
 			return null;
@@ -214,26 +231,9 @@ public class SignalItemSemanticEditPolicy extends
 			return getGEFWrapper(new TerminalHasTerminalSignalCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.SignalControlsRoutes_4019 == req
-				.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
-				.getElementType()) {
-			return null;
-		}
 		if (BjoernerCompleteElementTypes.TrackHasSignals_4018 == req
 				.getElementType()) {
 			return getGEFWrapper(new TrackHasSignalsCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
-				.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
-				.getElementType()) {
-			return getGEFWrapper(new TrackHasSignalCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (BjoernerCompleteElementTypes.SignalHasDirection_4020 == req
@@ -252,21 +252,21 @@ public class SignalItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case SignalPlacedAtConnectorEditPart.VISUAL_ID:
+			return getGEFWrapper(new SignalPlacedAtConnectorReorientCommand(req));
+		case TrackHasSignalEditPart.VISUAL_ID:
+			return getGEFWrapper(new TrackHasSignalReorientCommand(req));
+		case SignalPlacedOnTrackEditPart.VISUAL_ID:
+			return getGEFWrapper(new SignalPlacedOnTrackReorientCommand(req));
+		case SignalControlsRoutesEditPart.VISUAL_ID:
+			return getGEFWrapper(new SignalControlsRoutesReorientCommand(req));
 		case SignalPlacedAtEditPart.VISUAL_ID:
 			return getGEFWrapper(new SignalPlacedAtReorientCommand(req));
 		case TerminalHasTerminalSignalEditPart.VISUAL_ID:
 			return getGEFWrapper(new TerminalHasTerminalSignalReorientCommand(
 					req));
-		case SignalControlsRoutesEditPart.VISUAL_ID:
-			return getGEFWrapper(new SignalControlsRoutesReorientCommand(req));
-		case SignalPlacedOnTrackEditPart.VISUAL_ID:
-			return getGEFWrapper(new SignalPlacedOnTrackReorientCommand(req));
 		case TrackHasSignalsEditPart.VISUAL_ID:
 			return getGEFWrapper(new TrackHasSignalsReorientCommand(req));
-		case SignalPlacedAtConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(new SignalPlacedAtConnectorReorientCommand(req));
-		case TrackHasSignalEditPart.VISUAL_ID:
-			return getGEFWrapper(new TrackHasSignalReorientCommand(req));
 		case SignalHasDirectionEditPart.VISUAL_ID:
 			return getGEFWrapper(new SignalHasDirectionReorientCommand(req));
 		}

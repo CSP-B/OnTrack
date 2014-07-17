@@ -23,6 +23,52 @@
     <domainDiagramElement
         href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram"/>
     <topLevelNodes
+        visualID="2004"
+        editPartClassName="ConnectorEditPart"
+        itemSemanticEditPolicyClassName="ConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConnectorViewFactory"
+        canonicalEditPolicyClassName="ConnectorCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ConnectorGraphicalNodeEditPolicy"
+        createCommandClassName="ConnectorCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ConnectorEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          layoutType="FLOW_LAYOUT"
+          className="ConnectorFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureConnectorIDFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureConnectorIDFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureConnectorIDFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureConnectorIDFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureConnectorIDFigure() {&#xA;&#x9;&#x9;return fFigureConnectorIDFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector"/>
+        <containmentMetaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasConnectors"/>
+        <childMetaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasConnectors"/>
+      </modelFacet>
+      <labels
+          visualID="5003"
+          editPartClassName="ConnectorIDEditPart"
+          itemSemanticEditPolicyClassName="ConnectorIDItemSemanticEditPolicy"
+          notationViewFactoryClassName="ConnectorIDViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureConnectorIDFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/ID"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
+    <topLevelNodes
         visualID="2001"
         editPartClassName="TerminalEditPart"
         itemSemanticEditPolicyClassName="TerminalItemSemanticEditPolicy"
@@ -115,50 +161,29 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2004"
-        editPartClassName="ConnectorEditPart"
-        itemSemanticEditPolicyClassName="ConnectorItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConnectorViewFactory"
-        canonicalEditPolicyClassName="ConnectorCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ConnectorGraphicalNodeEditPolicy"
-        createCommandClassName="ConnectorCreateCommand">
+        visualID="2002"
+        editPartClassName="ControlTableEditPart"
+        itemSemanticEditPolicyClassName="ControlTableItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControlTableViewFactory"
+        canonicalEditPolicyClassName="ControlTableCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ControlTableGraphicalNodeEditPolicy"
+        createCommandClassName="ControlTableCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ConnectorEditHelper"/>
+          editHelperClassName="ControlTableEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="ConnectorFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureConnectorIDFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureConnectorIDFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureConnectorIDFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureConnectorIDFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureConnectorIDFigure() {&#xA;&#x9;&#x9;return fFigureConnectorIDFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/ControlTable"/>
         <containmentMetaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasConnectors"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasControlTable"/>
         <childMetaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasConnectors"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasControlTable"/>
       </modelFacet>
-      <labels
-          visualID="5003"
-          editPartClassName="ConnectorIDEditPart"
-          itemSemanticEditPolicyClassName="ConnectorIDItemSemanticEditPolicy"
-          notationViewFactoryClassName="ConnectorIDViewFactory"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureConnectorIDFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/ID"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2003"
@@ -252,80 +277,13 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes
-        visualID="2002"
-        editPartClassName="ControlTableEditPart"
-        itemSemanticEditPolicyClassName="ControlTableItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControlTableViewFactory"
-        canonicalEditPolicyClassName="ControlTableCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ControlTableGraphicalNodeEditPolicy"
-        createCommandClassName="ControlTableCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ControlTableEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-      <modelFacet>
-        <metaClass
-            href="BjoernerComplete.genmodel#//bjoernercomplete/ControlTable"/>
-        <containmentMetaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasControlTable"/>
-        <childMetaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/RailDiagram/hasControlTable"/>
-      </modelFacet>
-    </topLevelNodes>
     <links
-        visualID="4015"
-        editPartClassName="ConnectorHasUnit1EditPart"
-        itemSemanticEditPolicyClassName="ConnectorHasUnit1ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConnectorHasUnit1ViewFactory"
-        createCommandClassName="ConnectorHasUnit1CreateCommand"
-        reorientCommandClassName="ConnectorHasUnit1ReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="ConnectorHasUnit1Figure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorHasUnit1Figure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorHasUnit1Figure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/hasUnit1"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4013"
-        editPartClassName="ControlTableHasRoutesEditPart"
-        itemSemanticEditPolicyClassName="ControlTableHasRoutesItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControlTableHasRoutesViewFactory"
-        createCommandClassName="ControlTableHasRoutesCreateCommand"
-        reorientCommandClassName="ControlTableHasRoutesReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="ControlTableHasRoutesFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ControlTableHasRoutesFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ControlTableHasRoutesFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/ControlTable/hasRoutes"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4007"
-        editPartClassName="SignalPlacedAtEditPart"
-        itemSemanticEditPolicyClassName="SignalPlacedAtItemSemanticEditPolicy"
-        notationViewFactoryClassName="SignalPlacedAtViewFactory"
-        createCommandClassName="SignalPlacedAtCreateCommand"
-        reorientCommandClassName="SignalPlacedAtReorientCommand">
+        visualID="4016"
+        editPartClassName="SignalPlacedAtConnectorEditPart"
+        itemSemanticEditPolicyClassName="SignalPlacedAtConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="SignalPlacedAtConnectorViewFactory"
+        createCommandClassName="SignalPlacedAtConnectorCreateCommand"
+        reorientCommandClassName="SignalPlacedAtConnectorReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -337,175 +295,28 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/placedAt"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/placedAtConnector"/>
       </modelFacet>
     </links>
     <links
-        visualID="4017"
-        editPartClassName="TerminalHasTerminalSignalEditPart"
-        itemSemanticEditPolicyClassName="TerminalHasTerminalSignalItemSemanticEditPolicy"
-        notationViewFactoryClassName="TerminalHasTerminalSignalViewFactory"
-        createCommandClassName="TerminalHasTerminalSignalCreateCommand"
-        reorientCommandClassName="TerminalHasTerminalSignalReorientCommand">
+        visualID="4006"
+        editPartClassName="TrackHasSignalEditPart"
+        itemSemanticEditPolicyClassName="TrackHasSignalItemSemanticEditPolicy"
+        notationViewFactoryClassName="TrackHasSignalViewFactory"
+        createCommandClassName="TrackHasSignalCreateCommand"
+        reorientCommandClassName="TrackHasSignalReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="TerminalFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TerminalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTerminalNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTerminalLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TerminalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTerminalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTerminalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTerminalNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTerminalLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTerminalLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTerminalLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTerminalNameFigure() {&#xA;&#x9;&#x9;return fFigureTerminalNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTerminalLengthFigure() {&#xA;&#x9;&#x9;return fFigureTerminalLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          className="TrackFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TrackFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TrackFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTrackNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTrackLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackNameFigure() {&#xA;&#x9;&#x9;return fFigureTrackNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackLengthFigure() {&#xA;&#x9;&#x9;return fFigureTrackLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Terminal/hasTerminalSignal"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4009"
-        editPartClassName="CrossingHasC3_CrossingEditPart"
-        itemSemanticEditPolicyClassName="CrossingHasC3_CrossingItemSemanticEditPolicy"
-        notationViewFactoryClassName="CrossingHasC3_CrossingViewFactory"
-        createCommandClassName="CrossingHasC3_CrossingCreateCommand"
-        reorientCommandClassName="CrossingHasC3_CrossingReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="CrossingFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasC3_Crossing"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4002"
-        editPartClassName="CrossingHasCrossingDirectionEditPart"
-        itemSemanticEditPolicyClassName="CrossingHasCrossingDirectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="CrossingHasCrossingDirectionViewFactory"
-        createCommandClassName="CrossingHasCrossingDirectionCreateCommand"
-        reorientCommandClassName="CrossingHasCrossingDirectionReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="CrossingFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasCrossingDirection"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4012"
-        editPartClassName="UnitHasC2EditPart"
-        itemSemanticEditPolicyClassName="UnitHasC2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="UnitHasC2ViewFactory"
-        createCommandClassName="UnitHasC2CreateCommand"
-        reorientCommandClassName="UnitHasC2ReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="UnitFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnitFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnitFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUnitNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureUnitLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitNameFigure() {&#xA;&#x9;&#x9;return fFigureUnitNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitLengthFigure() {&#xA;&#x9;&#x9;return fFigureUnitLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Unit/hasC2"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4014"
-        editPartClassName="CrossingHasC4_CrossingEditPart"
-        itemSemanticEditPolicyClassName="CrossingHasC4_CrossingItemSemanticEditPolicy"
-        notationViewFactoryClassName="CrossingHasC4_CrossingViewFactory"
-        createCommandClassName="CrossingHasC4_CrossingCreateCommand"
-        reorientCommandClassName="CrossingHasC4_CrossingReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="CrossingFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasC4_Crossing"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4019"
-        editPartClassName="SignalControlsRoutesEditPart"
-        itemSemanticEditPolicyClassName="SignalControlsRoutesItemSemanticEditPolicy"
-        notationViewFactoryClassName="SignalControlsRoutesViewFactory"
-        createCommandClassName="SignalControlsRoutesCreateCommand"
-        reorientCommandClassName="SignalControlsRoutesReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SignalFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SignalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSignalNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SignalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSignalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSignalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureSignalNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSignalNameFigure() {&#xA;&#x9;&#x9;return fFigureSignalNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/controlsRoutes"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4010"
-        editPartClassName="ConnectorHasUnit2EditPart"
-        itemSemanticEditPolicyClassName="ConnectorHasUnit2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConnectorHasUnit2ViewFactory"
-        createCommandClassName="ConnectorHasUnit2CreateCommand"
-        reorientCommandClassName="ConnectorHasUnit2ReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="ConnectorHasUnit1Figure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorHasUnit1Figure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorHasUnit1Figure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/hasUnit2"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4004"
-        editPartClassName="PointHasPointDirectionEditPart"
-        itemSemanticEditPolicyClassName="PointHasPointDirectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="PointHasPointDirectionViewFactory"
-        createCommandClassName="PointHasPointDirectionCreateCommand"
-        reorientCommandClassName="PointHasPointDirectionReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="PointFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PointFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointLengthFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointPointNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PointFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePointNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointNameFigure);&#xA;&#xA;&#xA;&#xA;fFigurePointLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointLengthFigure);&#xA;&#xA;&#xA;&#xA;fFigurePointPointNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointPointNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointPointNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointNameFigure() {&#xA;&#x9;&#x9;return fFigurePointNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointLengthFigure() {&#xA;&#x9;&#x9;return fFigurePointLengthFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointPointNameFigure() {&#xA;&#x9;&#x9;return fFigurePointPointNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Point/hasPointDirection"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Track/hasSignal"/>
       </modelFacet>
     </links>
     <links
@@ -530,24 +341,24 @@
       </modelFacet>
     </links>
     <links
-        visualID="4018"
-        editPartClassName="TrackHasSignalsEditPart"
-        itemSemanticEditPolicyClassName="TrackHasSignalsItemSemanticEditPolicy"
-        notationViewFactoryClassName="TrackHasSignalsViewFactory"
-        createCommandClassName="TrackHasSignalsCreateCommand"
-        reorientCommandClassName="TrackHasSignalsReorientCommand">
+        visualID="4011"
+        editPartClassName="UnitHasC1EditPart"
+        itemSemanticEditPolicyClassName="UnitHasC1ItemSemanticEditPolicy"
+        notationViewFactoryClassName="UnitHasC1ViewFactory"
+        createCommandClassName="UnitHasC1CreateCommand"
+        reorientCommandClassName="UnitHasC1ReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="TrackFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TrackFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TrackFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTrackNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTrackLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackNameFigure() {&#xA;&#x9;&#x9;return fFigureTrackNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackLengthFigure() {&#xA;&#x9;&#x9;return fFigureTrackLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          className="UnitFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnitFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnitFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUnitNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureUnitLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitNameFigure() {&#xA;&#x9;&#x9;return fFigureUnitNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitLengthFigure() {&#xA;&#x9;&#x9;return fFigureUnitLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Track/hasSignals"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Unit/hasC1"/>
       </modelFacet>
     </links>
     <links
@@ -593,12 +404,12 @@
       </modelFacet>
     </links>
     <links
-        visualID="4016"
-        editPartClassName="SignalPlacedAtConnectorEditPart"
-        itemSemanticEditPolicyClassName="SignalPlacedAtConnectorItemSemanticEditPolicy"
-        notationViewFactoryClassName="SignalPlacedAtConnectorViewFactory"
-        createCommandClassName="SignalPlacedAtConnectorCreateCommand"
-        reorientCommandClassName="SignalPlacedAtConnectorReorientCommand">
+        visualID="4019"
+        editPartClassName="SignalControlsRoutesEditPart"
+        itemSemanticEditPolicyClassName="SignalControlsRoutesItemSemanticEditPolicy"
+        notationViewFactoryClassName="SignalControlsRoutesViewFactory"
+        createCommandClassName="SignalControlsRoutesCreateCommand"
+        reorientCommandClassName="SignalControlsRoutesReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -610,7 +421,238 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/placedAtConnector"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/controlsRoutes"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4007"
+        editPartClassName="SignalPlacedAtEditPart"
+        itemSemanticEditPolicyClassName="SignalPlacedAtItemSemanticEditPolicy"
+        notationViewFactoryClassName="SignalPlacedAtViewFactory"
+        createCommandClassName="SignalPlacedAtCreateCommand"
+        reorientCommandClassName="SignalPlacedAtReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="SignalFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SignalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSignalNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SignalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSignalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSignalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureSignalNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSignalNameFigure() {&#xA;&#x9;&#x9;return fFigureSignalNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/placedAt"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4013"
+        editPartClassName="ControlTableHasRoutesEditPart"
+        itemSemanticEditPolicyClassName="ControlTableHasRoutesItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControlTableHasRoutesViewFactory"
+        createCommandClassName="ControlTableHasRoutesCreateCommand"
+        reorientCommandClassName="ControlTableHasRoutesReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ControlTableHasRoutesFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ControlTableHasRoutesFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ControlTableHasRoutesFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/ControlTable/hasRoutes"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4010"
+        editPartClassName="ConnectorHasUnit2EditPart"
+        itemSemanticEditPolicyClassName="ConnectorHasUnit2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConnectorHasUnit2ViewFactory"
+        createCommandClassName="ConnectorHasUnit2CreateCommand"
+        reorientCommandClassName="ConnectorHasUnit2ReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ConnectorHasUnit1Figure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorHasUnit1Figure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorHasUnit1Figure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/hasUnit2"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4009"
+        editPartClassName="CrossingHasC3_CrossingEditPart"
+        itemSemanticEditPolicyClassName="CrossingHasC3_CrossingItemSemanticEditPolicy"
+        notationViewFactoryClassName="CrossingHasC3_CrossingViewFactory"
+        createCommandClassName="CrossingHasC3_CrossingCreateCommand"
+        reorientCommandClassName="CrossingHasC3_CrossingReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CrossingFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasC3_Crossing"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4004"
+        editPartClassName="PointHasPointDirectionEditPart"
+        itemSemanticEditPolicyClassName="PointHasPointDirectionItemSemanticEditPolicy"
+        notationViewFactoryClassName="PointHasPointDirectionViewFactory"
+        createCommandClassName="PointHasPointDirectionCreateCommand"
+        reorientCommandClassName="PointHasPointDirectionReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="PointFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PointFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointLengthFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePointPointNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PointFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePointNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointNameFigure);&#xA;&#xA;&#xA;&#xA;fFigurePointLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointLengthFigure);&#xA;&#xA;&#xA;&#xA;fFigurePointPointNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePointPointNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePointPointNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointNameFigure() {&#xA;&#x9;&#x9;return fFigurePointNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointLengthFigure() {&#xA;&#x9;&#x9;return fFigurePointLengthFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePointPointNameFigure() {&#xA;&#x9;&#x9;return fFigurePointPointNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Point/hasPointDirection"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4015"
+        editPartClassName="ConnectorHasUnit1EditPart"
+        itemSemanticEditPolicyClassName="ConnectorHasUnit1ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConnectorHasUnit1ViewFactory"
+        createCommandClassName="ConnectorHasUnit1CreateCommand"
+        reorientCommandClassName="ConnectorHasUnit1ReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ConnectorHasUnit1Figure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConnectorHasUnit1Figure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConnectorHasUnit1Figure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Connector/hasUnit1"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4017"
+        editPartClassName="TerminalHasTerminalSignalEditPart"
+        itemSemanticEditPolicyClassName="TerminalHasTerminalSignalItemSemanticEditPolicy"
+        notationViewFactoryClassName="TerminalHasTerminalSignalViewFactory"
+        createCommandClassName="TerminalHasTerminalSignalCreateCommand"
+        reorientCommandClassName="TerminalHasTerminalSignalReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="TerminalFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TerminalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTerminalNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTerminalLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TerminalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTerminalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTerminalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTerminalNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTerminalLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTerminalLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTerminalLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTerminalNameFigure() {&#xA;&#x9;&#x9;return fFigureTerminalNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTerminalLengthFigure() {&#xA;&#x9;&#x9;return fFigureTerminalLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Terminal/hasTerminalSignal"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4018"
+        editPartClassName="TrackHasSignalsEditPart"
+        itemSemanticEditPolicyClassName="TrackHasSignalsItemSemanticEditPolicy"
+        notationViewFactoryClassName="TrackHasSignalsViewFactory"
+        createCommandClassName="TrackHasSignalsCreateCommand"
+        reorientCommandClassName="TrackHasSignalsReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="TrackFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TrackFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TrackFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTrackNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTrackLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackNameFigure() {&#xA;&#x9;&#x9;return fFigureTrackNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackLengthFigure() {&#xA;&#x9;&#x9;return fFigureTrackLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Track/hasSignals"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4014"
+        editPartClassName="CrossingHasC4_CrossingEditPart"
+        itemSemanticEditPolicyClassName="CrossingHasC4_CrossingItemSemanticEditPolicy"
+        notationViewFactoryClassName="CrossingHasC4_CrossingViewFactory"
+        createCommandClassName="CrossingHasC4_CrossingCreateCommand"
+        reorientCommandClassName="CrossingHasC4_CrossingReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CrossingFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasC4_Crossing"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4020"
+        editPartClassName="SignalHasDirectionEditPart"
+        itemSemanticEditPolicyClassName="SignalHasDirectionItemSemanticEditPolicy"
+        notationViewFactoryClassName="SignalHasDirectionViewFactory"
+        createCommandClassName="SignalHasDirectionCreateCommand"
+        reorientCommandClassName="SignalHasDirectionReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="SignalFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SignalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSignalNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SignalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSignalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSignalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureSignalNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSignalNameFigure() {&#xA;&#x9;&#x9;return fFigureSignalNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/hasDirection"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4012"
+        editPartClassName="UnitHasC2EditPart"
+        itemSemanticEditPolicyClassName="UnitHasC2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="UnitHasC2ViewFactory"
+        createCommandClassName="UnitHasC2CreateCommand"
+        reorientCommandClassName="UnitHasC2ReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="UnitFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnitFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnitFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUnitNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureUnitLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitNameFigure() {&#xA;&#x9;&#x9;return fFigureUnitNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitLengthFigure() {&#xA;&#x9;&#x9;return fFigureUnitLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Unit/hasC2"/>
       </modelFacet>
     </links>
     <links
@@ -635,66 +677,24 @@
       </modelFacet>
     </links>
     <links
-        visualID="4011"
-        editPartClassName="UnitHasC1EditPart"
-        itemSemanticEditPolicyClassName="UnitHasC1ItemSemanticEditPolicy"
-        notationViewFactoryClassName="UnitHasC1ViewFactory"
-        createCommandClassName="UnitHasC1CreateCommand"
-        reorientCommandClassName="UnitHasC1ReorientCommand">
+        visualID="4002"
+        editPartClassName="CrossingHasCrossingDirectionEditPart"
+        itemSemanticEditPolicyClassName="CrossingHasCrossingDirectionItemSemanticEditPolicy"
+        notationViewFactoryClassName="CrossingHasCrossingDirectionViewFactory"
+        createCommandClassName="CrossingHasCrossingDirectionCreateCommand"
+        reorientCommandClassName="CrossingHasCrossingDirectionReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="UnitFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class UnitFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureUnitLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public UnitFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureUnitNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureUnitLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureUnitLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureUnitLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitNameFigure() {&#xA;&#x9;&#x9;return fFigureUnitNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureUnitLengthFigure() {&#xA;&#x9;&#x9;return fFigureUnitLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          className="CrossingFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CrossingFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCrossingLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CrossingFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCrossingNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureCrossingLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCrossingLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureCrossingLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingNameFigure() {&#xA;&#x9;&#x9;return fFigureCrossingNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCrossingLengthFigure() {&#xA;&#x9;&#x9;return fFigureCrossingLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Unit/hasC1"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4006"
-        editPartClassName="TrackHasSignalEditPart"
-        itemSemanticEditPolicyClassName="TrackHasSignalItemSemanticEditPolicy"
-        notationViewFactoryClassName="TrackHasSignalViewFactory"
-        createCommandClassName="TrackHasSignalCreateCommand"
-        reorientCommandClassName="TrackHasSignalReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TrackFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TrackFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTrackLengthFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TrackFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTrackNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureTrackLengthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTrackLengthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureTrackLengthFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackNameFigure() {&#xA;&#x9;&#x9;return fFigureTrackNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTrackLengthFigure() {&#xA;&#x9;&#x9;return fFigureTrackLengthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Track/hasSignal"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4020"
-        editPartClassName="SignalHasDirectionEditPart"
-        itemSemanticEditPolicyClassName="SignalHasDirectionItemSemanticEditPolicy"
-        notationViewFactoryClassName="SignalHasDirectionViewFactory"
-        createCommandClassName="SignalHasDirectionCreateCommand"
-        reorientCommandClassName="SignalHasDirectionReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SignalFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SignalFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSignalNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SignalFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSignalNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureSignalNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureSignalNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSignalNameFigure() {&#xA;&#x9;&#x9;return fFigureSignalNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="BjoernerComplete.genmodel#//bjoernercomplete/Signal/hasDirection"/>
+            href="BjoernerComplete.genmodel#//bjoernercomplete/Crossing/hasCrossingDirection"/>
       </modelFacet>
     </links>
     <palette>
@@ -840,36 +840,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.1"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
         child="//@diagram/@topLevelNodes.4"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.4"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.4"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -881,12 +857,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.5"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -898,24 +886,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.2"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.4"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.4"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
@@ -927,24 +915,48 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.3"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.0"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@links.3"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.3"
-        child="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.2"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.5"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
@@ -954,18 +966,6 @@
         child="//@diagram/@links.4"
         groupName="links"
         groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.4"
-        child="//@diagram/@topLevelNodes.2"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@links.4"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.4"
         child="//@diagram/@topLevelNodes.1"
@@ -985,12 +985,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.5"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.5"
+        child="//@diagram/@topLevelNodes.5"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.1"
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.5"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1000,42 +1012,6 @@
         child="//@diagram/@links.6"
         groupName="links"
         groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.6"
-        child="//@diagram/@topLevelNodes.2"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@links.6"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.6"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.6"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.6"
-        child="//@diagram/@topLevelNodes.1"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@links.6"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.6"
         child="//@diagram/@topLevelNodes.4"
@@ -1055,24 +1031,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.7"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.7"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.7"
-        child="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@topLevelNodes.4"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.1"
+        parent="//@diagram/@topLevelNodes.4"
         child="//@diagram/@links.7"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1101,18 +1077,6 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.9"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.9"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.9"
         child="//@diagram/@topLevelNodes.1"
         referenceType="out_target"
         groupName="target"
@@ -1125,24 +1089,36 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.9"
-        child="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@topLevelNodes.2"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@links.9"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.9"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@links.9"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.9"
+        child="//@diagram/@topLevelNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@links.9"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1154,12 +1130,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.10"
-        child="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.10"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.10"
+        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@links.10"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1171,24 +1159,12 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.11"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.11"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.11"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.5"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.11"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1200,12 +1176,36 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.12"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.12"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.12"
+        child="//@diagram/@topLevelNodes.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.12"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.12"
+        child="//@diagram/@topLevelNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.12"
         referenceType="in_source"
         groupName="incoming links"
@@ -1229,12 +1229,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.13"
-        child="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.13"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.13"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.0"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.13"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1246,24 +1258,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.4"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.4"
         child="//@diagram/@links.14"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.14"
-        child="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.14"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1275,24 +1287,24 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.15"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.0"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@links.15"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.15"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@links.15"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1305,23 +1317,11 @@
     <childReferences
         parent="//@diagram/@links.16"
         child="//@diagram/@topLevelNodes.4"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.4"
-        child="//@diagram/@links.16"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.16"
-        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.4"
         child="//@diagram/@links.16"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1333,28 +1333,16 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.17"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.0"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@links.17"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.17"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.17"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.17"
         child="//@diagram/@topLevelNodes.1"
@@ -1369,12 +1357,24 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.17"
-        child="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.17"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.17"
+        child="//@diagram/@topLevelNodes.5"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.17"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1386,12 +1386,12 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.18"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.5"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.18"
         referenceType="in_source"
         groupName="incoming links"
@@ -1415,12 +1415,12 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.19"
-        child="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.3"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@links.19"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1452,7 +1452,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

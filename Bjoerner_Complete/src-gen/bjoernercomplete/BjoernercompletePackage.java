@@ -349,7 +349,7 @@ public interface BjoernercompletePackage extends EPackage {
 	int CONNECTOR = 4;
 
 	/**
-	 * The feature id for the '<em><b>Has Unit1</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Unit1</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -367,7 +367,7 @@ public interface BjoernercompletePackage extends EPackage {
 	int CONNECTOR__HAS_POINT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Has Unit2</b></em>' reference list.
+	 * The feature id for the '<em><b>Has Unit2</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1152,10 +1152,10 @@ public interface BjoernercompletePackage extends EPackage {
 	EClass getConnector();
 
 	/**
-	 * Returns the meta object for the reference list '{@link bjoernercomplete.Connector#getHasUnit1 <em>Has Unit1</em>}'.
+	 * Returns the meta object for the reference '{@link bjoernercomplete.Connector#getHasUnit1 <em>Has Unit1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Unit1</em>'.
+	 * @return the meta object for the reference '<em>Has Unit1</em>'.
 	 * @see bjoernercomplete.Connector#getHasUnit1()
 	 * @see #getConnector()
 	 * @generated
@@ -1174,10 +1174,10 @@ public interface BjoernercompletePackage extends EPackage {
 	EReference getConnector_HasPoint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link bjoernercomplete.Connector#getHasUnit2 <em>Has Unit2</em>}'.
+	 * Returns the meta object for the reference '{@link bjoernercomplete.Connector#getHasUnit2 <em>Has Unit2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Has Unit2</em>'.
+	 * @return the meta object for the reference '<em>Has Unit2</em>'.
 	 * @see bjoernercomplete.Connector#getHasUnit2()
 	 * @see #getConnector()
 	 * @generated
@@ -1721,7 +1721,7 @@ public interface BjoernercompletePackage extends EPackage {
 		EClass CONNECTOR = eINSTANCE.getConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Unit1</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Unit1</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1737,7 +1737,7 @@ public interface BjoernercompletePackage extends EPackage {
 		EReference CONNECTOR__HAS_POINT = eINSTANCE.getConnector_HasPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Has Unit2</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Has Unit2</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -71,7 +71,7 @@ public class TerminalItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == SignalPlacedOnTrackEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -95,7 +95,7 @@ public class TerminalItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == SignalPlacedOnTrackEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -106,31 +106,7 @@ public class TerminalItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TerminalHasTerminalSignalEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC2EditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasSignalsEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasTrackDirectionEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasSignalEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -146,7 +122,31 @@ public class TerminalItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasSignalEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasTrackDirectionEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TerminalHasTerminalSignalEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == TrackHasSignalsEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC2EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -182,11 +182,33 @@ public class TerminalItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
+		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
+				.getElementType()) {
+			return getGEFWrapper(new TrackHasSignalCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
 				.getElementType()) {
 			return null;
 		}
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC1CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.TrackHasTrackDirection_4003 == req
+				.getElementType()) {
+			return getGEFWrapper(new TrackHasTrackDirectionCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
 		if (BjoernerCompleteElementTypes.SignalPlacedAt_4007 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
 				.getElementType()) {
 			return null;
 		}
@@ -195,35 +217,13 @@ public class TerminalItemSemanticEditPolicy extends
 			return getGEFWrapper(new TerminalHasTerminalSignalCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC2CreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
-				.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
-				.getElementType()) {
-			return null;
-		}
 		if (BjoernerCompleteElementTypes.TrackHasSignals_4018 == req
 				.getElementType()) {
 			return getGEFWrapper(new TrackHasSignalsCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.TrackHasTrackDirection_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(new TrackHasTrackDirectionCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC1CreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
-				.getElementType()) {
-			return getGEFWrapper(new TrackHasSignalCreateCommand(req,
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC2CreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -234,46 +234,46 @@ public class TerminalItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
-				.getElementType()) {
-			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedAt_4007 == req
-				.getElementType()) {
-			return getGEFWrapper(new SignalPlacedAtCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017 == req
+		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
 				.getElementType()) {
 			return null;
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
-				.getElementType()) {
-			return getGEFWrapper(new ConnectorHasUnit2CreateCommand(req,
-					req.getSource(), req.getTarget()));
 		}
 		if (BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005 == req
 				.getElementType()) {
 			return getGEFWrapper(new SignalPlacedOnTrackCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.TrackHasSignals_4018 == req
-				.getElementType()) {
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
 			return null;
 		}
 		if (BjoernerCompleteElementTypes.TrackHasTrackDirection_4003 == req
 				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
+		if (BjoernerCompleteElementTypes.SignalPlacedAt_4007 == req
+				.getElementType()) {
+			return getGEFWrapper(new SignalPlacedAtCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
+				.getElementType()) {
+			return getGEFWrapper(new ConnectorHasUnit2CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
+				.getElementType()) {
+			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017 == req
+				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.TrackHasSignal_4006 == req
+		if (BjoernerCompleteElementTypes.TrackHasSignals_4018 == req
 				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -288,27 +288,27 @@ public class TerminalItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ConnectorHasUnit1EditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
+		case TrackHasSignalEditPart.VISUAL_ID:
+			return getGEFWrapper(new TrackHasSignalReorientCommand(req));
+		case SignalPlacedOnTrackEditPart.VISUAL_ID:
+			return getGEFWrapper(new SignalPlacedOnTrackReorientCommand(req));
+		case UnitHasC1EditPart.VISUAL_ID:
+			return getGEFWrapper(new UnitHasC1ReorientCommand(req));
+		case TrackHasTrackDirectionEditPart.VISUAL_ID:
+			return getGEFWrapper(new TrackHasTrackDirectionReorientCommand(req));
 		case SignalPlacedAtEditPart.VISUAL_ID:
 			return getGEFWrapper(new SignalPlacedAtReorientCommand(req));
+		case ConnectorHasUnit2EditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasUnit2ReorientCommand(req));
+		case ConnectorHasUnit1EditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
 		case TerminalHasTerminalSignalEditPart.VISUAL_ID:
 			return getGEFWrapper(new TerminalHasTerminalSignalReorientCommand(
 					req));
-		case UnitHasC2EditPart.VISUAL_ID:
-			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
-		case ConnectorHasUnit2EditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasUnit2ReorientCommand(req));
-		case SignalPlacedOnTrackEditPart.VISUAL_ID:
-			return getGEFWrapper(new SignalPlacedOnTrackReorientCommand(req));
 		case TrackHasSignalsEditPart.VISUAL_ID:
 			return getGEFWrapper(new TrackHasSignalsReorientCommand(req));
-		case TrackHasTrackDirectionEditPart.VISUAL_ID:
-			return getGEFWrapper(new TrackHasTrackDirectionReorientCommand(req));
-		case UnitHasC1EditPart.VISUAL_ID:
-			return getGEFWrapper(new UnitHasC1ReorientCommand(req));
-		case TrackHasSignalEditPart.VISUAL_ID:
-			return getGEFWrapper(new TrackHasSignalReorientCommand(req));
+		case UnitHasC2EditPart.VISUAL_ID:
+			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
