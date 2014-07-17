@@ -1111,7 +1111,6 @@ public class BjoernerCompleteDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<BjoernerCompleteNodeDescriptor> getSemanticChildren(
 				View view) {
 			return BjoernerCompleteDiagramUpdater.getSemanticChildren(view);
@@ -1120,7 +1119,6 @@ public class BjoernerCompleteDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<BjoernerCompleteLinkDescriptor> getContainedLinks(View view) {
 			return BjoernerCompleteDiagramUpdater.getContainedLinks(view);
 		}
@@ -1128,7 +1126,6 @@ public class BjoernerCompleteDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<BjoernerCompleteLinkDescriptor> getIncomingLinks(View view) {
 			return BjoernerCompleteDiagramUpdater.getIncomingLinks(view);
 		}
@@ -1136,7 +1133,6 @@ public class BjoernerCompleteDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<BjoernerCompleteLinkDescriptor> getOutgoingLinks(View view) {
 			return BjoernerCompleteDiagramUpdater.getOutgoingLinks(view);
 		}

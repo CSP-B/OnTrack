@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: Bjoerner_Complete.editor
 Bundle-SymbolicName: Bjoerner_Complete.editor;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-Version: 1.0.0.SNAPSHOT
 Bundle-Activator: bjoernercomplete.presentation.BjoernerCompleteEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -17,3 +16,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.ide;visibility:=reexport,
  org.eclipse.ui
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

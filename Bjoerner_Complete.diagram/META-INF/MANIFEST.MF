@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: Bjoerner_Complete.diagram; singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-Name: Bjoerner_Complete.diagram
+Bundle-SymbolicName: Bjoerner_Complete.diagram;singleton:=true
+Bundle-Version: 1.0.0.SNAPSHOT
 Bundle-Activator: bjoernercomplete.diagram.part.BjoernerCompleteDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -40,3 +39,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: .

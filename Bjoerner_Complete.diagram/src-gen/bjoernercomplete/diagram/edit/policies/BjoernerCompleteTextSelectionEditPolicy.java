@@ -190,7 +190,6 @@ public class BjoernerCompleteTextSelectionEditPolicy extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();

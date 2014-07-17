@@ -196,7 +196,6 @@ public class BjoernerCompleteTextNonResizableEditPolicy extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();

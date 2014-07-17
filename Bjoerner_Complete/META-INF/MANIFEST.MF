@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: Bjoerner_Complete
 Bundle-SymbolicName: Bjoerner_Complete;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-Version: 1.0.0.SNAPSHOT
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -36,3 +35,4 @@ Import-Package: org.eclipse.core.commands,
  org.eclipse.gmf.runtime.emf.core.util,
  org.eclipse.gmf.runtime.emf.type.core.requests,
  org.eclipse.gmf.runtime.notation
+Bundle-ClassPath: .
