@@ -253,6 +253,11 @@ public class BjoernerCompleteNavigatorContentProvider implements
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
 							.getType(TerminalEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
@@ -263,7 +268,7 @@ public class BjoernerCompleteNavigatorContentProvider implements
 					false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorEditPart.VISUAL_ID));
+							.getType(ControlTableEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -276,56 +281,13 @@ public class BjoernerCompleteNavigatorContentProvider implements
 							.getType(PointEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ControlTableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
+							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(ControlTableHasRoutesEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedAtEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(TerminalHasTerminalSignalEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasCrossingDirectionEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC2EditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalControlsRoutesEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit2EditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(PointHasPointDirectionEditPart.VISUAL_ID));
+							.getType(TrackHasSignalEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
@@ -333,7 +295,7 @@ public class BjoernerCompleteNavigatorContentProvider implements
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(TrackHasSignalsEditPart.VISUAL_ID));
+							.getType(UnitHasC1EditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
@@ -345,23 +307,61 @@ public class BjoernerCompleteNavigatorContentProvider implements
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
+							.getType(SignalControlsRoutesEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(SignalPlacedAtEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ControlTableHasRoutesEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasUnit2EditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(PointHasPointDirectionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(TerminalHasTerminalSignalEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(TrackHasSignalsEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(SignalHasDirectionEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(UnitHasC2EditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
 							.getType(ConnectorHasPointEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC1EditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(TrackHasSignalEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalHasDirectionEditPart.VISUAL_ID));
+							.getType(CrossingHasCrossingDirectionEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -372,21 +372,46 @@ public class BjoernerCompleteNavigatorContentProvider implements
 		case TerminalEditPart.VISUAL_ID: {
 			LinkedList<BjoernerCompleteAbstractNavigatorItem> result = new LinkedList<BjoernerCompleteAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
-					Messages.NavigatorGroupName_Terminal_2001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
 					Messages.NavigatorGroupName_Terminal_2001_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
+					Messages.NavigatorGroupName_Terminal_2001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(TrackHasSignalEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
+							.getType(SignalPlacedOnTrackEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(UnitHasC1EditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(TrackHasTrackDirectionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(SignalPlacedAtEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedAtEditPart.VISUAL_ID));
+							.getType(ConnectorHasUnit2EditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(
@@ -397,44 +422,19 @@ public class BjoernerCompleteNavigatorContentProvider implements
 					outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC2EditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit2EditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedOnTrackEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
 							.getType(TrackHasSignalsEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(TrackHasTrackDirectionEditPart.VISUAL_ID));
+							.getType(UnitHasC2EditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC1EditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(TrackHasSignalEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
+			}
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
 			}
 			return result.toArray();
 		}
@@ -469,6 +469,26 @@ public class BjoernerCompleteNavigatorContentProvider implements
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
+							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(TrackHasSignalEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(SignalPlacedOnTrackEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(SignalControlsRoutesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
 							.getType(SignalPlacedAtEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
@@ -478,29 +498,9 @@ public class BjoernerCompleteNavigatorContentProvider implements
 							.getType(TerminalHasTerminalSignalEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalControlsRoutesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedOnTrackEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
 							.getType(TrackHasSignalsEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(TrackHasSignalEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
@@ -520,31 +520,26 @@ public class BjoernerCompleteNavigatorContentProvider implements
 		case ConnectorEditPart.VISUAL_ID: {
 			LinkedList<BjoernerCompleteAbstractNavigatorItem> result = new LinkedList<BjoernerCompleteAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
-					Messages.NavigatorGroupName_Connector_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
 					Messages.NavigatorGroupName_Connector_2004_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
+					Messages.NavigatorGroupName_Connector_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
+							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC2EditPart.VISUAL_ID));
+							.getType(UnitHasC1EditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
+							.getType(PointHasC3_PointEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
@@ -554,12 +549,22 @@ public class BjoernerCompleteNavigatorContentProvider implements
 					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(PointHasC3_PointEditPart.VISUAL_ID));
+							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(SignalPlacedAtConnectorEditPart.VISUAL_ID));
+							.getType(UnitHasC2EditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
@@ -567,16 +572,11 @@ public class BjoernerCompleteNavigatorContentProvider implements
 							.getType(ConnectorHasPointEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC1EditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
@@ -584,21 +584,21 @@ public class BjoernerCompleteNavigatorContentProvider implements
 		case PointEditPart.VISUAL_ID: {
 			LinkedList<BjoernerCompleteAbstractNavigatorItem> result = new LinkedList<BjoernerCompleteAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
-					Messages.NavigatorGroupName_Point_2005_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
 					Messages.NavigatorGroupName_Point_2005_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
+					Messages.NavigatorGroupName_Point_2005_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC2EditPart.VISUAL_ID));
+							.getType(UnitHasC1EditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(PointHasC3_PointEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -611,40 +611,6 @@ public class BjoernerCompleteNavigatorContentProvider implements
 							.getType(PointHasPointDirectionEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(PointHasC3_PointEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(ConnectorHasPointEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC1EditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case CrossingEditPart.VISUAL_ID: {
-			LinkedList<BjoernerCompleteAbstractNavigatorItem> result = new LinkedList<BjoernerCompleteAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
-					Messages.NavigatorGroupName_Crossing_2006_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
-					Messages.NavigatorGroupName_Crossing_2006_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
 							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
@@ -652,23 +618,36 @@ public class BjoernerCompleteNavigatorContentProvider implements
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasCrossingDirectionEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					BjoernerCompleteVisualIDRegistry
 							.getType(UnitHasC2EditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasPointEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case CrossingEditPart.VISUAL_ID: {
+			LinkedList<BjoernerCompleteAbstractNavigatorItem> result = new LinkedList<BjoernerCompleteAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			BjoernerCompleteNavigatorGroup outgoinglinks = new BjoernerCompleteNavigatorGroup(
+					Messages.NavigatorGroupName_Crossing_2006_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			BjoernerCompleteNavigatorGroup incominglinks = new BjoernerCompleteNavigatorGroup(
+					Messages.NavigatorGroupName_Crossing_2006_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
+							.getType(UnitHasC1EditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -678,14 +657,35 @@ public class BjoernerCompleteNavigatorContentProvider implements
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					BjoernerCompleteVisualIDRegistry
-							.getType(UnitHasC1EditPart.VISUAL_ID));
+							.getType(CrossingHasC3_CrossingEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(ConnectorHasUnit1EditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(CrossingHasC4_CrossingEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(UnitHasC2EditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					BjoernerCompleteVisualIDRegistry
+							.getType(CrossingHasCrossingDirectionEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
+			}
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
 			}
 			return result.toArray();
 		}

@@ -338,8 +338,7 @@ public class BjoernerCompleteBaseItemSemanticEditPolicy extends
 		public boolean canCreateConnectorHasUnit1_4015(Connector source,
 				Unit target) {
 			if (source != null) {
-				if (source.getHasUnit1().size() >= 2
-						|| source.getHasUnit1().contains(target)) {
+				if (source.getHasUnit1() != null) {
 					return false;
 				}
 			}
@@ -429,9 +428,7 @@ public class BjoernerCompleteBaseItemSemanticEditPolicy extends
 					return false;
 				}
 			}
-			if (target != null
-					&& (target.getHasUnit2().size() >= 2 || target
-							.getHasUnit2().contains(target))) {
+			if (target != null && (target.getHasUnit2() != null)) {
 				return false;
 			}
 
@@ -475,8 +472,7 @@ public class BjoernerCompleteBaseItemSemanticEditPolicy extends
 		public boolean canCreateConnectorHasUnit2_4010(Connector source,
 				Unit target) {
 			if (source != null) {
-				if (source.getHasUnit2().size() >= 2
-						|| source.getHasUnit2().contains(target)) {
+				if (source.getHasUnit2() != null) {
 					return false;
 				}
 			}
@@ -605,9 +601,7 @@ public class BjoernerCompleteBaseItemSemanticEditPolicy extends
 					return false;
 				}
 			}
-			if (target != null
-					&& (target.getHasUnit1().size() >= 2 || target
-							.getHasUnit1().contains(target))) {
+			if (target != null && (target.getHasUnit1() != null)) {
 				return false;
 			}
 

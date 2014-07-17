@@ -31,12 +31,12 @@
         upperBound="4" eType="#//Direction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit1" upperBound="2"
-        eType="#//Unit" eOpposite="#//Unit/hasC1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit1" eType="#//Unit"
+        eOpposite="#//Unit/hasC1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasPoint" upperBound="2"
         eType="#//Point"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit2" upperBound="2"
-        eType="#//Unit" eOpposite="#//Unit/hasC2"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit2" eType="#//Unit"
+        eOpposite="#//Unit/hasC2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Path">

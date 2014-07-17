@@ -81,6 +81,17 @@ public class BjoernerCompleteDiagramUpdater {
 		}
 		RailDiagram modelElement = (RailDiagram) view.getElement();
 		LinkedList<BjoernerCompleteNodeDescriptor> result = new LinkedList<BjoernerCompleteNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getHasConnectors().iterator(); it
+				.hasNext();) {
+			Connector childElement = (Connector) it.next();
+			int visualID = BjoernerCompleteVisualIDRegistry.getNodeVisualID(
+					view, childElement);
+			if (visualID == ConnectorEditPart.VISUAL_ID) {
+				result.add(new BjoernerCompleteNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+		}
 		for (Iterator<?> it = modelElement.getHasUnits().iterator(); it
 				.hasNext();) {
 			Unit childElement = (Unit) it.next();
@@ -102,15 +113,13 @@ public class BjoernerCompleteDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getHasConnectors().iterator(); it
-				.hasNext();) {
-			Connector childElement = (Connector) it.next();
+		{
+			ControlTable childElement = modelElement.getHasControlTable();
 			int visualID = BjoernerCompleteVisualIDRegistry.getNodeVisualID(
 					view, childElement);
-			if (visualID == ConnectorEditPart.VISUAL_ID) {
+			if (visualID == ControlTableEditPart.VISUAL_ID) {
 				result.add(new BjoernerCompleteNodeDescriptor(childElement,
 						visualID));
-				continue;
 			}
 		}
 		for (Iterator<?> it = modelElement.getHasSignals().iterator(); it
@@ -124,15 +133,6 @@ public class BjoernerCompleteDiagramUpdater {
 				continue;
 			}
 		}
-		{
-			ControlTable childElement = modelElement.getHasControlTable();
-			int visualID = BjoernerCompleteVisualIDRegistry.getNodeVisualID(
-					view, childElement);
-			if (visualID == ControlTableEditPart.VISUAL_ID) {
-				result.add(new BjoernerCompleteNodeDescriptor(childElement,
-						visualID));
-			}
-		}
 		return result;
 	}
 
@@ -144,18 +144,18 @@ public class BjoernerCompleteDiagramUpdater {
 		switch (BjoernerCompleteVisualIDRegistry.getVisualID(view)) {
 		case RailDiagramEditPart.VISUAL_ID:
 			return getRailDiagram_1000ContainedLinks(view);
+		case ConnectorEditPart.VISUAL_ID:
+			return getConnector_2004ContainedLinks(view);
 		case TerminalEditPart.VISUAL_ID:
 			return getTerminal_2001ContainedLinks(view);
 		case CrossingEditPart.VISUAL_ID:
 			return getCrossing_2006ContainedLinks(view);
-		case ConnectorEditPart.VISUAL_ID:
-			return getConnector_2004ContainedLinks(view);
+		case ControlTableEditPart.VISUAL_ID:
+			return getControlTable_2002ContainedLinks(view);
 		case SignalEditPart.VISUAL_ID:
 			return getSignal_2003ContainedLinks(view);
 		case PointEditPart.VISUAL_ID:
 			return getPoint_2005ContainedLinks(view);
-		case ControlTableEditPart.VISUAL_ID:
-			return getControlTable_2002ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -166,18 +166,18 @@ public class BjoernerCompleteDiagramUpdater {
 	public static List<BjoernerCompleteLinkDescriptor> getIncomingLinks(
 			View view) {
 		switch (BjoernerCompleteVisualIDRegistry.getVisualID(view)) {
+		case ConnectorEditPart.VISUAL_ID:
+			return getConnector_2004IncomingLinks(view);
 		case TerminalEditPart.VISUAL_ID:
 			return getTerminal_2001IncomingLinks(view);
 		case CrossingEditPart.VISUAL_ID:
 			return getCrossing_2006IncomingLinks(view);
-		case ConnectorEditPart.VISUAL_ID:
-			return getConnector_2004IncomingLinks(view);
+		case ControlTableEditPart.VISUAL_ID:
+			return getControlTable_2002IncomingLinks(view);
 		case SignalEditPart.VISUAL_ID:
 			return getSignal_2003IncomingLinks(view);
 		case PointEditPart.VISUAL_ID:
 			return getPoint_2005IncomingLinks(view);
-		case ControlTableEditPart.VISUAL_ID:
-			return getControlTable_2002IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -188,18 +188,18 @@ public class BjoernerCompleteDiagramUpdater {
 	public static List<BjoernerCompleteLinkDescriptor> getOutgoingLinks(
 			View view) {
 		switch (BjoernerCompleteVisualIDRegistry.getVisualID(view)) {
+		case ConnectorEditPart.VISUAL_ID:
+			return getConnector_2004OutgoingLinks(view);
 		case TerminalEditPart.VISUAL_ID:
 			return getTerminal_2001OutgoingLinks(view);
 		case CrossingEditPart.VISUAL_ID:
 			return getCrossing_2006OutgoingLinks(view);
-		case ConnectorEditPart.VISUAL_ID:
-			return getConnector_2004OutgoingLinks(view);
+		case ControlTableEditPart.VISUAL_ID:
+			return getControlTable_2002OutgoingLinks(view);
 		case SignalEditPart.VISUAL_ID:
 			return getSignal_2003OutgoingLinks(view);
 		case PointEditPart.VISUAL_ID:
 			return getPoint_2005OutgoingLinks(view);
-		case ControlTableEditPart.VISUAL_ID:
-			return getControlTable_2002OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -219,12 +219,12 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Terminal modelElement = (Terminal) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Terminal_HasTerminalSignal_4017(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignals_4018(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasTrackDirection_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignal_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasTrackDirection_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Terminal_HasTerminalSignal_4017(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignals_4018(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
 		return result;
 	}
 
@@ -235,11 +235,11 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Crossing modelElement = (Crossing) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasCrossingDirection_4002(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasCrossingDirection_4002(modelElement));
 		return result;
 	}
 
@@ -250,8 +250,8 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Connector modelElement = (Connector) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit1_4015(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit2_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit1_4015(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasPoint_4008(modelElement));
 		return result;
 	}
@@ -263,10 +263,10 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Signal modelElement = (Signal) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAt_4007(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_ControlsRoutes_4019(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAtConnector_4016(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_ControlsRoutes_4019(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAt_4007(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_HasDirection_4020(modelElement));
 		return result;
 	}
@@ -278,10 +278,10 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Point modelElement = (Point) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasPointDirection_4004(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasC3_Point_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasC3_Point_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasPointDirection_4004(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
 		return result;
 	}
 
@@ -305,13 +305,13 @@ public class BjoernerCompleteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
+		result.addAll(getIncomingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Signal_PlacedAt_4007(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit2_4010(
 				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(
+		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -325,9 +325,9 @@ public class BjoernerCompleteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
-				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit2_4010(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -341,17 +341,17 @@ public class BjoernerCompleteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Unit_HasC2_4012(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Point_HasC3_Point_4001(
-				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Signal_PlacedAtConnector_4016(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Unit_HasC1_4011(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Point_HasC3_Point_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Unit_HasC2_4012(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -365,11 +365,11 @@ public class BjoernerCompleteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Track_HasSignal_4006(
+				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Terminal_HasTerminalSignal_4017(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Track_HasSignals_4018(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Track_HasSignal_4006(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -383,9 +383,9 @@ public class BjoernerCompleteDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
-				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit2_4010(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasUnit1_4015(
 				modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Connector_HasPoint_4008(
 				modelElement, crossReferences));
@@ -407,12 +407,12 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Terminal modelElement = (Terminal) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Terminal_HasTerminalSignal_4017(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignals_4018(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasTrackDirection_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignal_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasTrackDirection_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Terminal_HasTerminalSignal_4017(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Track_HasSignals_4018(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
 		return result;
 	}
 
@@ -423,11 +423,11 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Crossing modelElement = (Crossing) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasCrossingDirection_4002(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC3_Crossing_4009(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasC4_Crossing_4014(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Crossing_HasCrossingDirection_4002(modelElement));
 		return result;
 	}
 
@@ -438,8 +438,8 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Connector modelElement = (Connector) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit1_4015(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit2_4010(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasUnit1_4015(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Connector_HasPoint_4008(modelElement));
 		return result;
 	}
@@ -451,10 +451,10 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Signal modelElement = (Signal) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAt_4007(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_ControlsRoutes_4019(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAtConnector_4016(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedOnTrack_4005(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_ControlsRoutes_4019(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_PlacedAt_4007(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Signal_HasDirection_4020(modelElement));
 		return result;
 	}
@@ -466,10 +466,10 @@ public class BjoernerCompleteDiagramUpdater {
 			View view) {
 		Point modelElement = (Point) view.getElement();
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasPointDirection_4004(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasC3_Point_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC1_4011(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasC3_Point_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Point_HasPointDirection_4004(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Unit_HasC2_4012(modelElement));
 		return result;
 	}
 
@@ -788,13 +788,13 @@ public class BjoernerCompleteDiagramUpdater {
 	private static Collection<BjoernerCompleteLinkDescriptor> getOutgoingFeatureModelFacetLinks_Connector_HasUnit1_4015(
 			Connector source) {
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		for (Iterator<?> destinations = source.getHasUnit1().iterator(); destinations
-				.hasNext();) {
-			Unit destination = (Unit) destinations.next();
-			result.add(new BjoernerCompleteLinkDescriptor(source, destination,
-					BjoernerCompleteElementTypes.ConnectorHasUnit1_4015,
-					ConnectorHasUnit1EditPart.VISUAL_ID));
+		Unit destination = source.getHasUnit1();
+		if (destination == null) {
+			return result;
 		}
+		result.add(new BjoernerCompleteLinkDescriptor(source, destination,
+				BjoernerCompleteElementTypes.ConnectorHasUnit1_4015,
+				ConnectorHasUnit1EditPart.VISUAL_ID));
 		return result;
 	}
 
@@ -934,13 +934,13 @@ public class BjoernerCompleteDiagramUpdater {
 	private static Collection<BjoernerCompleteLinkDescriptor> getOutgoingFeatureModelFacetLinks_Connector_HasUnit2_4010(
 			Connector source) {
 		LinkedList<BjoernerCompleteLinkDescriptor> result = new LinkedList<BjoernerCompleteLinkDescriptor>();
-		for (Iterator<?> destinations = source.getHasUnit2().iterator(); destinations
-				.hasNext();) {
-			Unit destination = (Unit) destinations.next();
-			result.add(new BjoernerCompleteLinkDescriptor(source, destination,
-					BjoernerCompleteElementTypes.ConnectorHasUnit2_4010,
-					ConnectorHasUnit2EditPart.VISUAL_ID));
+		Unit destination = source.getHasUnit2();
+		if (destination == null) {
+			return result;
 		}
+		result.add(new BjoernerCompleteLinkDescriptor(source, destination,
+				BjoernerCompleteElementTypes.ConnectorHasUnit2_4010,
+				ConnectorHasUnit2EditPart.VISUAL_ID));
 		return result;
 	}
 

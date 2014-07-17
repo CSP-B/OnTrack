@@ -254,10 +254,10 @@ public class CrossingEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
-		types.add(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009);
-		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
-		types.add(BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014);
 		types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+		types.add(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009);
+		types.add(BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014);
+		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		return types;
 	}
 
@@ -268,16 +268,16 @@ public class CrossingEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009);
+			types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
+			types.add(BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
 			types.add(BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		}
 		return types;
 	}
@@ -287,13 +287,13 @@ public class CrossingEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009) {
+		if (relationshipType == BjoernerCompleteElementTypes.UnitHasC1_4011) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		} else if (relationshipType == BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC1_4011) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		}
 		return types;
@@ -304,8 +304,8 @@ public class CrossingEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
 		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit2_4010);
+		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
 		return types;
 	}
 
@@ -314,9 +314,9 @@ public class CrossingEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
+		if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit2_4010) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit2_4010) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		}
 		return types;

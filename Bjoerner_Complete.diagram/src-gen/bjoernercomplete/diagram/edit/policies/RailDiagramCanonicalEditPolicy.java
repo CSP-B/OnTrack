@@ -73,13 +73,13 @@ public class RailDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(BjoernercompletePackage.eINSTANCE
-					.getRailDiagram_HasUnits());
-			myFeaturesToSynchronize.add(BjoernercompletePackage.eINSTANCE
 					.getRailDiagram_HasConnectors());
 			myFeaturesToSynchronize.add(BjoernercompletePackage.eINSTANCE
-					.getRailDiagram_HasSignals());
+					.getRailDiagram_HasUnits());
 			myFeaturesToSynchronize.add(BjoernercompletePackage.eINSTANCE
 					.getRailDiagram_HasControlTable());
+			myFeaturesToSynchronize.add(BjoernercompletePackage.eINSTANCE
+					.getRailDiagram_HasSignals());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -114,12 +114,12 @@ public class RailDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean isMyDiagramElement(View view) {
 		int visualID = BjoernerCompleteVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
+		case ConnectorEditPart.VISUAL_ID:
 		case TerminalEditPart.VISUAL_ID:
 		case CrossingEditPart.VISUAL_ID:
-		case ConnectorEditPart.VISUAL_ID:
+		case ControlTableEditPart.VISUAL_ID:
 		case SignalEditPart.VISUAL_ID:
 		case PointEditPart.VISUAL_ID:
-		case ControlTableEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -281,6 +281,14 @@ public class RailDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case ConnectorEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(BjoernerCompleteDiagramUpdater
+						.getConnector_2004ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case TerminalEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(BjoernerCompleteDiagramUpdater
@@ -297,10 +305,10 @@ public class RailDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ConnectorEditPart.VISUAL_ID: {
+		case ControlTableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(BjoernerCompleteDiagramUpdater
-						.getConnector_2004ContainedLinks(view));
+						.getControlTable_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -317,14 +325,6 @@ public class RailDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(BjoernerCompleteDiagramUpdater
 						.getPoint_2005ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ControlTableEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(BjoernerCompleteDiagramUpdater
-						.getControlTable_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

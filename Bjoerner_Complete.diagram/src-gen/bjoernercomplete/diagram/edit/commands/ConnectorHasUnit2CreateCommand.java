@@ -69,7 +69,7 @@ public class ConnectorHasUnit2CreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().getHasUnit2().add(getTarget());
+			getSource().setHasUnit2(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

@@ -254,11 +254,11 @@ public class TerminalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
-		types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
-		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
-		types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
-		types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
 		types.add(BjoernerCompleteElementTypes.TrackHasSignal_4006);
+		types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
+		types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
+		types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
+		types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		return types;
 	}
 
@@ -269,19 +269,19 @@ public class TerminalEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof SignalEditPart) {
-			types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
-		}
-		if (targetEditPart instanceof ConnectorEditPart) {
-			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
-		}
-		if (targetEditPart instanceof SignalEditPart) {
-			types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
+			types.add(BjoernerCompleteElementTypes.TrackHasSignal_4006);
 		}
 		if (targetEditPart instanceof ConnectorEditPart) {
 			types.add(BjoernerCompleteElementTypes.UnitHasC1_4011);
 		}
 		if (targetEditPart instanceof SignalEditPart) {
-			types.add(BjoernerCompleteElementTypes.TrackHasSignal_4006);
+			types.add(BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017);
+		}
+		if (targetEditPart instanceof SignalEditPart) {
+			types.add(BjoernerCompleteElementTypes.TrackHasSignals_4018);
+		}
+		if (targetEditPart instanceof ConnectorEditPart) {
+			types.add(BjoernerCompleteElementTypes.UnitHasC2_4012);
 		}
 		return types;
 	}
@@ -291,16 +291,16 @@ public class TerminalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017) {
-			types.add(BjoernerCompleteElementTypes.Signal_2003);
-		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
-			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignals_4018) {
+		if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignal_4006) {
 			types.add(BjoernerCompleteElementTypes.Signal_2003);
 		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC1_4011) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignal_4006) {
+		} else if (relationshipType == BjoernerCompleteElementTypes.TerminalHasTerminalSignal_4017) {
 			types.add(BjoernerCompleteElementTypes.Signal_2003);
+		} else if (relationshipType == BjoernerCompleteElementTypes.TrackHasSignals_4018) {
+			types.add(BjoernerCompleteElementTypes.Signal_2003);
+		} else if (relationshipType == BjoernerCompleteElementTypes.UnitHasC2_4012) {
+			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		}
 		return types;
 	}
@@ -310,10 +310,10 @@ public class TerminalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
-		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
+		types.add(BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005);
 		types.add(BjoernerCompleteElementTypes.SignalPlacedAt_4007);
 		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit2_4010);
-		types.add(BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005);
+		types.add(BjoernerCompleteElementTypes.ConnectorHasUnit1_4015);
 		return types;
 	}
 
@@ -322,14 +322,14 @@ public class TerminalEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
-			types.add(BjoernerCompleteElementTypes.Connector_2004);
+		if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005) {
+			types.add(BjoernerCompleteElementTypes.Signal_2003);
 		} else if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedAt_4007) {
 			types.add(BjoernerCompleteElementTypes.Signal_2003);
 		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit2_4010) {
 			types.add(BjoernerCompleteElementTypes.Connector_2004);
-		} else if (relationshipType == BjoernerCompleteElementTypes.SignalPlacedOnTrack_4005) {
-			types.add(BjoernerCompleteElementTypes.Signal_2003);
+		} else if (relationshipType == BjoernerCompleteElementTypes.ConnectorHasUnit1_4015) {
+			types.add(BjoernerCompleteElementTypes.Connector_2004);
 		}
 		return types;
 	}

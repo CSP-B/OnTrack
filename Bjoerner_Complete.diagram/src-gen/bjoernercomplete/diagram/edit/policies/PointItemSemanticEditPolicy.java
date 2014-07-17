@@ -62,7 +62,7 @@ public class PointItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit2EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -70,7 +70,7 @@ public class PointItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit2EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -89,15 +89,7 @@ public class PointItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC2EditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == PointHasPointDirectionEditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC1EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -113,7 +105,15 @@ public class PointItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC1EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == PointHasPointDirectionEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == UnitHasC2EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -149,12 +149,13 @@ public class PointItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
-				.getElementType()) {
-			return null;
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC1CreateCommand(req,
+					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC2CreateCommand(req,
+		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+				.getElementType()) {
+			return getGEFWrapper(new PointHasC3_PointCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
@@ -166,18 +167,17 @@ public class PointItemSemanticEditPolicy extends
 			return getGEFWrapper(new PointHasPointDirectionCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
 				.getElementType()) {
-			return getGEFWrapper(new PointHasC3_PointCreateCommand(req,
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC2CreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasPoint_4008 == req
 				.getElementType()) {
 			return null;
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC1CreateCommand(req,
-					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -187,12 +187,11 @@ public class PointItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
-				.getElementType()) {
-			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
+			return null;
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
+		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+				.getElementType()) {
 			return null;
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
@@ -204,17 +203,18 @@ public class PointItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
 				.getElementType()) {
+			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
 			return null;
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasPoint_4008 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConnectorHasPointCreateCommand(req,
 					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
-			return null;
 		}
 		return null;
 	}
@@ -228,20 +228,20 @@ public class PointItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ConnectorHasUnit1EditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
-		case UnitHasC2EditPart.VISUAL_ID:
-			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
+		case UnitHasC1EditPart.VISUAL_ID:
+			return getGEFWrapper(new UnitHasC1ReorientCommand(req));
+		case PointHasC3_PointEditPart.VISUAL_ID:
+			return getGEFWrapper(new PointHasC3_PointReorientCommand(req));
 		case ConnectorHasUnit2EditPart.VISUAL_ID:
 			return getGEFWrapper(new ConnectorHasUnit2ReorientCommand(req));
 		case PointHasPointDirectionEditPart.VISUAL_ID:
 			return getGEFWrapper(new PointHasPointDirectionReorientCommand(req));
-		case PointHasC3_PointEditPart.VISUAL_ID:
-			return getGEFWrapper(new PointHasC3_PointReorientCommand(req));
+		case ConnectorHasUnit1EditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
+		case UnitHasC2EditPart.VISUAL_ID:
+			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
 		case ConnectorHasPointEditPart.VISUAL_ID:
 			return getGEFWrapper(new ConnectorHasPointReorientCommand(req));
-		case UnitHasC1EditPart.VISUAL_ID:
-			return getGEFWrapper(new UnitHasC1ReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

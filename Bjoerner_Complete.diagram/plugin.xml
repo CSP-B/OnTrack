@@ -217,8 +217,8 @@
       <viewProvider class="bjoernercomplete.diagram.providers.BjoernerCompleteViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="BjoernerComplete"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2006,2004,2003,2005,2002"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4015,4013,4007,4017,4009,4002,4012,4014,4019,4010,4004,4005,4018,4003,4001,4016,4008,4011,4006,4020"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2001,2006,2002,2003,2005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4016,4006,4005,4011,4003,4001,4019,4007,4013,4010,4009,4004,4015,4017,4018,4014,4020,4012,4008,4002"/>
       </viewProvider>
    </extension>
 
@@ -230,13 +230,13 @@
             <method name="getType()" value="BjoernerComplete"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2006,2004,2003,2005,2002"/>
+            <method name="getType()" value="2004,2001,2006,2002,2003,2005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4015,4013,4007,4017,4009,4002,4012,4014,4019,4010,4004,4005,4018,4003,4001,4016,4008,4011,4006,4020"/>
+            <method name="getType()" value="4016,4006,4005,4011,4003,4001,4019,4007,4013,4010,4009,4004,4015,4017,4018,4014,4020,4012,4008,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5004,5005"/>
+            <method name="getType()" value="5003,5001,5002,5004,5005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -250,13 +250,13 @@
       <modelingAssistantProvider class="bjoernercomplete.diagram.providers.BjoernerCompleteModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="bjoernercomplete.diagram.edit.parts.RailDiagramEditPart" id="RailDiagram_1000"/>
+         <object class="bjoernercomplete.diagram.edit.parts.ConnectorEditPart" id="Connector_2004"/>
          <object class="bjoernercomplete.diagram.edit.parts.TerminalEditPart" id="Terminal_2001"/>
          <object class="bjoernercomplete.diagram.edit.parts.CrossingEditPart" id="Crossing_2006"/>
-         <object class="bjoernercomplete.diagram.edit.parts.ConnectorEditPart" id="Connector_2004"/>
+         <object class="bjoernercomplete.diagram.edit.parts.ControlTableEditPart" id="ControlTable_2002"/>
          <object class="bjoernercomplete.diagram.edit.parts.SignalEditPart" id="Signal_2003"/>
          <object class="bjoernercomplete.diagram.edit.parts.PointEditPart" id="Point_2005"/>
-         <object class="bjoernercomplete.diagram.edit.parts.ControlTableEditPart" id="ControlTable_2002"/>
-         <context elements="RailDiagram_1000,Terminal_2001,Crossing_2006,Connector_2004,Signal_2003,Point_2005,ControlTable_2002,"/>
+         <context elements="RailDiagram_1000,Connector_2004,Terminal_2001,Crossing_2006,ControlTable_2002,Signal_2003,Point_2005,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -282,6 +282,16 @@
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <metamodelType
+               id="Bjoerner_Complete.diagram.Connector_2004"
+               name="%metatype.name.Connector_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Connector"
+               edithelper="bjoernercomplete.diagram.edit.helpers.ConnectorEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <metamodelType
                id="Bjoerner_Complete.diagram.Terminal_2001"
                name="%metatype.name.Terminal_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -302,12 +312,12 @@
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <metamodelType
-               id="Bjoerner_Complete.diagram.Connector_2004"
-               name="%metatype.name.Connector_2004"
+               id="Bjoerner_Complete.diagram.ControlTable_2002"
+               name="%metatype.name.ControlTable_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Connector"
-               edithelper="bjoernercomplete.diagram.edit.helpers.ConnectorEditHelper">
-            <param name="semanticHint" value="2004"/>
+               eclass="ControlTable"
+               edithelper="bjoernercomplete.diagram.edit.helpers.ControlTableEditHelper">
+            <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
@@ -331,112 +341,21 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <metamodelType
-               id="Bjoerner_Complete.diagram.ControlTable_2002"
-               name="%metatype.name.ControlTable_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ControlTable"
-               edithelper="bjoernercomplete.diagram.edit.helpers.ControlTableEditHelper">
-            <param name="semanticHint" value="2002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <specializationType
-               id="Bjoerner_Complete.diagram.ConnectorHasUnit1_4015"
-               name="%metatype.name.ConnectorHasUnit1_4015"
+               id="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4016"
+               name="%metatype.name.SignalPlacedAtConnector_4016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4015"/>
+            <param name="semanticHint" value="4016"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <specializationType
-               id="Bjoerner_Complete.diagram.ControlTableHasRoutes_4013"
-               name="%metatype.name.ControlTableHasRoutes_4013"
+               id="Bjoerner_Complete.diagram.TrackHasSignal_4006"
+               name="%metatype.name.TrackHasSignal_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4013"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.SignalPlacedAt_4007"
-               name="%metatype.name.SignalPlacedAt_4007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4007"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.TerminalHasTerminalSignal_4017"
-               name="%metatype.name.TerminalHasTerminalSignal_4017"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4017"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.CrossingHasC3_Crossing_4009"
-               name="%metatype.name.CrossingHasC3_Crossing_4009"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4009"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.CrossingHasCrossingDirection_4002"
-               name="%metatype.name.CrossingHasCrossingDirection_4002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4002"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.UnitHasC2_4012"
-               name="%metatype.name.UnitHasC2_4012"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4012"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.CrossingHasC4_Crossing_4014"
-               name="%metatype.name.CrossingHasC4_Crossing_4014"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4014"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.SignalControlsRoutes_4019"
-               name="%metatype.name.SignalControlsRoutes_4019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4019"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.ConnectorHasUnit2_4010"
-               name="%metatype.name.ConnectorHasUnit2_4010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4010"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.PointHasPointDirection_4004"
-               name="%metatype.name.PointHasPointDirection_4004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4004"/>
+            <param name="semanticHint" value="4006"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
@@ -450,11 +369,11 @@
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <specializationType
-               id="Bjoerner_Complete.diagram.TrackHasSignals_4018"
-               name="%metatype.name.TrackHasSignals_4018"
+               id="Bjoerner_Complete.diagram.UnitHasC1_4011"
+               name="%metatype.name.UnitHasC1_4011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4018"/>
+            <param name="semanticHint" value="4011"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
@@ -477,11 +396,110 @@
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <specializationType
-               id="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4016"
-               name="%metatype.name.SignalPlacedAtConnector_4016"
+               id="Bjoerner_Complete.diagram.SignalControlsRoutes_4019"
+               name="%metatype.name.SignalControlsRoutes_4019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4016"/>
+            <param name="semanticHint" value="4019"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.SignalPlacedAt_4007"
+               name="%metatype.name.SignalPlacedAt_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.ControlTableHasRoutes_4013"
+               name="%metatype.name.ControlTableHasRoutes_4013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.ConnectorHasUnit2_4010"
+               name="%metatype.name.ConnectorHasUnit2_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4010"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.CrossingHasC3_Crossing_4009"
+               name="%metatype.name.CrossingHasC3_Crossing_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.PointHasPointDirection_4004"
+               name="%metatype.name.PointHasPointDirection_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.ConnectorHasUnit1_4015"
+               name="%metatype.name.ConnectorHasUnit1_4015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.TerminalHasTerminalSignal_4017"
+               name="%metatype.name.TerminalHasTerminalSignal_4017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.TrackHasSignals_4018"
+               name="%metatype.name.TrackHasSignals_4018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.CrossingHasC4_Crossing_4014"
+               name="%metatype.name.CrossingHasC4_Crossing_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.SignalHasDirection_4020"
+               name="%metatype.name.SignalHasDirection_4020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4020"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
+         <specializationType
+               id="Bjoerner_Complete.diagram.UnitHasC2_4012"
+               name="%metatype.name.UnitHasC2_4012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4012"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
@@ -495,29 +513,11 @@
       </metamodel>
       <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
          <specializationType
-               id="Bjoerner_Complete.diagram.UnitHasC1_4011"
-               name="%metatype.name.UnitHasC1_4011"
+               id="Bjoerner_Complete.diagram.CrossingHasCrossingDirection_4002"
+               name="%metatype.name.CrossingHasCrossingDirection_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4011"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.TrackHasSignal_4006"
-               name="%metatype.name.TrackHasSignal_4006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4006"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://bjoernercomplete/1.0.0.qualifier">
-         <specializationType
-               id="Bjoerner_Complete.diagram.SignalHasDirection_4020"
-               name="%metatype.name.SignalHasDirection_4020"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4020"/>
+            <param name="semanticHint" value="4002"/>
          </specializationType>
       </metamodel>
    </extension>
@@ -533,32 +533,32 @@
       </clientContext> 
       <binding context="Bjoerner_Complete.diagram.TypeContext">
          <elementType ref="Bjoerner_Complete.diagram.RailDiagram_1000"/>
+         <elementType ref="Bjoerner_Complete.diagram.Connector_2004"/>
          <elementType ref="Bjoerner_Complete.diagram.Terminal_2001"/>
          <elementType ref="Bjoerner_Complete.diagram.Crossing_2006"/>
-         <elementType ref="Bjoerner_Complete.diagram.Connector_2004"/>
+         <elementType ref="Bjoerner_Complete.diagram.ControlTable_2002"/>
          <elementType ref="Bjoerner_Complete.diagram.Signal_2003"/>
          <elementType ref="Bjoerner_Complete.diagram.Point_2005"/>
-         <elementType ref="Bjoerner_Complete.diagram.ControlTable_2002"/>
-         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasUnit1_4015"/>
-         <elementType ref="Bjoerner_Complete.diagram.ControlTableHasRoutes_4013"/>
-         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedAt_4007"/>
-         <elementType ref="Bjoerner_Complete.diagram.TerminalHasTerminalSignal_4017"/>
-         <elementType ref="Bjoerner_Complete.diagram.CrossingHasC3_Crossing_4009"/>
-         <elementType ref="Bjoerner_Complete.diagram.CrossingHasCrossingDirection_4002"/>
-         <elementType ref="Bjoerner_Complete.diagram.UnitHasC2_4012"/>
-         <elementType ref="Bjoerner_Complete.diagram.CrossingHasC4_Crossing_4014"/>
-         <elementType ref="Bjoerner_Complete.diagram.SignalControlsRoutes_4019"/>
-         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasUnit2_4010"/>
-         <elementType ref="Bjoerner_Complete.diagram.PointHasPointDirection_4004"/>
+         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4016"/>
+         <elementType ref="Bjoerner_Complete.diagram.TrackHasSignal_4006"/>
          <elementType ref="Bjoerner_Complete.diagram.SignalPlacedOnTrack_4005"/>
-         <elementType ref="Bjoerner_Complete.diagram.TrackHasSignals_4018"/>
+         <elementType ref="Bjoerner_Complete.diagram.UnitHasC1_4011"/>
          <elementType ref="Bjoerner_Complete.diagram.TrackHasTrackDirection_4003"/>
          <elementType ref="Bjoerner_Complete.diagram.PointHasC3_Point_4001"/>
-         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedAtConnector_4016"/>
-         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasPoint_4008"/>
-         <elementType ref="Bjoerner_Complete.diagram.UnitHasC1_4011"/>
-         <elementType ref="Bjoerner_Complete.diagram.TrackHasSignal_4006"/>
+         <elementType ref="Bjoerner_Complete.diagram.SignalControlsRoutes_4019"/>
+         <elementType ref="Bjoerner_Complete.diagram.SignalPlacedAt_4007"/>
+         <elementType ref="Bjoerner_Complete.diagram.ControlTableHasRoutes_4013"/>
+         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasUnit2_4010"/>
+         <elementType ref="Bjoerner_Complete.diagram.CrossingHasC3_Crossing_4009"/>
+         <elementType ref="Bjoerner_Complete.diagram.PointHasPointDirection_4004"/>
+         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasUnit1_4015"/>
+         <elementType ref="Bjoerner_Complete.diagram.TerminalHasTerminalSignal_4017"/>
+         <elementType ref="Bjoerner_Complete.diagram.TrackHasSignals_4018"/>
+         <elementType ref="Bjoerner_Complete.diagram.CrossingHasC4_Crossing_4014"/>
          <elementType ref="Bjoerner_Complete.diagram.SignalHasDirection_4020"/>
+         <elementType ref="Bjoerner_Complete.diagram.UnitHasC2_4012"/>
+         <elementType ref="Bjoerner_Complete.diagram.ConnectorHasPoint_4008"/>
+         <elementType ref="Bjoerner_Complete.diagram.CrossingHasCrossingDirection_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

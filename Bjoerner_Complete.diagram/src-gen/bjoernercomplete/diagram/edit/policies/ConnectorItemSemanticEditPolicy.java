@@ -71,38 +71,6 @@ public class ConnectorItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == CrossingHasC3_CrossingEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == UnitHasC2EditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == CrossingHasC4_CrossingEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == PointHasC3_PointEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
 			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == SignalPlacedAtConnectorEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
@@ -119,10 +87,42 @@ public class ConnectorItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == PointHasC3_PointEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == CrossingHasC3_CrossingEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == CrossingHasC4_CrossingEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(incomingLink) == UnitHasC2EditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == ConnectorHasUnit2EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -130,7 +130,7 @@ public class ConnectorItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == ConnectorHasUnit2EditPart.VISUAL_ID) {
+			if (BjoernerCompleteVisualIDRegistry.getVisualID(outgoingLink) == ConnectorHasUnit1EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
@@ -174,19 +174,14 @@ public class ConnectorItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
-				.getElementType()) {
-			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009 == req
+		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
 				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014 == req
+		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
 				.getElementType()) {
 			return null;
 		}
@@ -195,21 +190,26 @@ public class ConnectorItemSemanticEditPolicy extends
 			return getGEFWrapper(new ConnectorHasUnit2CreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+		if (BjoernerCompleteElementTypes.CrossingHasC3_Crossing_4009 == req
 				.getElementType()) {
 			return null;
 		}
-		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
 				.getElementType()) {
+			return getGEFWrapper(new ConnectorHasUnit1CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014 == req
+				.getElementType()) {
+			return null;
+		}
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
 			return null;
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasPoint_4008 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConnectorHasPointCreateCommand(req,
 					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
-			return null;
 		}
 		return null;
 	}
@@ -219,7 +219,21 @@ public class ConnectorItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
+		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
+				.getElementType()) {
+			return getGEFWrapper(new SignalPlacedAtConnectorCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC1CreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
+				.getElementType()) {
+			return getGEFWrapper(new PointHasC3_PointCreateCommand(req,
+					req.getSource(), req.getTarget()));
+		}
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
 				.getElementType()) {
 			return null;
 		}
@@ -228,36 +242,22 @@ public class ConnectorItemSemanticEditPolicy extends
 			return getGEFWrapper(new CrossingHasC3_CrossingCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC2CreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (BjoernerCompleteElementTypes.ConnectorHasUnit1_4015 == req
+				.getElementType()) {
+			return null;
 		}
 		if (BjoernerCompleteElementTypes.CrossingHasC4_Crossing_4014 == req
 				.getElementType()) {
 			return getGEFWrapper(new CrossingHasC4_CrossingCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (BjoernerCompleteElementTypes.ConnectorHasUnit2_4010 == req
-				.getElementType()) {
-			return null;
-		}
-		if (BjoernerCompleteElementTypes.PointHasC3_Point_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(new PointHasC3_PointCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
-		if (BjoernerCompleteElementTypes.SignalPlacedAtConnector_4016 == req
-				.getElementType()) {
-			return getGEFWrapper(new SignalPlacedAtConnectorCreateCommand(req,
+		if (BjoernerCompleteElementTypes.UnitHasC2_4012 == req.getElementType()) {
+			return getGEFWrapper(new UnitHasC2CreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
 		if (BjoernerCompleteElementTypes.ConnectorHasPoint_4008 == req
 				.getElementType()) {
 			return null;
-		}
-		if (BjoernerCompleteElementTypes.UnitHasC1_4011 == req.getElementType()) {
-			return getGEFWrapper(new UnitHasC1CreateCommand(req,
-					req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -271,24 +271,24 @@ public class ConnectorItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case ConnectorHasUnit1EditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
-		case CrossingHasC3_CrossingEditPart.VISUAL_ID:
-			return getGEFWrapper(new CrossingHasC3_CrossingReorientCommand(req));
-		case UnitHasC2EditPart.VISUAL_ID:
-			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
-		case CrossingHasC4_CrossingEditPart.VISUAL_ID:
-			return getGEFWrapper(new CrossingHasC4_CrossingReorientCommand(req));
-		case ConnectorHasUnit2EditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasUnit2ReorientCommand(req));
-		case PointHasC3_PointEditPart.VISUAL_ID:
-			return getGEFWrapper(new PointHasC3_PointReorientCommand(req));
 		case SignalPlacedAtConnectorEditPart.VISUAL_ID:
 			return getGEFWrapper(new SignalPlacedAtConnectorReorientCommand(req));
-		case ConnectorHasPointEditPart.VISUAL_ID:
-			return getGEFWrapper(new ConnectorHasPointReorientCommand(req));
 		case UnitHasC1EditPart.VISUAL_ID:
 			return getGEFWrapper(new UnitHasC1ReorientCommand(req));
+		case PointHasC3_PointEditPart.VISUAL_ID:
+			return getGEFWrapper(new PointHasC3_PointReorientCommand(req));
+		case ConnectorHasUnit2EditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasUnit2ReorientCommand(req));
+		case CrossingHasC3_CrossingEditPart.VISUAL_ID:
+			return getGEFWrapper(new CrossingHasC3_CrossingReorientCommand(req));
+		case ConnectorHasUnit1EditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasUnit1ReorientCommand(req));
+		case CrossingHasC4_CrossingEditPart.VISUAL_ID:
+			return getGEFWrapper(new CrossingHasC4_CrossingReorientCommand(req));
+		case UnitHasC2EditPart.VISUAL_ID:
+			return getGEFWrapper(new UnitHasC2ReorientCommand(req));
+		case ConnectorHasPointEditPart.VISUAL_ID:
+			return getGEFWrapper(new ConnectorHasPointReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
