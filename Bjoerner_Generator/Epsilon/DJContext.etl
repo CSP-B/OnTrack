@@ -9,6 +9,9 @@ pre {
 
 	// Set ALLTRACK = all units + nullTrack
 	var alltrack = newBSet("ALLTRACK");
+	
+	// Set ALLCONNECTOR = all connectors
+	var allconnector = newBset("ALLCONNECTOR");
 
 	// Set SIGNAL = all signal names
 	var signal = newBSet("SIGNAL");
@@ -36,6 +39,14 @@ to se : BMachine!Element {
 
 	se.name = u.name;
 	alltrack.hasSetElements.add(se);
+}
+
+// Add connectors to ALLCONNECTOR
+@greedy
+rule processConnectors
+transform c : Bjoerner!Connector
+to se : BMachine!Element {
+
 }
 
 // Add all signal names to SIGNAL
