@@ -30,7 +30,7 @@ The following is required to run these projects:
 Clone the repository using the link on the right. E.g:
 
 ```
-git clone git@github.com:lordqwerty/OnTrack.git
+git clone git@github.com:CSP-B/OnTrack.git
 ```
 
 Change to the directory and run the following:
