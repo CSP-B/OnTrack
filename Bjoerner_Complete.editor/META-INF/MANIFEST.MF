@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Bjoerner_Complete.editor
+Bundle-Name: %pluginName
 Bundle-SymbolicName: Bjoerner_Complete.editor;singleton:=true
-Bundle-Version: 1.0.0.SNAPSHOT
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: bjoernercomplete.presentation.BjoernerCompleteEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
