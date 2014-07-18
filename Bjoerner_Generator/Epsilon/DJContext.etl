@@ -46,7 +46,8 @@ to se : BMachine!Element {
 rule processConnectors
 transform c : Bjoerner!Connector
 to se : BMachine!Element {
-
+	se.name = c.name;
+	allconnector.hasSetElements.add(se);
 }
 
 // Add all signal names to SIGNAL
