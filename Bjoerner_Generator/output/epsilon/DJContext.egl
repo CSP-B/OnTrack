@@ -25,7 +25,7 @@ for (s in bMachine1.hasSets)
     POINTPOSITION = {normal,reverse};
     POINTSTATUS = {locked, unlocked};
     ASPECT = {red,green};
-    TRAIN = {albert,bertie,clara,doris,edgar,faron,gladys,hugo}
+    TRAIN = {albert,bertie}
     
 
 
