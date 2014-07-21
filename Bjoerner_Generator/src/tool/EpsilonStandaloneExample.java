@@ -13,8 +13,8 @@ package tool;
 import java.io.File;
 import java.util.List;
 
-import org.eclipse.epsilon.common.parse.problem.ParseProblem;
-import org.eclipse.epsilon.common.util.StringProperties;
+import org.eclipse.epsilon.commons.parse.problem.ParseProblem;
+import org.eclipse.epsilon.commons.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.IEolExecutableModule;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;

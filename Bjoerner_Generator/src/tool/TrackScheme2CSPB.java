@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
 import org.apache.velocity.Template;
@@ -21,12 +20,10 @@ public class TrackScheme2CSPB {
 
 	// Constants
 	private static final String VERSION = "0.1";
-	private static final String[] TRAINS = {"albert","bertie"};
-	private int numTrains = 2; // Always two trains to verify safety of bidirectional tracks
 	
 	// File structure elements
 	private final Date date;
-	private final String[] outputFolder; // Generated files are placed in a unique date_time folder within OUTPUT_DIR
+	private String outputFolder; // Generated files are placed in a unique date_time folder within OUTPUT_DIR
 	
 	// Epsilon Directories
 	private static final String ETL_SOURCE_DIR = "Epsilon/";
@@ -62,7 +59,7 @@ public class TrackScheme2CSPB {
 	 */
 	public static void main(String[] args) {
 		
-		TrackScheme2CSPB tool = new TrackScheme2CSPB("Copy.bjoernercomplete");
+		TrackScheme2CSPB tool = new TrackScheme2CSPB("doubleJunction.bjoernercomplete");
 		
 		// Process all files in TEMPLATES_DIR
 		for (String template : new File(TEMPLATES_DIR).list()) {
@@ -86,15 +83,13 @@ public class TrackScheme2CSPB {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yy_kk.mm.ss");
 		
 		// create output folders
-		new File( OUTPUT_DIR + sdf.format(date) + "/" ).mkdir();
-		outputFolder = new String[numTrains];
+		new File(OUTPUT_DIR + sdf.format(date) + "/").mkdir();
+		outputFolder = new String();
 		
-		for (int i = 0; i < numTrains; i++) {
-			
-			outputFolder[i] = OUTPUT_DIR + sdf.format(date) + "/" + (i + 1) + "_train" + ( ( i > 0 ? "s" : "" ) ) + "/";
-			new File( outputFolder[i] ).mkdir();
-		}
+		outputFolder = OUTPUT_DIR + sdf.format(date) + "/";
+		new File(outputFolder).mkdir();
 	}
+
 
 	/**
 	 * Processes a template to produce an output file of the same name in OUTPUT_DIR for each number of trains available (1 to numTrains)
@@ -115,44 +110,41 @@ public class TrackScheme2CSPB {
 		// Initialise Apache Velocity template engine
 		Velocity.init();
 		
-		// For each number of trains available, generate EGL file from template and use to produce output file
-		for (int i = 1; i <= numTrains; i++) {
+		for(int i = 1; i <= 2; i++) {
+		
+		// Setup variables for template
+		VelocityContext context = new VelocityContext();
+		context.put("date", date.toString());
+		context.put("model", BJOERNER_MODEL);
+		context.put("version", VERSION);
+		
+		try {
 
-			// Setup variables for template
-			VelocityContext context = new VelocityContext();
-			context.put("date", date.toString());
-			context.put("model", BJOERNER_MODEL);
-			context.put("numTrains", i);
-			context.put("version", VERSION);
-			context.put("trains", Arrays.copyOfRange(TRAINS, 0, i));
-			
-			try {
+			// Prepare output EGL file
+			BufferedWriter writer = new BufferedWriter(new FileWriter(eglOutput));
 
-				// Prepare output EGL file
-				BufferedWriter writer = new BufferedWriter(new FileWriter(eglOutput));
+			// Get the template
+			Template velocityTemplate = Velocity.getTemplate(TEMPLATES_DIR + template);
 
-				// Get the template
-				Template velocityTemplate = Velocity.getTemplate(TEMPLATES_DIR + template);
+			// Process template
+			velocityTemplate.merge(context, writer);
 
-				// Process template
-				velocityTemplate.merge(context, writer);
+			// Finish writing to file
+			writer.flush();
+			writer.close();
+		}
+		catch (IOException e) {
 
-				// Finish writing to file
-				writer.flush();
-				writer.close();
-			}
-			catch (IOException e) {
+			System.out.println("Error writing to " + eglOutput);
+			e.printStackTrace();
+		}
+		
+		// configure output filename
+		String outputFile = outputFolder + template;
 
-				System.out.println("Error writing to " + eglOutput);
-				e.printStackTrace();
-			}
-			
-			// configure output filename
-			String outputFile = outputFolder[i-1] + template;
-
-			// process EGL
-			new TrackSchemeEGL(outputFile, eglOutput, outputModels).execute();
+		// process EGL
+		new TrackSchemeEGL(outputFile, eglOutput, outputModels).execute();
 		}
 	}
-	
+
 }

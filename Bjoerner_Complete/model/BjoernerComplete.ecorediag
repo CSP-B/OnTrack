@@ -689,4 +689,18 @@
     <element xmi:type="ecore:EReference" href="BjoernerComplete.ecore#//Crossing/hasCrossingDirection"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JMXeowtkEeSnl9pN_07acg" points="[0, 20, -405, 29]$[0, 79, -405, 88]$[436, 97, 31, 106]$[410, 11, 5, 20]"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kaRgUBDIEeSkg8kvOOqdsA" type="3002" source="_rvhBIAgYEeSLOYjCzO10zA" target="_bn0_kN_MEeGtdeQf_5XG6Q">
+    <children xmi:type="notation:Node" xmi:id="_kaT8kBDIEeSkg8kvOOqdsA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kaT8kRDIEeSkg8kvOOqdsA" x="1" y="9"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kaVKsBDIEeSkg8kvOOqdsA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kaVKsRDIEeSkg8kvOOqdsA" x="27" y="26"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kaRgURDIEeSkg8kvOOqdsA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kaRgUhDIEeSkg8kvOOqdsA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="BjoernerComplete.ecore#//Direction/trackDirection"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kaRgUxDIEeSkg8kvOOqdsA" points="[0, 36, 256, 11]$[0, 104, 256, 79]$[-256, 95, 0, 70]$[-256, 45, 0, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kaZcIBDIEeSkg8kvOOqdsA" id="(0.18627450980392157,0.11904761904761904)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tXt8cBDIEeSkg8kvOOqdsA" id="(0.10784313725490197,0.7857142857142857)"/>
+  </edges>
 </notation:Diagram>

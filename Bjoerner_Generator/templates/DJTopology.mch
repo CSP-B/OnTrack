@@ -35,19 +35,13 @@ PROPERTIES
      signal : ROUTE --> SIGNAL &
      homeSignal : SIGNAL >-> TRACK &
      homePoints : POINTS --> TRACK &
-     next : TRACK <-> TRACK &
-     staticNext : TRACK +-> TRACK &
-     dynamicNext : (POINTS * POINTPOSITION) +-> (TRACK * TRACK) &
-     staticNext - { (t,Exit) | t : TRACK } : TRACK >+> TRACK &
  
     /* every next is dependent on a point position or it is not.
      * Note: for any particular set of points and their status there will be at 
      * most one next track and at most one previous track (this is not explicitly stated)
      */
-
-    next = staticNext \/ ran(dynamicNext) &
-    dom(staticNext) /\ dom(ran(dynamicNext)) = {} &
-    ran(staticNext) /\ ran(ran(dynamicNext)) = {} &
+     
+     
 
 
 [%

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bjoernercomplete:RailDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bjoernercomplete="http://bjoernercomplete/1.0">
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.0" hasC2="//@hasConnectors.1" name="Entry1" hasSignals="//@hasSignals.0"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.1" hasC2="//@hasConnectors.2" name="AA" hasSignals="//@hasSignals.1"/>
+  <hasUnits xsi:type="bjoernercomplete:Point" hasC1="//@hasConnectors.2" hasC2="//@hasConnectors.3" name="AC" hasC3="//@hasConnectors.10" pointName="P101"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.3" hasC2="//@hasConnectors.4" name="AD" hasSignals="//@hasSignals.2"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.4" hasC2="//@hasConnectors.5" name="AE"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.5" hasC2="//@hasConnectors.6" name="Exit1"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.7" hasC2="//@hasConnectors.8" name="BZ"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.8" hasC2="//@hasConnectors.9" name="BY" hasSignals="//@hasSignals.3"/>
+  <hasUnits xsi:type="bjoernercomplete:Point" hasC1="//@hasConnectors.9" hasC2="//@hasConnectors.11" name="BX" hasC3="//@hasConnectors.19" pointName="P102"/>
+  <hasUnits xsi:type="bjoernercomplete:Point" hasC1="//@hasConnectors.11" hasC2="//@hasConnectors.10" name="BW1" hasC3="//@hasConnectors.12" pointName="P103"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.12" hasC2="//@hasConnectors.13" name="BU" hasSignals="//@hasSignals.6"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.13" hasC2="//@hasConnectors.14" name="Entry2" hasSignals="//@hasSignals.7"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.15" hasC2="//@hasConnectors.16" name="CM" hasSignals="//@hasSignals.8"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.16" hasC2="//@hasConnectors.17" name="CL"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.17" hasC2="//@hasConnectors.18" name="Exit3"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.19" hasC2="//@hasConnectors.20" name="DP" hasSignals="//@hasSignals.4"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.20" hasC2="//@hasConnectors.21" name="Entry3" hasSignals="//@hasSignals.5"/>
+  <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="//@hasConnectors.22" hasC2="//@hasConnectors.7" name="Exit2"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.0"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.1" hasUnit2="//@hasUnits.0"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.2" hasUnit2="//@hasUnits.1"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.3" hasUnit2="//@hasUnits.2"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.4" hasUnit2="//@hasUnits.3"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.5" hasUnit2="//@hasUnits.4"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit2="//@hasUnits.5"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.6" hasUnit2="//@hasUnits.17"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.7" hasUnit2="//@hasUnits.6"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.8" hasUnit2="//@hasUnits.7"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasPoint="//@hasUnits.2" hasUnit2="//@hasUnits.9"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.9" hasUnit2="//@hasUnits.8"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.10" hasPoint="//@hasUnits.9"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.11" hasUnit2="//@hasUnits.10"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit2="//@hasUnits.11"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.12">
+    <hasPoint href="doubleJunction.bjoernercomplete#/0/@hasUnits.1"/>
+  </hasConnectors>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.13" hasUnit2="//@hasUnits.12"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.14" hasUnit2="//@hasUnits.13"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit2="//@hasUnits.14"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.15" hasPoint="//@hasUnits.8"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.16" hasUnit2="//@hasUnits.15"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit2="//@hasUnits.16"/>
+  <hasConnectors xsi:type="bjoernercomplete:Connector" hasUnit1="//@hasUnits.17"/>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.0" placedAtConnector="//@hasConnectors.1" name="S1">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/105"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.1" name="S3">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/106"/>
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/114"/>
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/116"/>
+    <placedAtConnector href="doubleJunction.bjoernercomplete#/0/@hasConnectors.0"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.3" placedAtConnector="//@hasConnectors.4" name="S5">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/107"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.7" placedAtConnector="//@hasConnectors.8" name="S2">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/108"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.15" name="S16">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/109"/>
+    <placedAtConnector href="doubleJunction.bjoernercomplete#/0/@hasConnectors.3"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.16" placedAtConnector="//@hasConnectors.20" name="S19">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/110"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.10" name="S4">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/111"/>
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/115"/>
+    <placedAtConnector href="doubleJunction.bjoernercomplete#/0/@hasConnectors.2"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.11" placedAtConnector="//@hasConnectors.13" name="S8">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/112"/>
+  </hasSignals>
+  <hasSignals xsi:type="bjoernercomplete:Signal" placedOnLinear="//@hasUnits.12" placedAtConnector="//@hasConnectors.16" name="S17">
+    <controlsRoutes href="doubleJunction.bjoernercomplete#/113"/>
+  </hasSignals>
+</bjoernercomplete:RailDiagram>

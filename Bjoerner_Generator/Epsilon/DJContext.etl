@@ -11,7 +11,7 @@ pre {
 	var alltrack = newBSet("ALLTRACK");
 	
 	// Set ALLCONNECTOR = all connectors
-	var allconnector = newBset("ALLCONNECTOR");
+	var allconnector = newBSet("ALLCONNECTOR");
 
 	// Set SIGNAL = all signal names
 	var signal = newBSet("SIGNAL");
@@ -41,12 +41,11 @@ to se : BMachine!Element {
 	alltrack.hasSetElements.add(se);
 }
 
-// Add connectors to ALLCONNECTOR
 @greedy
 rule processConnectors
 transform c : Bjoerner!Connector
 to se : BMachine!Element {
-	se.name = c.name;
+	se.name = "A";
 	allconnector.hasSetElements.add(se);
 }
 
