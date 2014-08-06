@@ -8,7 +8,7 @@
 operation prepareBjoerner() {
 	
 	// Add nullTrack
-	var nullTrack = new Bjoerner!Linear;
+	var nullTrack = new Bjoerner!Track;
 	nullTrack.name = "nullTrack";
 	
 	// Add underscore to route names
@@ -164,7 +164,7 @@ operation Bjoerner!Route isNecessaryRoute() : Boolean {
 operation Bjoerner!Unit isExit() : Boolean {
 	
 	// if unit is linear and has a signal it cannot be an exit
-	if (self.isTypeOf(Bjoerner!Linear) and self.hasSignals.size() > 0) {return false;}
+	if (self.isTypeOf(Bjoerner!Track) and self.hasSignals.size() > 0) {return false;}
 	
 	// if any of the unit's connectors have just one unit return true
 	if (self.hasC1.numUnits() = 1) {return true;}
@@ -226,7 +226,7 @@ operation getEntryUPPs() : Sequence {
 		
 			var upp : Bjoerner!UnitPathPair = c.findUPP();
 			
-			if (upp.hasUnit.isTypeOf(Linear) and (upp.hasUnit.hasSignals.size() > 0)) {
+			if (upp.hasUnit.isTypeOf(Track) and (upp.hasUnit.hasSignals.size() > 0)) {
 			
 				result.add(upp);
 			}

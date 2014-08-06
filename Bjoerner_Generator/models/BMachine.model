@@ -1,76 +1,111 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bmachine="http://bmachine/1.0">
   <bmachine:Machine>
-    <hasProperties name="releaseTable" hasPropElements="/1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12 /13 /14"/>
+    <hasProperties name="signal" hasPropElements="/1 /2 /3 /4 /5 /6 /7 /8 /9 /10 /11 /12"/>
+    <hasProperties name="homeSignal" hasPropElements="/13 /14 /15 /16 /17 /18 /19 /20 /21"/>
+    <hasProperties name="homePoints" hasPropElements="/22 /23 /24 /25"/>
+    <hasProperties name="next"/>
+    <hasProperties name="staticNext"/>
+    <hasProperties name="dynamicNext"/>
   </bmachine:Machine>
   <bmachine:PropElement>
-    <hasDomainElements name="AD"/>
-    <hasRangeElements name="R_3A"/>
-    <hasRangeElements name="P101"/>
+    <hasDomainElements name="R_1A"/>
+    <hasRangeElements name="S1"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BY"/>
-    <hasRangeElements name="R_16A"/>
-    <hasRangeElements name="P102"/>
+    <hasDomainElements name="R_3A"/>
+    <hasRangeElements name="S3"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW2"/>
-    <hasRangeElements name="R_4A"/>
-    <hasRangeElements name="P103"/>
+    <hasDomainElements name="R_5A"/>
+    <hasRangeElements name="S5"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BX"/>
-    <hasRangeElements name="R_4A"/>
-    <hasRangeElements name="P104"/>
+    <hasDomainElements name="R_2A"/>
+    <hasRangeElements name="S2"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BY"/>
-    <hasRangeElements name="R_4A"/>
-    <hasRangeElements name="P102"/>
+    <hasDomainElements name="R_16A"/>
+    <hasRangeElements name="S16"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW1"/>
-    <hasRangeElements name="R_3B"/>
-    <hasRangeElements name="P101"/>
+    <hasDomainElements name="R_19A"/>
+    <hasRangeElements name="S19"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW2"/>
-    <hasRangeElements name="R_3B"/>
-    <hasRangeElements name="P103"/>
+    <hasDomainElements name="R_4A"/>
+    <hasRangeElements name="S4"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BX"/>
-    <hasRangeElements name="R_3B"/>
-    <hasRangeElements name="P104"/>
+    <hasDomainElements name="R_8A"/>
+    <hasRangeElements name="S8"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BY"/>
-    <hasRangeElements name="R_3B"/>
-    <hasRangeElements name="P102"/>
+    <hasDomainElements name="R_17A"/>
+    <hasRangeElements name="S17"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW2"/>
-    <hasRangeElements name="R_4B"/>
-    <hasRangeElements name="P103"/>
+    <hasDomainElements name="R_3B"/>
+    <hasRangeElements name="S3"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="CM"/>
-    <hasRangeElements name="R_4B"/>
-    <hasRangeElements name="P104"/>
+    <hasDomainElements name="R_4B"/>
+    <hasRangeElements name="S4"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW1"/>
-    <hasRangeElements name="R_3C"/>
-    <hasRangeElements name="P101"/>
+    <hasDomainElements name="R_3C"/>
+    <hasRangeElements name="S3"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="BW2"/>
-    <hasRangeElements name="R_3C"/>
-    <hasRangeElements name="P103"/>
+    <hasDomainElements name="S1"/>
+    <hasRangeElements name="Entry1"/>
   </bmachine:PropElement>
   <bmachine:PropElement>
-    <hasDomainElements name="CM"/>
-    <hasRangeElements name="R_3C"/>
-    <hasRangeElements name="P104"/>
+    <hasDomainElements name="S3"/>
+    <hasRangeElements name="AA"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S5"/>
+    <hasRangeElements name="AD"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S2"/>
+    <hasRangeElements name="BY"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S16"/>
+    <hasRangeElements name="DP"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S19"/>
+    <hasRangeElements name="Entry3"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S4"/>
+    <hasRangeElements name="BU"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S8"/>
+    <hasRangeElements name="Entry2"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="S17"/>
+    <hasRangeElements name="CM"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="P101"/>
+    <hasRangeElements name="AC"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="P102"/>
+    <hasRangeElements name="BX"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="P103"/>
+    <hasRangeElements name="BW1"/>
+  </bmachine:PropElement>
+  <bmachine:PropElement>
+    <hasDomainElements name="P104"/>
+    <hasRangeElements name="BW2"/>
   </bmachine:PropElement>
 </xmi:XMI>

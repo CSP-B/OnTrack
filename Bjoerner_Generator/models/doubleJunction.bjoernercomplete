@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bjoernercomplete="http://bjoernercomplete/1.0">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bjoernercomplete="http://bjoernercomplete/1.0.0.qualifier">
   <bjoernercomplete:RailDiagram>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.0" hasC2="/0/@hasConnectors.1" name="Entry1" hasSignals="/0/@hasSignals.0"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.1" hasC2="/0/@hasConnectors.2" name="AA" hasSignals="/0/@hasSignals.1"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.2" hasC2="/0/@hasConnectors.3" name="AB"/>
-    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.3" hasC2="/0/@hasConnectors.4" name="AC" hasC3="/0/@hasConnectors.11" pointName="P101"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.4" hasC2="/0/@hasConnectors.5" name="AD" hasSignals="/0/@hasSignals.2"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.5" hasC2="/0/@hasConnectors.6" name="AE"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.6" hasC2="/0/@hasConnectors.7" name="Exit1"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.8" hasC2="/0/@hasConnectors.9" name="BZ"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.9" hasC2="/0/@hasConnectors.10" name="BY" hasSignals="/0/@hasSignals.3"/>
-    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.10" hasC2="/0/@hasConnectors.12" name="BX" hasC3="/0/@hasConnectors.22" pointName="P102"/>
-    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.11" name="BW1" hasC3="/0/@hasConnectors.14" pointName="P103"/>
-    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.12" name="BW2" hasC3="/0/@hasConnectors.18" pointName="P104"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.14" hasC2="/0/@hasConnectors.15" name="BV"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.15" hasC2="/0/@hasConnectors.16" name="BU" hasSignals="/0/@hasSignals.6"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.16" hasC2="/0/@hasConnectors.17" name="Entry2" hasSignals="/0/@hasSignals.7"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.18" hasC2="/0/@hasConnectors.19" name="CM" hasSignals="/0/@hasSignals.8"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.19" hasC2="/0/@hasConnectors.20" name="CL"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.20" hasC2="/0/@hasConnectors.21" name="Exit3"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.22" hasC2="/0/@hasConnectors.23" name="DR"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.23" hasC2="/0/@hasConnectors.24" name="DP" hasSignals="/0/@hasSignals.4"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.24" hasC2="/0/@hasConnectors.25" name="Entry3" hasSignals="/0/@hasSignals.5"/>
-    <hasUnits xsi:type="bjoernercomplete:Linear" hasC1="/0/@hasConnectors.26" hasC2="/0/@hasConnectors.8" name="Exit2"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.0" hasC2="/0/@hasConnectors.1" name="Entry1" hasSignals="/0/@hasSignals.0"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.1" hasC2="/0/@hasConnectors.2" name="AA" hasSignals="/0/@hasSignals.1"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.2" hasC2="/0/@hasConnectors.3" name="AB"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.3" hasC2="/0/@hasConnectors.4" name="AC" hasC3_Point="/0/@hasConnectors.11" pointName="P101"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.4" hasC2="/0/@hasConnectors.5" name="AD" hasSignals="/0/@hasSignals.2"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.5" hasC2="/0/@hasConnectors.6" name="AE"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.6" hasC2="/0/@hasConnectors.7" name="Exit1"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.8" hasC2="/0/@hasConnectors.9" name="BZ"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.9" hasC2="/0/@hasConnectors.10" name="BY" hasSignals="/0/@hasSignals.3"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.10" hasC2="/0/@hasConnectors.12" name="BX" hasC3_Point="/0/@hasConnectors.22" pointName="P102"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.11" name="BW1" hasC3_Point="/0/@hasConnectors.14" pointName="P103"/>
+    <hasUnits xsi:type="bjoernercomplete:Point" hasC1="/0/@hasConnectors.13" hasC2="/0/@hasConnectors.12" name="BW2" hasC3_Point="/0/@hasConnectors.18" pointName="P104"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.14" hasC2="/0/@hasConnectors.15" name="BV"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.15" hasC2="/0/@hasConnectors.16" name="BU" hasSignals="/0/@hasSignals.6"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.16" hasC2="/0/@hasConnectors.17" name="Entry2" hasSignals="/0/@hasSignals.7"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.18" hasC2="/0/@hasConnectors.19" name="CM" hasSignals="/0/@hasSignals.8"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.19" hasC2="/0/@hasConnectors.20" name="CL"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.20" hasC2="/0/@hasConnectors.21" name="Exit3"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.22" hasC2="/0/@hasConnectors.23" name="DR"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.23" hasC2="/0/@hasConnectors.24" name="DP" hasSignals="/0/@hasSignals.4"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.24" hasC2="/0/@hasConnectors.25" name="Entry3" hasSignals="/0/@hasSignals.5"/>
+    <hasUnits xsi:type="bjoernercomplete:Track" hasC1="/0/@hasConnectors.26" hasC2="/0/@hasConnectors.8" name="Exit2"/>
     <hasConnectors hasUnit1="/0/@hasUnits.0"/>
     <hasConnectors hasUnit1="/0/@hasUnits.1" hasUnit2="/0/@hasUnits.0"/>
     <hasConnectors hasUnit1="/0/@hasUnits.2" hasUnit2="/0/@hasUnits.1"/>
@@ -50,15 +50,15 @@
     <hasConnectors hasUnit1="/0/@hasUnits.20" hasUnit2="/0/@hasUnits.19"/>
     <hasConnectors hasUnit2="/0/@hasUnits.20"/>
     <hasConnectors hasUnit1="/0/@hasUnits.21"/>
-    <hasSignals controlsRoutes="/105" name="S1" placedOnLinear="/0/@hasUnits.0" placedAtConnector="/0/@hasConnectors.1"/>
-    <hasSignals controlsRoutes="/106 /114 /116" name="S3" placedOnLinear="/0/@hasUnits.1" placedAtConnector="/0/@hasConnectors.2"/>
-    <hasSignals controlsRoutes="/107" name="S5" placedOnLinear="/0/@hasUnits.4" placedAtConnector="/0/@hasConnectors.5"/>
-    <hasSignals controlsRoutes="/108" name="S2" placedOnLinear="/0/@hasUnits.8" placedAtConnector="/0/@hasConnectors.9"/>
-    <hasSignals controlsRoutes="/109" name="S16" placedOnLinear="/0/@hasUnits.19" placedAtConnector="/0/@hasConnectors.23"/>
-    <hasSignals controlsRoutes="/110" name="S19" placedOnLinear="/0/@hasUnits.20" placedAtConnector="/0/@hasConnectors.24"/>
-    <hasSignals controlsRoutes="/111 /115" name="S4" placedOnLinear="/0/@hasUnits.13" placedAtConnector="/0/@hasConnectors.15"/>
-    <hasSignals controlsRoutes="/112" name="S8" placedOnLinear="/0/@hasUnits.14" placedAtConnector="/0/@hasConnectors.16"/>
-    <hasSignals controlsRoutes="/113" name="S17" placedOnLinear="/0/@hasUnits.15" placedAtConnector="/0/@hasConnectors.19"/>
+    <hasSignals controlsRoutes="/105" name="S1" placedOnTrack="/0/@hasUnits.0" placedAtConnector="/0/@hasConnectors.1"/>
+    <hasSignals controlsRoutes="/106 /114 /116" name="S3" placedOnTrack="/0/@hasUnits.1" placedAtConnector="/0/@hasConnectors.2"/>
+    <hasSignals controlsRoutes="/107" name="S5" placedOnTrack="/0/@hasUnits.4" placedAtConnector="/0/@hasConnectors.5"/>
+    <hasSignals controlsRoutes="/108" name="S2" placedOnTrack="/0/@hasUnits.8" placedAtConnector="/0/@hasConnectors.9"/>
+    <hasSignals controlsRoutes="/109" name="S16" placedOnTrack="/0/@hasUnits.19" placedAtConnector="/0/@hasConnectors.23"/>
+    <hasSignals controlsRoutes="/110" name="S19" placedOnTrack="/0/@hasUnits.20" placedAtConnector="/0/@hasConnectors.24"/>
+    <hasSignals controlsRoutes="/111 /115" name="S4" placedOnTrack="/0/@hasUnits.13" placedAtConnector="/0/@hasConnectors.15"/>
+    <hasSignals controlsRoutes="/112" name="S8" placedOnTrack="/0/@hasUnits.14" placedAtConnector="/0/@hasConnectors.16"/>
+    <hasSignals controlsRoutes="/113" name="S17" placedOnTrack="/0/@hasUnits.15" placedAtConnector="/0/@hasConnectors.19"/>
     <hasControlTable hasRoutes="/105 /106 /107 /108 /109 /110 /111 /112 /113 /114 /115 /116"/>
   </bjoernercomplete:RailDiagram>
   <bjoernercomplete:Path hasPC2="/0/@hasConnectors.1" hasPC1="/0/@hasConnectors.0"/>

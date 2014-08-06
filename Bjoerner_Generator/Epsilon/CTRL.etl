@@ -88,7 +88,7 @@ to s : CSP!SETElement, i : CSP!TypedItem {
 
 // Add linears with signals to SIGNALHOMES
 rule checkLinears
-transform l : Bjoerner!Linear
+transform l : Bjoerner!Track
 to s : CSP!SETElement, i : CSP!TypedItem {
 
 	// Only transform if linear has signals

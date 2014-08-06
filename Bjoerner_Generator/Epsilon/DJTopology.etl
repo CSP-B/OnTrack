@@ -111,7 +111,7 @@ to pe : BMachine!PropElement {
 	// signal name as domain element
 	newBDomainElement(s.name, pe);
 	// unit name as range element
-	newBRangeElement(s.placedOnLinear.name, pe);
+	newBRangeElement(s.placedOnTrack.name, pe);
 }
 
 rule populateHomePoints
