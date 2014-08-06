@@ -21,7 +21,7 @@ public class TrackScheme2CSPB {
 
 	// Constants
 	private static final String VERSION = "0.1";
-	private static final String[] TRAINS = {"albert","bertie", "clara", "doris", "edgar", "faron", "gladys", "hugo"};
+	private static final String[] TRAINS = {"albert","bertie"};
 	private int numTrains = 0; // The maximum number of trains required by the model. It can be set here to a value greater than zero, otherwise is calculated based on input model
 	private static final int MAX_TRAINS = TRAINS.length; // The upper limit for numTrains. Set no bigger than TRAINS.length
 	
@@ -64,7 +64,7 @@ public class TrackScheme2CSPB {
 	 */
 	public static void main(String[] args) {
 		
-		TrackScheme2CSPB tool = new TrackScheme2CSPB("Copy.bjoernercomplete");
+		TrackScheme2CSPB tool = new TrackScheme2CSPB("doubleJunction.bjoernercomplete");
 		
 		// Process all files in TEMPLATES_DIR
 		for (String template : new File(TEMPLATES_DIR).list()) {

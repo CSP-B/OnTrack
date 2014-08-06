@@ -30,7 +30,7 @@ public class TrackSchemeETL extends EpsilonStandaloneExample {
 		// Set output model properties
 		for (IModel model : outputModels) {
 			model.setReadOnLoad(false);
-			model.setStoredOnDisposal(false);
+			model.setStoredOnDisposal(true);
 			try {
 				model.load();
 			} catch (EolModelLoadingException e) {
