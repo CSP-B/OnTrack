@@ -37,3 +37,6 @@ local.properties
 # Maven
 log/
 target/
+
+# Ignore Track plan outputs
+Bjoerner_Generator/output

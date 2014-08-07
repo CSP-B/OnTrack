@@ -26,7 +26,7 @@ for (s in bMachine1.hasSets)
     POINTPOSITION = {normal,reverse};
     POINTSTATUS = {locked, unlocked};
     ASPECT = {red,green};
-    TRAIN = {#foreach ($String in $trains)$String#if ($foreach.hasNext),#end#end#**#}
+    TRAIN = {albert,bertie}
     
 
 
@@ -35,7 +35,12 @@ CONSTANTS
     ENTRY,
     EXIT,
     SIGNALSTATUS, 
-    TRACK
+    TRACK,
+    CONNECTOR,
+    POINT,
+    BUFFER,
+    SIGNAL,
+    CROSSING
     
 
 PROPERTIES
@@ -46,6 +51,9 @@ for (p in bMachine1.hasProperties)
 }
 %]
     SIGNALSTATUS = ASPECT &
+    CONNECTOR = ALLCONNECTOR &
+    POINT <: ALLPOINT &
+    POINT = ALLPOINT &
     TRACK = ALLTRACK - {nullTrack}
 	
 END

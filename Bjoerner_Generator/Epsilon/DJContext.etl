@@ -10,20 +10,34 @@ pre {
 	// Set ALLTRACK = all units + nullTrack
 	var alltrack = newBSet("ALLTRACK");
 
+	//	set ALLCONNECTOR = all connectors
+	var allconnector = newBSet("ALLCONNECTOR");
+
 	// Set SIGNAL = all signal names
-	var signal = newBSet("SIGNAL");
+	var signal = newBSet("ALLSIGNAL");
 
 	// Set POINTS = all point pointNames
-	var points = newBSet("POINTS");
+	var points = newBSet("ALLPOINTS");
 
 	// Set ROUTE = all route names
 	var routeB = newBSet("ROUTE");
+
+	//	Set BUFFERSIGNALS = all route buffer signals
+	var bufferSignals = newBSet("ALLBUFFERSIGNALS");
+
+	//	Property BUFFER = all route terminals
+	var buffer = newBProperty("BUFFER");
+
+	//	Property CROSSING
+	var crossing = newBProperty("CROSSING");
 	
 	// Property ENTRY
 	var entry = newBProperty("ENTRY");
 	
 	// Property EXIT
 	var exit = newBProperty("EXIT");
+
+	var connectorCount = 0;
 }
 
 //////// Transformation Rules ////////
@@ -45,6 +59,14 @@ to se : BMachine!Element {
 
 	se.name = s.name;
 	signal.hasSetElements.add(se);
+}
+
+rule processAllConnector 
+transform c : Bjoerner!Connector
+to se : BMachine!Element {
+	se.name = "C" + connectorCount.toString();
+	allconnector.hasSetElements.add(se);
+	connectorCount = connectorCount + 1;
 }
 
 // Add all point pointNames to POINTS
@@ -85,4 +107,19 @@ to pe : BMachine!PropElement, e : BMachine!Element {
 	if (u.hasSignals.size > 0) {entry.hasPropElements.add(pe);}
 	// Else add to EXIT
 	else {exit.hasPropElements.add(pe);}	
+}
+
+// Find BUFFERS
+rule findBuffers
+transform b : Bjoerner!Terminal
+to pe : BMachine!PropElement {
+	
+	buffer.hasPropElements.add(b);
+}
+
+// Find CROSSINGS
+rule findCrossings
+transform c : Bjoerner!Crossing
+to pe : BMachine!PropElement {
+	crossing.hasPropElements.add(c);
 }
