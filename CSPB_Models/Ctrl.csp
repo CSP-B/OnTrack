@@ -1,0 +1,128 @@
+-- Throw away:
+-- points : p1, p4
+-- routes : r1, r4, r5a, r5d
+-- tracks : tc1, tc2, tc4, tc5, tc11, tc12, tc15, tc16
+-- signals: s1, s4, s6, s9
+
+
+datatype TRAIN = albert | bertie
+datatype SIGNAL = red | green
+datatype POS =  
+     -- TC1 | TC2 | 
+     TC3 | 
+     -- TC4 | TC5 | 
+     TC6 | TC7 | TC8 | TC9 | TC10 |
+     -- TC11 | TC12 | 
+     TC13 | TC14 | 
+     -- TC15 | TC16 | 
+     TC17 | TC18 | TC19 | TC20 | TC21| nullTrack
+datatype TRAINSTATUS = entered | moved
+ALLTRACK = POS
+TRACK = diff(ALLTRACK,{nullTrack})
+ENTRY = {TC10}
+EXIT = {TC21}
+SIGNALHOMES = {
+       --TC1, TC4, 
+       --TC11, TC15, 
+       TC3,
+       TC13,
+       TC10}
+
+--new set for the special buffer tracks
+BUFFER = { 
+   --TC1, TC4, TC11, TC15
+   TC3, TC13
+   }
+
+datatype ROUTE = 
+   -- R1| 
+   R2 |R3 |
+   --R4 | R5A |
+   R5B |R5C 
+   --|R5D
+
+datatype ANSWERS = yes | no
+
+channel enter: TRAIN.ENTRY
+channel exit: TRAIN.EXIT
+channel nextSignal : TRAIN.SIGNAL.Bool
+channel move : TRAIN.ALLTRACK.ALLTRACK
+channel request : ROUTE.ANSWERS
+channel release : ROUTE.ANSWERS
+channel changeDirection: TRAIN.ALLTRACK
+
+RW_CTRL =
+  ([] r : ROUTE @ request!r?ans -> RW_CTRL)
+  []
+  ([] r : ROUTE @ release!r?ans -> RW_CTRL)  
+
+--since all entry tracks are protected by signals, once a train enters it has to read the signal and is not allowed to exit, could choose just to sit there
+TRAIN_OFF(t) = 
+  [] entryPos : ENTRY  @
+    enter!t!entryPos -> TRAIN_ENTERED(t,entryPos)
+
+TRAIN_ENTERED(t,entryPos) = 
+    nextSignal!t?aspect?flag ->
+   (if (aspect==green or flag == false) then
+       move.t.entryPos?newp -> TRAIN_CTRL(t,newp)
+    else
+    ((move.t.entryPos?newp -> STOP) |~| TRAIN_ENTERED(t,entryPos))
+   -- allow an entry to go through a red with an overlap
+   -- TRAIN_ENTERED(t,entryPos)
+   )
+
+
+
+TRAIN_CTRL(t,pos) =
+--if an exit track it must leave the system
+(member(pos,EXIT) & exit.t.pos -> STOP  )
+[]
+-- it is not an exit track and there is no signal
+(not(member(pos,EXIT)) and
+ not(member(pos,SIGNALHOMES)) & 
+   move.t.pos?newp -> TRAIN_CTRL(t,newp)
+)
+[]
+-- there is a signal on the track, track is not exit
+(not(member(pos,EXIT)) and
+ member(pos,SIGNALHOMES)  & 
+   (nextSignal!t?aspect?flag ->
+   (if (aspect==green or flag == false) then
+       move.t.pos?newp -> TRAIN_CTRL(t,newp)
+    else
+       ((move.t.pos?newp -> STOP) |~| TRAIN_CTRL(t,pos))
+   )
+   []
+   changeDirection.t.pos -> TRAIN_CTRL(t,pos))
+)
+
+
+-- if the track is a buffer then the only thing it can do is change direction and then move 
+-- if there was a signal on the track then the synchronisation with the train process means that it would first read the signal
+-- if it was red it would simply go through the signal
+ TRAIN_BUFFER_CTRL(b,t) = move!t?p!b -> changeDirection.t.b -> move.t.b?newp -> TRAIN_BUFFER_CTRL(b,t)
+ALL_BUFFER = ||| b : BUFFER, t : TRAIN @ TRAIN_BUFFER_CTRL(b,t)
+
+A_ALL_BUFFER = union(union(
+       { move.t.p.b | t <- TRAIN, p<-ALLTRACK, b<-BUFFER},
+       { move.t.b.p | t <- TRAIN, p<-ALLTRACK, b<-BUFFER}),
+       {|changeDirection|})
+
+ALL_TRAINS = ||| t : TRAIN @ TRAIN_OFF(t)
+A_ALL_TRAINS = {| enter,exit, nextSignal, move|}
+
+--ALL_TRAINS_WITH_BUFFER = ALL_TRAINS
+ALL_TRAINS_WITH_BUFFER = ALL_TRAINS [A_ALL_TRAINS || A_ALL_BUFFER] ALL_BUFFER
+
+
+channel collision, runthrough, derailment, occupiedgreen, offdesignated
+ERR = (collision -> ERR) [] 
+      (runthrough -> ERR) [] 
+      (derailment -> ERR) [] 
+      (occupiedgreen -> ERR) [] 
+      (offdesignated -> ERR) 
+
+CTRL = (RW_CTRL ||| ERR) 
+CTRL_WITH_BUFFER = CTRL ||| ALL_TRAINS_WITH_BUFFER
+
+MAIN = CTRL_WITH_BUFFER
