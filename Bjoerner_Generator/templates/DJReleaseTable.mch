@@ -29,7 +29,9 @@ for (p in bMachine1.hasProperties)
 {
 	out.println( p.write() );
 }
-%]
+%] &
+
+ran(releaseTable) = lockTable
 
 END
 
