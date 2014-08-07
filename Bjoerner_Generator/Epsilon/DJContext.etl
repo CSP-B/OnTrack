@@ -21,6 +21,15 @@ pre {
 
 	// Set ROUTE = all route names
 	var routeB = newBSet("ROUTE");
+
+	//	Set BUFFERSIGNALS = all route buffer signals
+	var bufferSignals = newBSet("ALLBUFFERSIGNALS");
+
+	//	Property BUFFER = all route terminals
+	var buffer = newBProperty("BUFFER");
+
+	//	Property CROSSING
+	var crossing = newBProperty("CROSSING");
 	
 	// Property ENTRY
 	var entry = newBProperty("ENTRY");
@@ -98,4 +107,19 @@ to pe : BMachine!PropElement, e : BMachine!Element {
 	if (u.hasSignals.size > 0) {entry.hasPropElements.add(pe);}
 	// Else add to EXIT
 	else {exit.hasPropElements.add(pe);}	
+}
+
+// Find BUFFERS
+rule findBuffers
+transform b : Bjoerner!Terminal
+to pe : BMachine!PropElement {
+	
+	buffer.hasPropElements.add(b);
+}
+
+// Find CROSSINGS
+rule findCrossings
+transform c : Bjoerner!Crossing
+to pe : BMachine!PropElement {
+	crossing.hasPropElements.add(c);
 }

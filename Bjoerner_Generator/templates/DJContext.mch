@@ -51,6 +51,9 @@ for (p in bMachine1.hasProperties)
 }
 %]
     SIGNALSTATUS = ASPECT &
+    CONNECTOR = ALLCONNECTOR &
+    POINT <: ALLPOINT &
+    POINT = ALLPOINT &
     TRACK = ALLTRACK - {nullTrack}
 	
 END
