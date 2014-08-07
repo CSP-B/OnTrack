@@ -21,13 +21,10 @@ public class TrackScheme2CSPB {
 
 	// Constants
 	private static final String VERSION = "0.1";
-	private static final String[] TRAINS = {"albert","bertie"};
-	private int numTrains = 0; // The maximum number of trains required by the model. It can be set here to a value greater than zero, otherwise is calculated based on input model
-	private static final int MAX_TRAINS = TRAINS.length; // The upper limit for numTrains. Set no bigger than TRAINS.length
 	
 	// File structure elements
 	private final Date date;
-	private final String[] outputFolder; // Generated files are placed in a unique date_time folder within OUTPUT_DIR
+	private String outputFolder;
 	
 	// Epsilon Directories
 	private static final String ETL_SOURCE_DIR = "Epsilon/";
@@ -83,45 +80,16 @@ public class TrackScheme2CSPB {
 		BJOERNER_MODEL = model;
 		inputModel = EpsilonStandaloneExample.createEmfModel(BJOERNER_MODEL_NAME, MODELS_DIR + BJOERNER_MODEL, MODELS_DIR + BJOERNER_META_MODEL);
 		
-		// calculate numTrains
-		setNumTrains();
-		
 		// get date
 		date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yy_kk.mm.ss");
 		
+		outputFolder = sdf.format(date);
+		
 		// create output folders
-		new File(OUTPUT_DIR + sdf.format(date) + "/").mkdir();
-		outputFolder = new String[numTrains];
+		new File(OUTPUT_DIR + outputFolder + "/").mkdir();
 		
-		for (int i=0; i<numTrains; i++) {
-			
-			outputFolder[i] = OUTPUT_DIR + sdf.format(date) + "/" + (i+1) + "_train" + ((i>0 ? "s" : "")) + "/";
-			new File(outputFolder[i]).mkdir();
-		}
-	}
-	
-	/**
-	 * Uses EOL_SOURCE to determine the maximum number of trains to be modelled, unless its value has been preset
-	 * Its value can be no bigger than MAX_TRAINS
-	 * @return the maximum number of trains to be modelled
-	 */
-	private void setNumTrains() {
 		
-		if (numTrains <= 0) {
-			numTrains = (Integer) new TrackSchemeEOL(EOL_SOURCE, inputModel).execute();
-			System.out.print(numTrains + " trains required");
-		}
-		else {
-			System.out.print("numTrains has been preset to " + numTrains);
-		}
-		
-		if (numTrains > MAX_TRAINS) {
-			numTrains = MAX_TRAINS;
-			System.out.print(" (model currently restricted to maximum of " + MAX_TRAINS + ")");
-		}
-		
-		System.out.println();
 	}
 
 	/**
@@ -144,15 +112,13 @@ public class TrackScheme2CSPB {
 		Velocity.init();
 		
 		// For each number of trains available, generate EGL file from template and use to produce output file
-		for (int i=1; i<=numTrains; i++) {
 
 			// Setup variables for template
 			VelocityContext context = new VelocityContext();
 			context.put("date", date.toString());
 			context.put("model", BJOERNER_MODEL);
-			context.put("numTrains", i);
+			context.put("numTrains", "2");
 			context.put("version", VERSION);
-			context.put("trains", Arrays.copyOfRange(TRAINS, 0, i));
 			
 			try {
 
@@ -176,11 +142,10 @@ public class TrackScheme2CSPB {
 			}
 			
 			// configure output filename
-			String outputFile = outputFolder[i-1] + template;
+			String outputFile = OUTPUT_DIR + outputFolder + "/" + template;
 
 			// process EGL
 			new TrackSchemeEGL(outputFile, eglOutput, outputModels).execute();
 		}
-	}
 	
 }

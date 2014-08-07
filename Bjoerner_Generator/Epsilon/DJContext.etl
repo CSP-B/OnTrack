@@ -10,11 +10,14 @@ pre {
 	// Set ALLTRACK = all units + nullTrack
 	var alltrack = newBSet("ALLTRACK");
 
+	//	set ALLCONNECTOR = all connectors
+	var allconnector = newBSet("ALLCONNECTOR");
+
 	// Set SIGNAL = all signal names
-	var signal = newBSet("SIGNAL");
+	var signal = newBSet("ALLSIGNAL");
 
 	// Set POINTS = all point pointNames
-	var points = newBSet("POINTS");
+	var points = newBSet("ALLPOINTS");
 
 	// Set ROUTE = all route names
 	var routeB = newBSet("ROUTE");
@@ -24,6 +27,8 @@ pre {
 	
 	// Property EXIT
 	var exit = newBProperty("EXIT");
+
+	var connectorCount = 0;
 }
 
 //////// Transformation Rules ////////
@@ -45,6 +50,14 @@ to se : BMachine!Element {
 
 	se.name = s.name;
 	signal.hasSetElements.add(se);
+}
+
+rule processAllConnector 
+transform c : Bjoerner!Connector
+to se : BMachine!Element {
+	se.name = "C" + connectorCount.toString();
+	allconnector.hasSetElements.add(se);
+	connectorCount = connectorCount + 1;
 }
 
 // Add all point pointNames to POINTS

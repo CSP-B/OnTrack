@@ -26,7 +26,7 @@ for (s in bMachine1.hasSets)
     POINTPOSITION = {normal,reverse};
     POINTSTATUS = {locked, unlocked};
     ASPECT = {red,green};
-    TRAIN = {#foreach ($String in $trains)$String#if ($foreach.hasNext),#end#end#**#}
+    TRAIN = {albert,bertie}
     
 
 
