@@ -1,2 +1,2 @@
-Thu Aug 07 14:04:53 BST 2014  [error] Left side of '>=' operation is not a Number at templates/DJContext.mch[line 4, column 73]
-Thu Aug 07 14:04:54 BST 2014  [error] Left side of '>=' operation is not a Number at templates/CTRL.csp[line 3, column 80]
+Thu Aug 07 14:23:24 BST 2014  [error] Left side of '>=' operation is not a Number at templates/DJContext.mch[line 4, column 73]
+Thu Aug 07 14:23:25 BST 2014  [error] Left side of '>=' operation is not a Number at templates/CTRL.csp[line 3, column 80]

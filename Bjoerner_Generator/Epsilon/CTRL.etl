@@ -17,6 +17,11 @@ pre {
 	// DatatypeItemList for ROUTE
 	var route_list = newCSPDatatypeItemList(route);
 
+	// Datatype BUFFER = all buffers
+	var buffer = newCSPDatatype("BUFFER");
+	// DatatypeItem list for BUFFER
+	var buffer_list = newCSPDatatypeItemList(buffer);
+
 	// Set ENTRY = all entry units (end linears with a signal)
 	var entry = newCSPSet("ENTRY");
 
@@ -65,6 +70,24 @@ to d : CSP!DatatypeItem {
 	// increase route_list size and set new first item
 	route_list.size = route_list.size + 1;
 	route_list.firstItem = d;
+}
+
+// Add buffers
+rule checkBuffers
+transform b : Bjoerner!Terminal
+to d : CSP!DatatypeItem {
+		d.name = r.name;
+		d.type = buffer;
+
+		// if buffer_list already has items
+		if (buffer_list.firstItem.isDefined()) {
+			// link to previous item
+			d.preceeds = buffer_list.firstItem;
+		}
+
+		// increase buffer_list size and set new first item
+		buffer_list.size = buffer_list.size + 1;
+		buffer_list.firstItem = d;
 }
 
 // Add end units to ENTRY and EXIT

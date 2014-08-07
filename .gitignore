@@ -39,4 +39,5 @@ log/
 target/
 
 # Ignore Track plan outputs
-Bjoerner_Generator/output
+Bjoerner_Generator/output/*/*.csp
+Bjoerner_Generator/output/*/*.mch

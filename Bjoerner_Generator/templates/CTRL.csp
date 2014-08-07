@@ -56,11 +56,10 @@ channel enter: TRAIN.ENTRY
 channel exit: TRAIN.EXIT
 channel nextSignal : TRAIN.SIGNAL
 channel move : TRAIN.ALLTRACK.ALLTRACK
-channel stay : TRAIN.ALLTRACK
 channel request : ROUTE.ANSWERS
 channel release : ROUTE.ANSWERS
 --definition of error channels
-channel collision, derailment
+channel collision, derailment, runthrough, occupiedgreen, offdesignated
 
 
 --controller process to deal with route requests and releasing of routes
@@ -71,54 +70,73 @@ RW_CTRL =
 
 --definition of individual train control process
 --each train starts off the track plan and after leaving remains on the exit track
-TRAIN_OFF(t) = enter!t?newp -> TRAIN_CTRL(t,newp)
-TRAIN_EXIT(t) = []e: EXIT @ (move.t.e?newp -> TRAIN_EXIT(t))
+TRAIN_OFF(t) = 
+  [] entryPos : ENTRY  @
+    enter!t!entryPos -> TRAIN_ENTERED(t,entryPos)
 
---process to determine movement of train, trains do not move through red signals
+TRAIN_ENTERED(t,entryPos) = 
+    nextSignal!t?aspect?flag ->
+   (if (aspect==green or flag == false) then
+       move.t.entryPos?newp -> TRAIN_CTRL(t,newp)
+    else
+    ((move.t.entryPos?newp -> STOP) |~| TRAIN_ENTERED(t,entryPos))
+   -- allow an entry to go through a red with an overlap
+   -- TRAIN_ENTERED(t,entryPos)
+   )
+
+
+
 TRAIN_CTRL(t,pos) =
-(not(member(pos,EXIT)) and member(pos,SIGNALHOMES) & nextSignal!t?aspect -> 
-   if (aspect==green)
-   then
-      (move!t.pos?newp -> TRAIN_CTRL(t,newp))
-      []
-      (stay!t.pos -> TRAIN_CTRL(t,pos))
-   else
-      stay!t.pos -> TRAIN_CTRL(t,pos))
+--if an exit track it must leave the system
+(member(pos,EXIT) & exit.t.pos -> STOP  )
 []
-(not(member(pos,EXIT)) and not(member(pos,SIGNALHOMES)) &
-   ((move!t.pos?newp -> TRAIN_CTRL(t,newp))
-    []
-    (stay!t.pos -> TRAIN_CTRL(t,pos))))
+-- it is not an exit track and there is no signal
+(not(member(pos,EXIT)) and
+ not(member(pos,SIGNALHOMES)) & 
+   move.t.pos?newp -> TRAIN_CTRL(t,newp)
+)
 []
-(member(pos,EXIT) & 
-    ((stay!t!pos -> TRAIN_CTRL(t,pos))
-     []
-     (exit!t.pos -> TRAIN_EXIT(t))))
+-- there is a signal on the track, track is not exit
+(not(member(pos,EXIT)) and
+ member(pos,SIGNALHOMES)  & 
+   (nextSignal!t?aspect?flag ->
+   (if (aspect==green or flag == false) then
+       move.t.pos?newp -> TRAIN_CTRL(t,newp)
+    else
+       ((move.t.pos?newp -> STOP) |~| TRAIN_CTRL(t,pos))
+   )
+   []
+   changeDirection.t.pos -> TRAIN_CTRL(t,pos))
+)
 
 
---definition of all train processes which are not initially on the tracks
+-- if the track is a buffer then the only thing it can do is change direction and then move 
+-- if there was a signal on the track then the synchronisation with the train process means that it would first read the signal
+-- if it was red it would simply go through the signal
+ TRAIN_BUFFER_CTRL(b,t) = move!t?p!b -> changeDirection.t.b -> move.t.b?newp -> TRAIN_BUFFER_CTRL(b,t)
+ALL_BUFFER = ||| b : BUFFER, t : TRAIN @ TRAIN_BUFFER_CTRL(b,t)
+
+A_ALL_BUFFER = union(union(
+       { move.t.p.b | t <- TRAIN, p<-ALLTRACK, b<-BUFFER},
+       { move.t.b.p | t <- TRAIN, p<-ALLTRACK, b<-BUFFER}),
+       {|changeDirection|})
+
 ALL_TRAINS = ||| t : TRAIN @ TRAIN_OFF(t)
+A_ALL_TRAINS = {| enter,exit, nextSignal, move|}
 
---definitons to model collision and derailment
---these processes serve no purpose in the CSP but are included so that the alphabets of the CSP and B match
---they are events that are used in the CTL model checking
-ERR = (collision -> ERR) [] (derailment -> ERR)
+--ALL_TRAINS_WITH_BUFFER = ALL_TRAINS
+ALL_TRAINS_WITH_BUFFER = ALL_TRAINS [A_ALL_TRAINS || A_ALL_BUFFER] ALL_BUFFER
 
---define the composition of the route controller, all trains and the error events
---control the entry of the two trains in the model to limit the state space
-CTRL = RW_CTRL ||| ALL_TRAINS ||| ERR
-        [|{| enter |}|]
-       (#foreach ($String in $trains)enter.$String?p -> #end#**#STOP)
+ERR = (collision -> ERR) [] 
+      (runthrough -> ERR) [] 
+      (derailment -> ERR) [] 
+      (occupiedgreen -> ERR) [] 
+      (offdesignated -> ERR) 
 
---define a restricted controller so that events which do not change the state can be ignored
-RESTRICTED_CTRL = CTRL [ {| request, release, enter, exit, nextSignal, move, stay, collision, derailment |}
-                          || union(union({| stay, #foreach ($String in $trains)nextSignal.$String#**#.red#if ($foreach.hasNext), #end#end |},
-                                         { request.r.no | r <- ROUTE}),
-                                   { release.r.no | r <- ROUTE}) ] STOP
+CTRL = (RW_CTRL ||| ERR) 
+CTRL_WITH_BUFFER = CTRL ||| ALL_TRAINS_WITH_BUFFER
 
--- Main process which enables the B and CSP to be analysed together
-is needed in order to run through ProB
-MAIN = RESTRICTED_CTRL
+MAIN = CTRL_WITH_BUFFER
 
 [%
 
