@@ -35,7 +35,12 @@ CONSTANTS
     ENTRY,
     EXIT,
     SIGNALSTATUS, 
-    TRACK
+    TRACK,
+    CONNECTOR,
+    POINT,
+    BUFFER,
+    SIGNAL,
+    CROSSING
     
 
 PROPERTIES
