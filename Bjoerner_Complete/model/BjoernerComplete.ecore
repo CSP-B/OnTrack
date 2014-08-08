@@ -53,7 +53,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signal">
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlsRoutes" upperBound="-1"
-        eType="#//Route" eOpposite="#//Route/controlledBySignal"/>
+        eType="#//RouteName" eOpposite="#//RouteName/controlledBySignal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="placedOnTrack" lowerBound="1"
         eType="#//Track" eOpposite="#//Track/hasSignals"/>
@@ -64,7 +64,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasDirection" lowerBound="1"
         eType="#//Direction"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Route">
+  <eClassifiers xsi:type="ecore:EClass" name="RouteName">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUPPs" upperBound="-1"
         eType="#//UnitPathPair"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controlledBySignal" lowerBound="1"
@@ -74,20 +74,24 @@
         eType="#//Point"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasReversePoints" upperBound="-1"
         eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedWith" lowerBound="1"
+        eType="#//TopologicalRoute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlTable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasRoutes" upperBound="-1"
-        eType="#//Route"/>
+        eType="#//RouteName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEntry" upperBound="-1"
+        eType="#//ControlTableEntry"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RailDiagram">
+  <eClassifiers xsi:type="ecore:EClass" name="SchemePlan">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
         eType="#//Unit" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasConnectors" upperBound="-1"
         eType="#//Connector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasSignals" upperBound="-1"
         eType="#//Signal" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="hasControlTable" eType="#//ControlTable"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasControlTable" lowerBound="1"
+        eType="#//ControlTable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Crossing" eSuperTypes="#//Unit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasC3_Crossing" lowerBound="1"
@@ -104,5 +108,51 @@
   <eClassifiers xsi:type="ecore:EClass" name="Direction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="hasConnectors" lowerBound="2"
         upperBound="2" eType="#//Connector"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlTableEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasControlTable" eType="#//ControlTable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRouteName" lowerBound="1"
+        eType="#//RouteName" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dfgfgfd" eType="#//ClearUnits"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hdghf" eType="#//RouteName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasClearUnits" lowerBound="1"
+        eType="#//ClearUnits" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNormalPoints" lowerBound="1"
+        eType="#//NormalPoints" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasReversePoints" lowerBound="1"
+        eType="#//ReversePoints" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearUnits">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasClearUnits" lowerBound="1"
+        eType="#//ControlTableEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnits" upperBound="-1"
+        eType="#//Unit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalPoints">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNormalPoints" lowerBound="1"
+        eType="#//ControlTableEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasNPoints" upperBound="-1"
+        eType="#//Point"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReversePoints">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasRPoints" upperBound="-1"
+        eType="#//Point"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FixedSignal" eSuperTypes="#//Signal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RouteSignal" eSuperTypes="#//Signal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TopologicalRoute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitSignal" eType="#//Signal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrySignal" lowerBound="1"
+        eType="#//RouteSignal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasDirectedUnits" upperBound="-1"
+        eType="#//DirectedUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnitDirectiom" lowerBound="1"
+        eType="#//Direction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasUnit" lowerBound="1"
+        eType="#//Unit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="belongsTo" upperBound="-1"
+        eType="#//TopologicalRoute"/>
   </eClassifiers>
 </ecore:EPackage>
