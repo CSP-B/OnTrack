@@ -11,8 +11,8 @@ The OnTrack toolset automates workflows for railway verification, starting with 
 
 * [Dr Helen Treharne](http://www2.surrey.ac.uk/computing/people/helen_treharne/)
 * [Professor Steve Schneider](http://www2.surrey.ac.uk/computing/people/steve_schneider/)
-* [Markus Roggenbach](http://www.cs.swan.ac.uk/~csmarkus/)
-* [Phillip James](http://cs.swan.ac.uk/~cspj/)
+* [Dr Markus Roggenbach](http://www.cs.swan.ac.uk/~csmarkus/)
+* [Dr Phillip James](http://cs.swan.ac.uk/~cspj/)
 * [Jorden Whitefield](http://uk.linkedin.com/in/jwhitefield/)
 * Matthew Trumble
 
